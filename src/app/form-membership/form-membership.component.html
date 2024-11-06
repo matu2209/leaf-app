@@ -1,0 +1,52 @@
+<!-- form-membership.component.html -->
+<div class="modal fade" id="MembershipModal" tabindex="-1" aria-labelledby="membershipModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="membershipModalLabel">Membership Payment</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-2">
+                        <label class="form-label">Cardholder Name:</label>
+                        <input type="text" class="form-control" placeholder="Cardholder Name">
+                    </div>
+                    <div>
+                        <label class="form-label">Card Number:</label>
+                        <input type="text" class="form-control" placeholder="1234 5678 9012 3456">
+                    </div>
+                    <div>
+                        <label class="form-label">Expiration Date:</label>
+                        <input type="text" class="form-control" placeholder="MM/YY">
+                    </div>
+                    <div>
+                        <label class="form-label">CVV:</label>
+                        <input type="text" class="form-control" placeholder="123">
+                    </div>
+                    <div>
+                        <label class="form-label">Billing Address:</label>
+                        <input type="text" class="form-control" placeholder="Billing Address">
+                    </div>
+                    <div>
+                        <label class="form-label">Country:</label>
+                        <select class="form-control">
+                            <option value="">Select a country</option>
+                            <option value="us">United States</option>
+                            <option value="ca">Canada</option>
+                            <option value="br">Brazil</option>
+                            <option value="ar">Argentina</option>
+                            <!-- Agrega más países aquí -->
+                        </select>
+                    </div>                                   
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Accept</button>
+        </div>
+      </div>
+    </div>
+ </div>
+ 

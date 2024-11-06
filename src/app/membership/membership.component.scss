@@ -1,0 +1,44 @@
+.pricing-card {
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 20px;
+    margin-bottom: 30px;
+  
+    .card-header {
+      background-color: #697353;
+      padding: 15px;
+      h3 {
+        margin: 0;
+        color: #ffffff;
+      }
+    }
+
+    .list-unstyled{
+        color: #40352B;
+    }
+
+    .price {
+      font-size: 2rem;
+      color: #697353;
+      margin-bottom: 20px;
+    }
+  
+    li {
+      margin: 10px 0;
+    }
+  
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    button{
+        background-color: #D9C6A3;
+        color: #40352B;
+    }
+
+    
+  }
+
+  

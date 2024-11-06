@@ -1,0 +1,9 @@
+<div class="card" (click)="onCardClick(plant)" data-bs-toggle="modal" data-bs-target="#InformationModal">
+    <img [src]="plant.image_url" class="card-img-top" alt="Imagen de planta">
+    <div class="card-body">
+      <h5 class="card-title">{{ plant.common_name }}</h5>
+      <p class="card-text">{{ plant.scientific_name }}</p>
+    </div>
+</div>
+
+<app-plant-information></app-plant-information> 

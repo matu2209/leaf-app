@@ -1,0 +1,17 @@
+<br><br><br><br>
+
+<app-filter-form (filterSubmitted)="onFilterSubmitted()"></app-filter-form>
+
+<div class="container text-center mt-5">
+    <ng-container *ngIf="plantsFound; else noPlantsFound">
+        <h2>Explore</h2>
+    </ng-container>
+
+    <ng-template #noPlantsFound>
+        <app-not-found></app-not-found>
+    </ng-template>
+
+    <app-plant-list #plantListComponent></app-plant-list>
+
+</div>
+

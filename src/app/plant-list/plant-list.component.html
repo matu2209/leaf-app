@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let plant of plants">
+        <app-plant-card [plant]="plant"></app-plant-card>
+      </div>
+    </div>
+</div>
+  
+<app-pagination *ngIf="endPage != firstPage" [actualPage]="actualPage" [firstPage]="firstPage" [previousPage]="previousPage" [nextPage]="nextPage" 
+                [endPage]="endPage" (pageChange)="changePage($event)"></app-pagination> 

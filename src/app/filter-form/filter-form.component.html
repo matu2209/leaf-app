@@ -1,0 +1,159 @@
+<div class="container mt-4">
+  <div class="mx-auto d-flex align-items-center">
+    <!-- Botón de filtro con ícono de filtro -->
+    <button class="btn btn-light ms-2 me-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      <i class="bi bi-filter"></i> Filter
+    </button>
+  
+    <!-- Centro: Barra de búsqueda y botones de búsqueda -->
+    
+      <form class="d-flex" role="search" [formGroup]="nameForm" (ngSubmit)="onSubmitName()">
+        <div class="input-group">
+          <input class="form-control" type="search" placeholder="Search plants..." aria-label="Search" formControlName="plant_name">
+          <button class="btn btn-outline-light" type="submit">
+            <i class="bi bi-search" ></i> 
+          </button>
+        </div>
+      </form>
+    </div>
+    
+    <!-- Contenedor colapsable de filtros -->
+    <div class="collapse mt-3" id="collapseExample">
+      <div class="card card-body">
+  
+        <form [formGroup]="filterForm" (ngSubmit)="onSubmitFilter()">
+  
+            <!-- Botón de búsqueda -->
+            <button class="btn btn-light mb-3" type="submit" data-bs-toggle="collapse" data-bs-target="#collapseExample">
+                <i class="bi bi-search"></i> Search
+            </button>
+            <div class="card mb-3">
+                <div class="card-body">
+                <p class="mb-0">Please select the filters you would like to apply.</p>
+                </div>
+            </div>
+  
+          <div class="row mb-3">
+            <div class="col-md-3">
+              <!-- EDIBLE PARTS -->
+              <div class="card mb-3">
+                <div class="card-body">
+                  <label class="form-label">Edible part</label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="part0" formControlName="edible">
+                    <label class="form-check-label" for="part0">Is edible?</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="part1" formControlName="part_roots">
+                    <label class="form-check-label" for="part1">Roots</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="part2" formControlName="part_leaves">
+                    <label class="form-check-label" for="part2">Leaves</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-md-3">
+              <!-- SPECIFICATIONS -->
+              <div class="card mb-3">
+                <div class="card-body">
+                  <label class="form-label">Specifications</label>
+                  <div class="mb-3">
+                    <label for="growth_form" class="form-label">Growth Form</label>
+                    <select class="form-select" id="growth_form" formControlName="growth_form">
+                      <option value="">Select an option</option>
+                      <option value="multiple stem">Multiple Stem</option>
+                      <option value="single stem">Single Stem</option>
+                      <option value="stoloniferous">Stoloniferous</option>
+                      <option value="rhizomatous">Rhizomatous</option>
+                      <option value="bunch">Bunch</option>
+                      <option value="single crown">Single Crown</option>
+                    </select>
+                  </div>
+          
+                  <!-- Growth Habit -->
+                  <div class="mb-3">
+                    <label for="growth_habit" class="form-label">Growth Habit</label>
+                    <select class="form-select" id="growth_habit" formControlName="growth_habit">
+                      <option value="">Select an option</option>
+                      <option value="forb/herb">Forb/herb</option>
+                      <option value="graminoid">Graminoid</option>
+                      <option value="tree">Tree</option>
+                      <option value="shrub">Shrub</option>
+                    </select>
+                  </div>
+          
+                  <!-- Growth Rate -->
+                  <div class="mb-3">
+                    <label for="growth_rate" class="form-label">Growth Rate</label>
+                    <select class="form-select" id="growth_rate" formControlName="growth_rate">
+                      <option value="">Select an option</option>
+                      <option value="slow">Slow</option>
+                      <option value="moderate">Moderate</option>
+                      <option value="rapid">Rapid</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-md-3">
+              <!-- FOLIAGE -->
+              <div class="card mb-3">
+                <div class="card-body">
+                  <label class="form-label">Foliage</label>
+  
+                  <!-- Texture -->
+                  <div class="mb-3">
+                    <label for="foliage_texture" class="form-label">Foliage Texture</label>
+                    <select class="form-select" id="foliage_texture" formControlName="foliage_texture">
+                      <option value="">Select an option</option>
+                      <option value="fine">Fine</option>
+                      <option value="medium">Medium</option>
+                      <option value="coarse">Coarse</option>
+                    </select>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+  
+            <div class="col-md-3">
+              <!-- FLOWER -->
+              <div class="card mb-3">
+                <div class="card-body">
+                  <label class="form-label">Flower</label>
+  
+                  <!-- Fruit Checkbox -->
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="has_fruit" formControlName="has_fruit">
+                    <label class="form-check-label" for="has_fruit">Does the plant have fruit?</label>
+                  </div>
+  
+                  <!-- Vegetable Checkbox -->
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="is_vegetable" formControlName="is_vegetable">
+                    <label class="form-check-label" for="is_vegetable">Is the species a vegetable?</label>
+                  </div>
+  
+                  <!-- Has Flowers Checkbox -->
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="has_flowers" formControlName="has_flowers">
+                    <label class="form-check-label" for="has_flowers">Does the plant have flowers?</label>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            
+          </div>
+
+        </form>
+
+
+      </div>
+    </div>
+  </div>
+  

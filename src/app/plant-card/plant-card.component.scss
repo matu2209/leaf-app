@@ -1,0 +1,23 @@
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s; // Transición para animación
+    margin-bottom: 20px; // Agrega margen inferior
+    margin-top: 10px;
+    
+  
+    &:hover {
+      transform: scale(1.05); // Escala la tarjeta al pasar el mouse
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); // Aumenta la sombra
+    }
+  }
+  
+  h5, p {
+    color: #40352B;
+  }
+  .card-img-top {
+    height: 150px;
+    object-fit: cover;
+  }
+  
