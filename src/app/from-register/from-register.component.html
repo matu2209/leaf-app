@@ -1,0 +1,48 @@
+<!-- form-register.component.html -->
+<div class="modal fade" id="RegisterModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="registerModalLabel">Register</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-2">
+                        <label class="form-label">Username:</label>
+                        <input type="text" class="form-control" placeholder="Username">
+                    </div>
+                    <div>
+                        <label class="form-label">Email:</label>
+                        <input type="email" class="form-control" placeholder="example@examplemail.com">
+                    </div>
+                    <div>
+                        <label class="form-label">Password:</label>
+                        <input type="password" class="form-control" placeholder="Password">
+                    </div>
+                    <div>
+                        <label class="form-label">Password confirmation:</label>
+                        <input type="password" class="form-control" placeholder="Password confirmation">
+                    </div>   
+                    <div>
+                        <label class="form-label">Country:</label>
+                        <select class="form-control">
+                            <option value="">Select a country</option>
+                            <option value="us">United States</option>
+                            <option value="ca">Canada</option>
+                            <option value="br">Brazil</option>
+                            <option value="ar">Argentina</option>
+                            <!-- Agrega más países aquí -->
+                        </select>
+                    </div>                                    
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Accept</button>
+        </div>
+      </div>
+    </div>
+ </div>
+ 

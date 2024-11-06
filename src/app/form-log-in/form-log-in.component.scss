@@ -1,0 +1,22 @@
+h5, label{
+    color:#40352B;
+}
+
+.modal-header{
+    background-color:#697353; 
+}
+.btn:hover {
+    color: #40352B; /* Cambiar el color del texto al pasar el mouse */
+    background-color: #F2E1AC;
+    border: 1px solid #F2E1AC; /* Añadir un borde visible al hacer hover */
+}
+.modal-footer{
+    background-color:#697353;
+}
+.modal-body{
+    background-color: #F2E1AC;
+}
+.modal.fade.show {
+    backdrop-filter: blur(2px) brightness(0.8) contrast(1.2) /*Desenfoque del modal*/
+  }
+

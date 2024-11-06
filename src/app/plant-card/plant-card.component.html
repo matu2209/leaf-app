@@ -1,0 +1,7 @@
+<div class="card" (click)="onCardClick(plant)">
+    <img [src]="plant.image_url" class="card-img-top" alt="Imagen de planta">
+    <div class="card-body">
+      <h5 class="card-title">{{ plant.common_name }}</h5>
+      <p class="card-text">{{ plant.scientific_name }}</p>
+    </div>
+</div>
