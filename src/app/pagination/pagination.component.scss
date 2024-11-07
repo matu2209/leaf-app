@@ -1,0 +1,26 @@
+.pagination .page-item .page-link {
+    color: #ffffff; // Color de texto
+    background-color: #697353; // Color de fondo
+    border-color: #697353; // Borde del botón
+    transition: background-color 0.3s;
+  
+    &:hover {
+      background-color: #F2E1AC; 
+      border-color: #F2E1AC;
+      color: #40352B;
+    }
+  
+    &:active {
+        box-shadow: 0 0 5px #697353;
+      &:focus {
+        box-shadow: 0 0 5px #697353;
+      }
+    }
+  
+    &:disabled {
+      background-color: #cccccc;
+      color: #666666; 
+      border-color: #cccccc;
+      cursor: not-allowed;
+    }
+  }

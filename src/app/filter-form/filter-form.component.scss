@@ -1,5 +1,5 @@
 .btn:hover {
-    color: #40352B; /* Cambiar el color del texto al pasar el mouse */
+    color: #40352B; 
     background-color: #F2E1AC;
     border: 1px solid #F2E1AC; /* Añadir un borde visible al hacer hover */
 }
@@ -11,4 +11,31 @@
 
 .cardo{
     border-color: #40352B;
+}
+
+div, .form-check-label, .form-select, .form-control{
+    color: #40352B; 
+}
+
+.form-control{
+    &:focus {
+        box-shadow: 0 0 5px #BF9169; // Color y tamaño de la sombra en foco
+        border-color: #BF9169; // Cambiar el borde en el foco si es necesario
+      }
+}
+
+.form-check-input {
+    // Cambia el color base del checkbox
+    background-color: transparent;
+    border-color: #40352B; // color de borde inicial cuando no está marcado
+  
+    // Estilo cuando está marcado
+    &:checked {
+      background-color: #697353; // color de fondo cuando está marcado
+    }
+  
+    // Añadir sombra al hacer clic o enfocar
+    &:focus {
+      box-shadow: 0 0 5px #697353;
+    }
 }

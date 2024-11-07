@@ -13,6 +13,13 @@ export class PlantsService{
   plants:String[] = []
   initplants: any[] = [];
   token: string | null = null
+  lastFilter: String = "";
+
+  actualPage: String = "";
+  firstPage: String = "";
+  previousPage: String = "";
+  nextPage: String = "";
+  endPage: String = "";
 
   //--------------------------------------------------------------------------------//
   getToken(): Observable<any> {
@@ -25,17 +32,37 @@ export class PlantsService{
       throw new Error('Token no disponible');
     }
     const apiUrl = `https://trefle.io/api/v1/species?token=${this.token}`;
-    //const apiUrl = `https://trefle.io/api/v1/plants?token=aW2LEBeBBBOFaqdQAkfHOmJfmK_aD4Str_qpiZT2vag`;
-    //const apiUrl = `https://trefle.io/api/v1/plants/search?token=${this.token}&q=coconut`;
+
     
     return this.http.get(apiUrl); 
   }
 
-  getByFilters(query:String): Observable<any> {
+  getByFilters(query:String, page:String): Observable<any> {
     if (!this.token) {
       throw new Error('Token no disponible');
     }
-    const apiUrl = `https://trefle.io/api/v1/plants?token=${this.token}${query}`;
+    const apiUrl = `https://trefle.io/api/v1/plants?token=${this.token}${query}&page=${page}`;
+    this.lastFilter = `${query}`;
+    
+    console.log(apiUrl);
+    return this.http.get(apiUrl); 
+  }
+
+  getByName(query:String): Observable<any> {
+    if (!this.token) {
+      throw new Error('Token no disponible');
+    }
+    const apiUrl = `https://trefle.io/api/v1/plants?token=${this.token}&filter[common_name]=${query}`;
+
+    console.log(apiUrl);
+    return this.http.get(apiUrl); 
+  }
+
+  getById(id:String): Observable<any> {
+    if (!this.token) {
+      throw new Error('Token no disponible');
+    }
+    const apiUrl = `https://trefle.io/api/v1/species/${id}?token=${this.token}`;
 
     console.log(apiUrl);
     return this.http.get(apiUrl); 

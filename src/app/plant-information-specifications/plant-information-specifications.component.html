@@ -1,0 +1,37 @@
+<div class="container mt-4">
+    <h3>Specifications</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="plantData.specifications.growth_form">
+          <td>Growth form</td>
+          <td>{{ plantData.specifications.growth_form }}</td>
+        </tr>
+        <tr *ngIf="plantData.specifications.growth_habit">
+          <td>Growth habit</td>
+          <td>{{ plantData.specifications.growth_habit }}</td>
+        </tr>
+        <tr *ngIf="plantData.specifications.growth_rate">
+          <td>Growth rate</td>
+          <td>{{ plantData.specifications.growth_rate }}</td>
+        </tr>
+        <tr *ngIf="plantData.specifications.average_height?.cm">
+          <td>Average height (cm)</td>
+          <td>{{ plantData.specifications.average_height.cm }}</td>
+        </tr>
+        <tr *ngIf="plantData.specifications.maximum_height?.cm">
+          <td>maximum height (cm)</td>
+          <td>{{ plantData.specifications.maximum_height.cm }}</td>
+        </tr>
+        <tr *ngIf="plantData.specifications.toxicity">
+          <td>Toxicity</td>
+          <td>{{ plantData.specifications.toxicity }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

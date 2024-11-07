@@ -1,0 +1,20 @@
+<div class="row mb-4">
+    <div class="col-md-4">
+      <img [src]="plantData.image_url" alt="{{ plantData.common_name }}" class="img-fluid rounded">
+    </div>
+    <div class="col-md-8">
+      <h2 class="display-4">{{ plantData.common_name }}</h2>
+      <a href="https://en.wikipedia.org/wiki/{{ plantData.scientific_name }}" target="_blank">
+        <p class="text-muted"><em>{{ plantData.scientific_name }}</em> by {{ plantData.author }} ({{ plantData.year }})</p>
+      </a>
+      <p><strong>Slug:</strong> {{ plantData.slug }}</p>
+      <p><strong>Family:</strong> {{ plantData.family }}</p>
+      <p><strong>Genus:</strong> {{ plantData.genus }}</p>
+      <p><strong>Rank:</strong> {{ plantData.genus }}</p>
+      <p><strong>Status:</strong> {{ plantData.rank }}</p>
+      <p><strong>Observations:</strong> {{ plantData.observations }}</p>
+      <p *ngIf="plantData.edible_part"><strong>Edible parts:</strong> {{ plantData.edible_part }}</p>
+      <p><strong>Edible:</strong> {{ plantData.edible ? 'Yes' : 'No' }}</p>
+      <p><strong>Vegetable:</strong> {{ plantData.vegetable ? 'Yes' : 'No' }}</p>
+    </div>
+</div>

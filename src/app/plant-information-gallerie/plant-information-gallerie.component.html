@@ -1,0 +1,69 @@
+<div class="container mt-4"> 
+   <div *ngIf="plantData.images" class="row">
+        <!-- Leaf Images -->
+        <div *ngIf="plantData.images.leaf && plantData.images.leaf.length > 0" class="col-md-6 mb-4">
+            <h4>Leaf Images</h4>
+            <div class="d-flex flex-wrap">
+                <div *ngFor="let img of plantData.images.leaf" class="p-2">
+                <img [src]="img.image_url" class="img-thumbnail" [alt]="'Leaf image ' + img.id" style="width: 100px;" title="{{ img.copyright }}">
+                <!-- <p class="small text-muted">{{ img.copyright }}</p> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Flower Images -->
+        <div *ngIf="plantData.images.flower && plantData.images.flower.length > 0" class="col-md-6 mb-4">
+            <h4>Flower Images</h4>
+            <div class="d-flex flex-wrap">
+                <div *ngFor="let img of plantData.images.flower" class="p-2">
+                <img [src]="img.image_url" class="img-thumbnail" [alt]="'Flower image ' + img.id" style="width: 100px;" title="{{ img.copyright }}">
+                <!-- <p class="small text-muted">{{ img.copyright }}</p> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Habit Images -->
+        <div *ngIf="plantData.images.habit && plantData.images.habit.length > 0" class="col-md-6 mb-4">
+            <h4>Habit Images</h4>
+            <div class="d-flex flex-wrap">
+                <div *ngFor="let img of plantData.images.habit" class="p-2">
+                <img [src]="img.image_url" class="img-thumbnail" [alt]="'Habit image ' + img.id" style="width: 100px;" title="{{ img.copyright }}">
+                <!-- <p class="small text-muted">{{ img.copyright }}</p> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Bark Images -->
+        <div *ngIf="plantData.images.bark && plantData.images.bark.length > 0" class="col-md-6 mb-4">
+            <h4>Bark Images</h4>
+            <div class="d-flex flex-wrap">
+                <div *ngFor="let img of plantData.images.bark" class="p-2">
+                <img [src]="img.image_url" class="img-thumbnail" [alt]="'Bark image ' + img.id" style="width: 100px;" title="{{ img.copyright }}">
+                <!-- <p class="small text-muted">{{ img.copyright }}</p> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Fruit Images -->
+        <div *ngIf="plantData.images.fruit && plantData.images.fruit.length > 0" class="col-md-6 mb-4">
+            <h4>Fruit Images</h4>
+            <div class="d-flex flex-wrap">
+                <div *ngFor="let img of plantData.images.fruit" class="p-2">
+                <img [src]="img.image_url" class="img-thumbnail" [alt]="'Fruit image ' + img.id" style="width: 100px;" title="{{ img.copyright }}">
+                <!-- <p class="small text-muted">{{ img.copyright }}</p> -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Other Images -->
+        <div *ngIf="plantData.images.other && plantData.images.other.length > 0" class="col-md-6 mb-4">
+            <h4>Other Images</h4>
+            <div class="d-flex flex-wrap">
+                <div *ngFor="let img of plantData.images.other" class="p-2">
+                <img [src]="img.image_url" class="img-thumbnail" [alt]="'Other image ' + img.id" style="width: 100px;" title="{{ img.copyright }}">
+                <!-- <p class="small text-muted">{{ img.copyright }}</p> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>       

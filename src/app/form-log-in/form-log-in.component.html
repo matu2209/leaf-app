@@ -1,33 +1,35 @@
-
-<!-- Modal de boostrap-->
 <div class="modal fade" id="logInModal" tabindex="-1" aria-labelledby="logInModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="logInModalLabel">Log In</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-            <div class = "card">
-                <div class = "card-body">
-                    <div class="mb-2">
-                        <label class="form-label">
-                             Username:   
-                        </label>
-                        <input type="text" class="form-control" placeholder="Username">
-                    </div>
-                    <label class="form-label">
-                            Password:
-                    </label>
-                    <input type="text" class="form-control" placeholder="Password">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="logInModalLabel">Log In</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="loginForm" (ngSubmit)="validateCredentials()">
+          <div class="card">
+            <div class="card-body">
+              <div class="mb-2">
+                <label class="form-label">Username:</label>
+                <input type="text" class="form-control" placeholder="Username" formControlName="username">
+                <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="text-danger">
+                  Username is required.
                 </div>
+              </div>
+              <div>
+                <label class="form-label">Password:</label>
+                <input type="password" class="form-control" placeholder="Password" formControlName="password">
+                <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="text-danger">
+                  Password is required.
+                </div>
+              </div>
             </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Accept</button>
-        </div>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-outline-light">Accept</button>
+          </div>
+        </form>
       </div>
     </div>
   </div>
-  
-  
+</div>

@@ -12,30 +12,26 @@ export class FilterFormComponent {
 
 
   filterForm!: FormGroup;
+  nameForm!: FormGroup;
+
   queryParameters: string[] = [];
 
   constructor(private PlantsService: PlantsService){ }
 
   ngOnInit():any{
 
+    this.nameForm = new FormGroup({
+      plant_name: new FormControl('')
+    });
+
     this.filterForm = new FormGroup({
-      days_to_harvest: new FormControl(''),
-      ph_maximum: new FormControl(''),
-      ph_minimum: new FormControl(''),
-      light: new FormControl(''),
-      atmospheric_humidity: new FormControl(''),
-      growth_form: new FormControl(''), // Fixed here
-      growth_habit: new FormControl(''), // Fixed here
-      growth_rate: new FormControl(''), // Fixed here
+      growth_form: new FormControl(''), 
+      growth_habit: new FormControl(''), 
+      growth_rate: new FormControl(''),
+      edible: new FormControl(false),
       part_roots: new FormControl(false),
       part_leaves: new FormControl(false),
-      part_steams: new FormControl(false), // Added missing form control
-      part_flowers: new FormControl(false),
-      part_seeds: new FormControl(false),
-      part_fruits: new FormControl(false),
-      toxicity: new FormControl('none'),
       foliage_texture: new FormControl(''),
-      leaf_retention: new FormControl(false),
       has_fruit: new FormControl(false),
       is_vegetable: new FormControl(false),
       has_flowers: new FormControl(false)
@@ -43,47 +39,18 @@ export class FilterFormComponent {
 
   }
 
-  onSubmit(): void {
+  onSubmitFilter(): void {
     const filters = this.filterForm.value;
     this.queryParameters = [];
   
-    if (filters.days_to_harvest) {
-      this.queryParameters.push(`filter[days_to_harvest]=${filters.days_to_harvest}`);
+    if (filters.edible) {
+      this.queryParameters.push(`filter[edible]=true`);
     }
-    
-    if (filters.ph_maximum) {
-      this.queryParameters.push(`filter[ph_maximum]=${filters.ph_maximum}`);
-    }
-    
-    if (filters.ph_minimum) {
-      this.queryParameters.push(`filter[ph_minimum]=${filters.ph_minimum}`);
-    }
-    
-    if (filters.light) {
-      this.queryParameters.push(`filter[light]=${filters.light}`);
-    }
-    
-    if (filters.atmospheric_humidity) {
-      this.queryParameters.push(`filter[atmospheric_humidity]=${filters.atmospheric_humidity}`);
-    }
-  
     if (filters.part_roots) {
       this.queryParameters.push(`filter[edible_part]=roots`);
     }
     if (filters.part_leaves) {
       this.queryParameters.push(`filter[edible_part]=leaves`);
-    }
-    if (filters.part_steams) {
-      this.queryParameters.push(`filter[edible_part]=steam`);
-    }
-    if (filters.part_flowers) {
-      this.queryParameters.push(`filter[edible_part]=flower`);
-    }
-    if (filters.part_seeds) {
-      this.queryParameters.push(`filter[edible_part]=seed`);
-    }
-    if (filters.part_fruits) {
-      this.queryParameters.push(`filter[edible_part]=fruit`);
     }
 
     if (filters.growth_form) {
@@ -100,9 +67,7 @@ export class FilterFormComponent {
       this.queryParameters.push(`filter[foliage_texture]=${filters.foliage_texture}`);
     }
     
-    if (filters.leaf_retention) {
-      this.queryParameters.push(`filter[leaf_retention]=true`);
-    }
+
 
     if (filters.has_fruit) {
       this.queryParameters.push(`filter[fruit_conspicuous]=true`);
@@ -119,14 +84,34 @@ export class FilterFormComponent {
     this.fetchPlants(queryString);
 
   }
+
+  onSubmitName(){
+    const filter = this.nameForm.value;
+    this.fetchPlants(`&filter[common_name]=${filter.plant_name}`);
+  }
   
+  getPageNumber(link: String) {
+    return link ? link.substring(link.lastIndexOf("=") + 1) : "";
+  }
 
   fetchPlants(queryString: string) {
 
-    this.PlantsService.getByFilters(queryString).subscribe(
+    this.filterForm.reset();
+    this.nameForm.reset({
+      plant_name: ''
+    });
+
+    this.PlantsService.getByFilters(queryString, "1").subscribe(
       response => {
         console.log(response.data);
         this.PlantsService.plants = response.data;
+
+        this.PlantsService.actualPage = this.getPageNumber(response.links.self);
+        this.PlantsService.firstPage = this.getPageNumber(response.links.first);
+        this.PlantsService.previousPage = this.getPageNumber(response.links.prev);
+        this.PlantsService.nextPage = this.getPageNumber(response.links.next);
+        this.PlantsService.endPage = this.getPageNumber(response.links.last);
+
         this.filterSubmitted.emit(); 
       },
       error => {

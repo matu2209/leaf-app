@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { PlantsService } from '../plants/plants.service';
 
 @Component({
@@ -7,9 +7,19 @@ import { PlantsService } from '../plants/plants.service';
   styleUrls: ['./plant-list.component.scss']
 })
 export class PlantListComponent {
+  @Input() initplants: boolean = false; 
+
   plants: any[] = [];
 
+  actualPage: String = "1";
+  firstPage: String = "";
+  previousPage: String = "";
+  nextPage: String = "";
+  endPage: String = "";
+
+
   constructor(private PlantsService: PlantsService) {}
+
 
   ngOnInit(): void {
     if(!this.PlantsService.token){
@@ -24,7 +34,11 @@ export class PlantListComponent {
         }
       );
     }else{
-      this.plants = this.PlantsService.initplants
+      if(this.initplants || this.PlantsService.plants.length == 0){
+        this.plants = this.PlantsService.initplants;
+      }else{
+        this.loadFilteredPlants();
+      }
     }
   }
 
@@ -45,6 +59,40 @@ export class PlantListComponent {
 
   loadFilteredPlants(){
     this.plants = this.PlantsService.plants;
+    this.actualPage = this.PlantsService.actualPage;
+    this.firstPage = this.PlantsService.firstPage;
+    this.previousPage = this.PlantsService.previousPage; 
+    this.nextPage = this.PlantsService.nextPage;
+    this.endPage = this.PlantsService.endPage;
+  }
+
+  getPageNumber(link: String) {
+    return link ? link.substring(link.lastIndexOf("=") + 1) : "";
+  }
+
+  changePage(page: String){
+    this.actualPage = page;
+    console.log("pagina actual : " + this.actualPage);
+    this.PlantsService.getByFilters(this.PlantsService.lastFilter, page).subscribe(
+      response => {
+        this.PlantsService.plants = response.data;
+
+        this.PlantsService.actualPage = this.actualPage;
+        this.PlantsService.previousPage = this.getPageNumber(response.links.prev);
+        this.PlantsService.nextPage = this.getPageNumber(response.links.next);
+
+        console.log(this.PlantsService.previousPage);
+        console.log(this.PlantsService.nextPage);
+
+        this.previousPage = this.PlantsService.previousPage;
+        this.nextPage = this.PlantsService.nextPage;
+
+        this.plants = this.PlantsService.plants; 
+      },
+      error => {
+        console.error('Error al obtener las plantas', error);
+      }
+    );
   }
   
 }

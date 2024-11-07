@@ -1,0 +1,16 @@
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <button class="page-link" (click)="onPageChange(firstPage)" [disabled]="!firstPage || firstPage == actualPage">First</button>
+      </li>
+      <li class="page-item">
+        <button class="page-link" (click)="onPageChange(previousPage)" [disabled]="!previousPage || previousPage == actualPage">Previous</button>
+      </li>
+      <li class="page-item">
+        <button class="page-link" (click)="onPageChange(nextPage)" [disabled]="!nextPage || nextPage == actualPage">Next</button>
+      </li>
+      <li class="page-item">
+        <button class="page-link" (click)="onPageChange(endPage)" [disabled]="!endPage || endPage == actualPage">End</button>
+      </li>
+    </ul>
+  </nav>

@@ -5,11 +5,11 @@
   .nav-link {
     position: relative;
     display: inline-block;
-    color: #ffffff; // Color del texto
+    color: #ffffff; 
     text-decoration: none;
     padding: 0.5rem 1rem;
     transition: all 0.5s ease;
-    border: 1px solid transparent; // Añadir un borde transparente para mantener el tamaño
+    border: 1px solid transparent; 
     
   }
   
@@ -20,30 +20,30 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color: #D9C6A3; // Color del fondo al hacer hover
+    background-color: #D9C6A3; 
     z-index: -1;
     transition: all 0.3s ease;
     transform: scale(0);
-    border-radius: 5px; // Bordes redondeados
+    border-radius: 5px;
   }
   
   .nav-link:hover::after {
-    transform: scale(1); // Escalar el fondo al pasar el mouse
+    transform: scale(1); 
   }
   
   .nav-link:hover {
-    color: #40352B; // Cambiar el color del texto al pasar el mouse
+    color: #40352B; 
     background-color: #F2E1AC;
-    border: 1px solid #F2E1AC; // Añadir un borde visible al hacer hover
+    border: 1px solid #F2E1AC; 
   }
 
   .btn:hover {
-    color: #40352B; /* Cambiar el color del texto al pasar el mouse */
+    color: #40352B; 
     background-color: #F2E1AC;
-    border: 1px solid #F2E1AC; /* Añadir un borde visible al hacer hover */
+    border: 1px solid #F2E1AC;
 }
   
   .navbar-brand {
-    color: #40352B !important; /* Cambia este valor por el color que desees */
-    font-weight: bold; /* Esto es opcional si quieres cambiar el grosor del texto */
+    color: #40352B !important; 
+    font-weight: bold; 
 }

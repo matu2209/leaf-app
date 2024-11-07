@@ -19,6 +19,10 @@ import { FromRegisterComponent } from './from-register/from-register.component';
 import { FormMembershipComponent } from './form-membership/form-membership.component';
 import { FilterFormComponent } from './filter-form/filter-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { PlantInformationPageComponent } from './plant-information-page/plant-information-page.component';
+import { PlantInformationSourcesComponent } from './plant-information-sources/plant-information-sources.component';
+
 
 
 @NgModule({
@@ -34,8 +38,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormLogInComponent,
     FromRegisterComponent,
     FormMembershipComponent,
-    FilterFormComponent
-  ],  
+    FilterFormComponent,
+    NotFoundComponent,
+    PlantInformationPageComponent,
+    PlantInformationSourcesComponent
+    ],  
   imports: [
     HttpClientModule,
     BrowserModule,

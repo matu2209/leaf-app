@@ -1,0 +1,14 @@
+<div class="container mt-4">
+    <h3>Sources</h3>
+    <ul class="list-unstyled">
+        <li *ngFor="let source of plantData.sources">
+            <div *ngIf= "source.url">
+                <strong>{{ source.name }}</strong>
+                <span *ngIf="source.citation"> ({{ source.citation }})</span>
+                <span *ngIf="source.url">
+                - <a [href]="source.url" target="_blank">More info</a>
+                </span>
+            </div>
+        </li>
+    </ul>
+</div>

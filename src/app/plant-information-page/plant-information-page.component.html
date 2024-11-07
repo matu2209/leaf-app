@@ -1,0 +1,25 @@
+<br><br>
+<br>
+<br>
+
+<div class="container my-5" *ngIf="plantData">
+    <!-- Plant Header -->
+    <app-plant-information-header [plantData]="plantData"></app-plant-information-header>
+   
+    <!-- Plant distributions -->
+    <app-plant-information-distributions [plantData]="plantData"></app-plant-information-distributions>
+  
+    <!-- specifications -->
+    <app-plant-information-specifications [plantData]="plantData"></app-plant-information-specifications>
+  
+    <!-- Growth -->
+    <app-plant-information-growth [plantData]="plantData"></app-plant-information-growth>
+    
+    <!-- Image Galleries -->
+    <app-plant-information-gallerie [plantData]="plantData"></app-plant-information-gallerie>
+
+    <!-- Sources Section -->
+    <app-plant-information-sources [plantData]="plantData"></app-plant-information-sources>
+  
+  </div>
+  

@@ -1,0 +1,37 @@
+<div class="container mt-4">
+    <h3>Growth</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Property</th>
+          <th>value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngIf="plantData.growth.ph_maximum">
+          <td>pH maximum</td>
+          <td>{{ plantData.growth.ph_maximum }} </td>
+        </tr>
+        <tr *ngIf="plantData.growth.ph_minimum">
+          <td>pH minimum</td>
+          <td>{{ plantData.growth.ph_minimum }}</td>
+        </tr>
+        <tr *ngIf="plantData.growth.light">
+          <td>Growth light</td>
+          <td>{{ plantData.growth.light }}</td>
+        </tr>
+        <tr *ngIf="plantData.growth.atmospheric_humidity">
+          <td>Atmospheric humidity</td>
+          <td>{{ plantData.growth.atmospheric_humidity }}</td>
+        </tr>
+        <tr *ngIf="plantData.growth.soil_nutriments">
+          <td>Soil nutriments</td>
+          <td>{{ plantData.growth.soil_nutriments }}</td>
+        </tr>
+        <tr *ngIf="plantData.growth.soil_salinity">
+          <td>Soil salinity</td>
+          <td>{{ plantData  .growth.soil_salinity }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

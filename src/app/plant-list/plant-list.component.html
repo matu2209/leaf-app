@@ -4,5 +4,7 @@
         <app-plant-card [plant]="plant"></app-plant-card>
       </div>
     </div>
-  </div>
+</div>
   
+<app-pagination *ngIf="endPage != firstPage" [actualPage]="actualPage" [firstPage]="firstPage" [previousPage]="previousPage" [nextPage]="nextPage" 
+                [endPage]="endPage" (pageChange)="changePage($event)"></app-pagination> 
