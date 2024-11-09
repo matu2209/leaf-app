@@ -9,6 +9,6 @@ export class Client {
         public email: string,
         public country: string,
         public favorites: { id: number, note: string }[],
-        public creditCard: []
+        public creditCard: {name: string, number: string, date: string, cvv: string, address: string, country: string }[]
     ) {}
 }

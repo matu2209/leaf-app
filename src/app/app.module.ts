@@ -26,6 +26,7 @@ import { FavoritesPageComponent } from './favorites-page/favorites-page.componen
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +44,7 @@ import { FavoritesPageComponent } from './favorites-page/favorites-page.componen
     NotFoundComponent,
     PlantInformationPageComponent,
     PlantInformationSourcesComponent,
-    FavoritesPageComponent
+    FavoritesPageComponent,
     ],  
   imports: [
     HttpClientModule,

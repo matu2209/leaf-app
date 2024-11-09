@@ -12,6 +12,11 @@ export class HeaderComponent implements OnInit{
   constructor(private AuthenticationService: AuthenticationService){}
 
   user?: Client;
+  // showProfileSidebar = false;
+
+  // ProfileSidebar() {
+  //   this.showProfileSidebar = !this.showProfileSidebar;
+  // }
 
   ngOnInit(){
     this.AuthenticationService.loggedInUser$.subscribe(user => {

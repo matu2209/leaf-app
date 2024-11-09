@@ -199,9 +199,12 @@ app.post('/tarjetas', autenticarToken, (req, res) => {
     const usuarios = leerUsuarios();
     const i = usuarios.findIndex(usuario => usuario.id === req.user.id);
     var card = {
-        numero: req.body.numero,
-        vencimiento: req.body.vencimiento,
-        cvc: req.body.cvc
+        name: req.body.name,
+        number: req.body.number,
+        date: req.body.date, 
+        cvv: req.body.cvv,
+        address: req.body.address,
+        country: req.body.country
     }
     
     usuarios[i].creditCard.push(card);
@@ -214,7 +217,7 @@ app.delete('/tarjetas', autenticarToken, (req, res) => {
     const usuarios = leerUsuarios();
     const i = usuarios.findIndex(usuario => usuario.id === req.user.id);
 
-    usuarios[i].creditCard = usuarios[i].creditCard.filter(card => card.numero !== req.body.numero);
+    usuarios[i].creditCard = usuarios[i].creditCard.filter(card => card.number !== req.body.number);
 
     guardarUsuarios(usuarios);
 

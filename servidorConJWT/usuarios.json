@@ -21,13 +21,7 @@
     "email": "matu@asd.com",
     "country": "argentina",
     "favorites": [],
-    "creditCard": [
-      {
-        "numero": 4321432143214321,
-        "vencimiento": "1/5/2024",
-        "cvc": 321
-      }
-    ]
+    "creditCard": []
   },
   {
     "id": 3,
@@ -45,22 +39,69 @@
     "id": 4,
     "username": "joshua",
     "password": "123456",
-    "member": false,
+    "member": true,
     "firstName": "joshua",
     "lastName": "baccaro",
     "email": "jb@asd.com",
     "country": "españa",
-    "favorites": [],
-    "creditCard": [
+    "favorites": [
       {
-        "numero": 43214321432143220,
-        "vencimiento": "1/5/2024",
-        "cvc": 321
+        "id": 77116,
+        "note": ""
       },
       {
-        "numero": 43214321432143220,
-        "vencimiento": "1/5/2024",
-        "cvc": 321
+        "id": 109482,
+        "note": ""
+      }
+    ],
+    "creditCard": [
+      {
+        "name": "Joshua Baccaro",
+        "number": "1234 1234 1234 1234",
+        "date": "10/29",
+        "cvv": "123",
+        "address": "Peru 2454",
+        "country": "ar"
+      },
+      {
+        "name": "Yahveh Baccaro",
+        "number": "1111 1111 1111 1111",
+        "date": "10/29",
+        "cvv": "123",
+        "address": "Peru 2454",
+        "country": "ar"
+      },
+      {
+        "name": "123123123",
+        "number": "1234 1234 1234 1234",
+        "date": "11/11",
+        "cvv": "123",
+        "address": "asdasd",
+        "country": "ar"
+      },
+      {
+        "name": "1111 1111 1111 1111",
+        "number": "1234 1234 1234 1234",
+        "date": "11/20",
+        "cvv": "123",
+        "address": "asdsadasd",
+        "country": "br"
+      },
+      {
+        "name": "Siiiiii",
+        "number": "1234 5678 1234 5678",
+        "date": "10/29",
+        "cvv": "123",
+        "address": "114",
+        "country": "ca"
+      },
+      {
+        "name": "Joshua",
+        "number": "1111 1234 1234 1111",
+        "date": "12/20",
+        "cvv": "123",
+        "address": "asd",
+        "country": "ar"
       }
     ]
   },
