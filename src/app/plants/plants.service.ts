@@ -6,12 +6,14 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PlantsService{
-  private backendUrl = 'http://localhost:3000';  // Cambia si es necesario
+  private backendUrl = 'http://localhost:3000';  
 
   constructor(private http: HttpClient) {}
 
-  plants:String[] = []
+  plants: String[] = [];
   initplants: any[] = [];
+
+
   token: string | null = null
   lastFilter: String = "";
 
@@ -65,6 +67,15 @@ export class PlantsService{
     const apiUrl = `https://trefle.io/api/v1/species/${id}?token=${this.token}`;
 
     console.log(apiUrl);
+    return this.http.get(apiUrl); 
+  }
+
+  getPlantById(id: number): Observable<any> {
+    if (!this.token) {
+      throw new Error('Token no disponible');
+    } 
+    const apiUrl = `https://trefle.io/api/v1/plants/${id}?token=${this.token}`;
+
     return this.http.get(apiUrl); 
   }
 }

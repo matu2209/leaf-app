@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { AuthenticationService } from '../authentication/authentication.service';
+import { Router } from '@angular/router';
+
+declare var bootstrap: any;  // Declara bootstrap para usar sus métodos
+
 
 @Component({
   selector: 'app-form-log-in',
@@ -11,7 +15,7 @@ import { AuthenticationService } from '../authentication/authentication.service'
 export class FormLogInComponent {
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private authService: AuthenticationService) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private authService: AuthenticationService, private router: Router) {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -24,13 +28,25 @@ export class FormLogInComponent {
       return;
     }
 
-    const url = ''; // RUTA JSON SERVER
+    const url = 'http://localhost:3001/login'; // RUTA JSON SERVER
 
-    this.http.get<any[]>(`${url}?username=${this.loginForm.value.username}&password=${this.loginForm.value.password}`).subscribe(
+    const body = {
+      username: this.loginForm.value.username,
+      password: this.loginForm.value.password
+    };
+
+    this.http.post<any[]>(url, body).subscribe(
       users => {
-        if (users.length > 0) {
-          this.authService.login(users[0]);
+        if (users) {          
+          this.authService.login(users);
           alert('Login successful');
+          this.loginForm.reset();
+          //this.router.navigate(['profile']);
+
+          const modalElement = document.getElementById('logInModal');
+          const modalInstance = bootstrap.Modal.getInstance(modalElement);
+          modalInstance.hide();
+          
         } else {
           alert('Invalid username or password');
         }

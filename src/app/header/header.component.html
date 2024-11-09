@@ -18,20 +18,24 @@
             <a class="nav-link btn btn-outline-light" routerLink="" aria-current="page" role="button">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link btn btn-outline-light" routerLink="" role="button">Favorites</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn btn-outline-light" routerLink="" role="button" data-bs-toggle="modal" data-bs-target="#MembershipModal">Membresía</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link btn btn-outline-light" routerLink="/search" role="button">Explore</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-light" routerLink="" role="button" *ngIf="user">My profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-light" routerLink="/fav" role="button" *ngIf="user && user.member">Favorites</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-light" routerLink="" role="button" data-bs-toggle="modal" data-bs-target="#MembershipModal" *ngIf=" user && user.member == false">Membresía</a>
           </li>
         </ul>
 
         <!-- Derecha: Botones de Log In y Register -->
         <div class="d-flex">
           <button class="btn btn-outline-light me-2" type="button" data-bs-toggle="modal" data-bs-target="#logInModal">Log In</button>
-          <button class="btn btn-light" type="button" data-bs-toggle="modal" data-bs-target="#RegisterModal">Register</button>
+          <button class="btn btn-light me-2" type="button" data-bs-toggle="modal" data-bs-target="#RegisterModal">Register</button>
+          <button class="btn btn-light" type="button" (click)="logOut()" *ngIf="user">Log out</button>
         </div>
       </div>
     </div>

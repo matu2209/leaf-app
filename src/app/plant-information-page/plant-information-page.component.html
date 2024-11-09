@@ -5,6 +5,22 @@
 <div class="container my-5" *ngIf="plantData">
     <!-- Plant Header -->
     <app-plant-information-header [plantData]="plantData"></app-plant-information-header>
+
+    <div class="card mb-5" *ngIf="user">
+      <div class="card-body">
+        <button class="btn btn-success" (click)="addToFavorite(plantData.id)">
+            Add to favorites
+        </button>
+      </div>
+    </div>
+
+    <!-- <div class="card mb-5" *ngIf="user && ">
+      <div class="card-body">
+        <button class="btn btn-success" (click)="deleteFromFavorite(plantData.id)">
+            Delete from favorites
+        </button>
+      </div>
+    </div> -->
    
     <!-- Plant distributions -->
     <app-plant-information-distributions [plantData]="plantData"></app-plant-information-distributions>

@@ -28,7 +28,7 @@ import { PlantInformationGallerieComponent } from '../plant-information-gallerie
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   exports: [
     PlantListComponent,

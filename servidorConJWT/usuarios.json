@@ -1,0 +1,148 @@
+[
+  {
+    "id": 1,
+    "username": "ss",
+    "password": "123456",
+    "member": false,
+    "firstName": "sebastian",
+    "lastName": "galvan",
+    "email": "seba@asd.com",
+    "country": "brasil",
+    "favorites": [],
+    "creditCard": []
+  },
+  {
+    "id": 2,
+    "username": "mm",
+    "password": "123456",
+    "member": false,
+    "firstName": "matias",
+    "lastName": "galvan",
+    "email": "matu@asd.com",
+    "country": "argentina",
+    "favorites": [],
+    "creditCard": [
+      {
+        "numero": 4321432143214321,
+        "vencimiento": "1/5/2024",
+        "cvc": 321
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "username": "yb",
+    "password": "123456",
+    "member": false,
+    "firstName": "yahveh",
+    "lastName": "baccaro",
+    "email": "yb@asd.com",
+    "country": "portugal",
+    "favorites": [],
+    "creditCard": []
+  },
+  {
+    "id": 4,
+    "username": "joshua",
+    "password": "123456",
+    "member": false,
+    "firstName": "joshua",
+    "lastName": "baccaro",
+    "email": "jb@asd.com",
+    "country": "españa",
+    "favorites": [],
+    "creditCard": [
+      {
+        "numero": 43214321432143220,
+        "vencimiento": "1/5/2024",
+        "cvc": 321
+      },
+      {
+        "numero": 43214321432143220,
+        "vencimiento": "1/5/2024",
+        "cvc": 321
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "username": "demonslayer",
+    "password": "123456",
+    "member": false,
+    "firstName": "jhon",
+    "lastName": "doe",
+    "email": "jd@asd-com",
+    "country": "us",
+    "favorites": [],
+    "creditCard": []
+  },
+  {
+    "id": 6,
+    "username": "Dia",
+    "password": "1234567",
+    "member": true,
+    "firstName": "Yahveh",
+    "lastName": "Baccaro",
+    "email": "yahveh@gmail.com",
+    "country": "ar",
+    "favorites": [
+      {
+        "id": 11971,
+        "nota": "hola"
+      },
+      {
+        "id": 51662,
+        "nota": "hola2"
+      },
+      {
+        "id": 227114,
+        "note": ""
+      },
+      {
+        "id": 77107,
+        "note": ""
+      },
+      {
+        "id": 181036,
+        "note": ""
+      }
+    ],
+    "creditCard": []
+  },
+  {
+    "id": 7,
+    "username": "halm",
+    "password": "123456",
+    "member": false,
+    "firstName": "Christian",
+    "lastName": "Tian",
+    "email": "tian@gmail.com",
+    "country": "ar",
+    "favorites": [],
+    "creditCard": []
+  },
+  {
+    "id": 8,
+    "username": "josh",
+    "password": "123456",
+    "member": false,
+    "firstName": "ua",
+    "lastName": "baccaro",
+    "email": "js@gmail.com",
+    "country": "ar",
+    "favorites": [],
+    "creditCard": []
+  },
+  {
+    "id": 9,
+    "username": "jp",
+    "password": "123456",
+    "member": false,
+    "firstName": "pablo",
+    "lastName": "kumar",
+    "email": "jp@gmail.com",
+    "country": "ca",
+    "favorites": [],
+    "creditCard": []
+  }
+]

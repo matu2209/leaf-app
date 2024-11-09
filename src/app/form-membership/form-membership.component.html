@@ -1,77 +1,52 @@
+<!-- form-membership.component.html -->
 <div class="modal fade" id="MembershipModal" tabindex="-1" aria-labelledby="membershipModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="membershipModalLabel">Membership Payment</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div *ngIf="cards.length > 0">
-          <label class="form-label">Select a saved card:</label>
-          <select class="form-control mb-3" [formControl]="selectedCardControl" (change)="loadCardDetails()">
-            <option [ngValue]="null">-- Select a card --</option>
-            <option *ngFor="let card of cards" [ngValue]="card">
-              {{ card.cardholderName }} - {{ card.cardNumber | slice:0:4 }} **** **** {{ card.cardNumber | slice:-4 }}
-            </option>
-          </select>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="membershipModalLabel">Membership Payment</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-
-        <button class="btn btn-outline-primary mb-3" (click)="addNewCard()">Add New Card</button>
-
-        <form *ngIf="showForm" [formGroup]="membershipForm" (ngSubmit)="submitMembership()">
-          <div class="mb-2">
-            <label class="form-label">Cardholder Name:</label>
-            <input type="text" class="form-control" placeholder="Cardholder Name" formControlName="cardholderName">
-            <div *ngIf="membershipForm.get('cardholderName')?.invalid && membershipForm.get('cardholderName')?.touched" class="text-danger">
-              Cardholder Name is required.
+        <div class="modal-body">
+            <div class="card">
+                <div class="card-body">
+                    <div class="mb-2">
+                        <label class="form-label">Cardholder Name:</label>
+                        <input type="text" class="form-control" placeholder="Cardholder Name">
+                    </div>
+                    <div>
+                        <label class="form-label">Card Number:</label>
+                        <input type="text" class="form-control" placeholder="1234 5678 9012 3456">
+                    </div>
+                    <div>
+                        <label class="form-label">Expiration Date:</label>
+                        <input type="text" class="form-control" placeholder="MM/YY">
+                    </div>
+                    <div>
+                        <label class="form-label">CVV:</label>
+                        <input type="text" class="form-control" placeholder="123">
+                    </div>
+                    <div>
+                        <label class="form-label">Billing Address:</label>
+                        <input type="text" class="form-control" placeholder="Billing Address">
+                    </div>
+                    <div>
+                        <label class="form-label">Country:</label>
+                        <select class="form-control">
+                            <option value="">Select a country</option>
+                            <option value="us">United States</option>
+                            <option value="ca">Canada</option>
+                            <option value="br">Brazil</option>
+                            <option value="ar">Argentina</option>
+                            <!-- Agrega más países aquí -->
+                        </select>
+                    </div>                                   
+                </div>
             </div>
-          </div>
-          <div>
-            <label class="form-label">Card Number:</label>
-            <input type="text" class="form-control" placeholder="1234 5678 9012 3456" formControlName="cardNumber">
-            <div *ngIf="membershipForm.get('cardNumber')?.invalid && membershipForm.get('cardNumber')?.touched" class="text-danger">
-              Valid card number is required (format: 1234 5678 9012 3456).
-            </div>
-          </div>
-          <div>
-            <label class="form-label">Expiration Date:</label>
-            <input type="text" class="form-control" placeholder="MM/YY" formControlName="expirationDate">
-            <div *ngIf="membershipForm.get('expirationDate')?.invalid && membershipForm.get('expirationDate')?.touched" class="text-danger">
-              Valid expiration date is required (format: MM/YY).
-            </div>
-          </div>
-          <div>
-            <label class="form-label">CVV:</label>
-            <input type="text" class="form-control" placeholder="123" formControlName="cvv">
-            <div *ngIf="membershipForm.get('cvv')?.invalid && membershipForm.get('cvv')?.touched" class="text-danger">
-              CVV is required (3 digits).
-            </div>
-          </div>
-          <div>
-            <label class="form-label">Billing Address:</label>
-            <input type="text" class="form-control" placeholder="Billing Address" formControlName="billingAddress">
-            <div *ngIf="membershipForm.get('billingAddress')?.invalid && membershipForm.get('billingAddress')?.touched" class="text-danger">
-              Billing Address is required.
-            </div>
-          </div>
-          <div>
-            <label class="form-label">Country:</label>
-            <select class="form-control" formControlName="country">
-              <option value="">Select a country</option>
-              <option value="us">United States</option>
-              <option value="ca">Canada</option>
-              <option value="br">Brazil</option>
-              <option value="ar">Argentina</option>
-            </select>
-            <div *ngIf="membershipForm.get('country')?.invalid && membershipForm.get('country')?.touched" class="text-danger">
-              Country is required.
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="submit" class="btn btn-outline-light">Accept</button>
-          </div>
-        </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Accept</button>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+ </div>
+ 
