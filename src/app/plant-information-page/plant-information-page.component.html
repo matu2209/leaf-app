@@ -6,21 +6,32 @@
     <!-- Plant Header -->
     <app-plant-information-header [plantData]="plantData"></app-plant-information-header>
 
-    <div class="card mb-5" *ngIf="user">
+    <div class="card mb-5" *ngIf="user && user.member && !isFavorite(plantData.id)">
       <div class="card-body">
-        <button class="btn btn-success" (click)="addToFavorite(plantData.id)">
+        <button class="btn boton" (click)="addToFavorite(plantData.id)">
             Add to favorites
         </button>
       </div>
     </div>
 
-    <!-- <div class="card mb-5" *ngIf="user && ">
+     <!-- Campo de notas personales con formulario reactivo -->
+    <div class="card mb-5" *ngIf="user && user.member && isFavorite(plantData.id)">
       <div class="card-body">
-        <button class="btn btn-success" (click)="deleteFromFavorite(plantData.id)">
-            Delete from favorites
-        </button>
+        <form [formGroup]="noteForm" (ngSubmit)="updateNote(plantData.id)">
+          <label for="noteInput" class="form-label">Personal Note</label>
+          <div class="input-group">
+            <textarea type="text" class="form-control" formControlName="note" placeholder="Write your personal notes about this plant..."></textarea>
+            <button class="btn boton" type="submit">
+                Save Note
+            </button>
+          </div>
+        </form>
+        <small class="text-muted mt-2 d-block">Your notes are saved privately.</small>
       </div>
-    </div> -->
+    </div>
+
+
+
    
     <!-- Plant distributions -->
     <app-plant-information-distributions [plantData]="plantData"></app-plant-information-distributions>
@@ -36,6 +47,14 @@
 
     <!-- Sources Section -->
     <app-plant-information-sources [plantData]="plantData"></app-plant-information-sources>
+
+    <div class="card mb-5" *ngIf="user && user.member && isFavorite(plantData.id)">
+      <div class="card-body">
+        <button class="btn btn-danger" (click)="deleteFromFavorites(plantData.id)">
+            Delete from favorites
+        </button>
+      </div>
+    </div>
   
   </div>
   

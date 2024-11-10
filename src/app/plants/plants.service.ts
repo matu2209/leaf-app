@@ -60,22 +60,14 @@ export class PlantsService{
     return this.http.get(apiUrl); 
   }
 
-  getById(id:String): Observable<any> {
+  getById(id:number): Observable<any> {
     if (!this.token) {
       throw new Error('Token no disponible');
     }
+    console.log("el id que busco en la api es: ", id);
     const apiUrl = `https://trefle.io/api/v1/species/${id}?token=${this.token}`;
 
     console.log(apiUrl);
-    return this.http.get(apiUrl); 
-  }
-
-  getPlantById(id: number): Observable<any> {
-    if (!this.token) {
-      throw new Error('Token no disponible');
-    } 
-    const apiUrl = `https://trefle.io/api/v1/plants/${id}?token=${this.token}`;
-
     return this.http.get(apiUrl); 
   }
 }

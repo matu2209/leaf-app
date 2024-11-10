@@ -24,7 +24,7 @@ app.post('/get-token', async (req, res) => {
     } catch (error) {
         console.error('Error obteniendo token:', error);
         res.status(500).send('Error obteniendo token');
-    }
+    } 
 });
 
 

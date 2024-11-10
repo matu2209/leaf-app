@@ -87,7 +87,7 @@ export class PlantListComponent {
     }
   
     // Crear un array de Observables para obtener cada planta por su ID
-    const favoriteRequests = this.user.favorites.map((favorite) => this.PlantsService.getPlantById(favorite.id));
+    const favoriteRequests = this.user.favorites.map((favorite) => this.PlantsService.getById(favorite.id));
   
     // forkJoin es esperar a que todas las solicitudes que hay en el arrego favoriteequest terminen
     forkJoin(favoriteRequests).subscribe(

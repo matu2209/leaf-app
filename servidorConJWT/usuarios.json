@@ -128,14 +128,6 @@
     "country": "ar",
     "favorites": [
       {
-        "id": 11971,
-        "nota": "hola"
-      },
-      {
-        "id": 51662,
-        "nota": "hola2"
-      },
-      {
         "id": 227114,
         "note": ""
       },
@@ -146,6 +138,22 @@
       {
         "id": 181036,
         "note": ""
+      },
+      {
+        "id": 122042,
+        "note": ""
+      },
+      {
+        "id": 109482,
+        "note": ""
+      },
+      {
+        "id": 51662,
+        "note": "pero BUENOOOOOOOOOOOOO CHAVALEEEES"
+      },
+      {
+        "id": 256621,
+        "note": "a dance with the"
       }
     ],
     "creditCard": []
