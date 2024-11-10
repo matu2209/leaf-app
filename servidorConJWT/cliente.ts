@@ -9,6 +9,7 @@ export class Client {
         public birthDate: Date,
         public email: string,
         public country: string,
+        public admin: boolean,
         public favorites: { id: number, note: string }[],
         public creditCard: {name: string, number: string, date: string, cvv: string, address: string, country: string }[],
         public admin: boolean

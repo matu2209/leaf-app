@@ -11,7 +11,7 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
+    
     <!-- Elementos de la barra de navegación -->
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -23,6 +23,9 @@
         </li>
         <li class="nav-item">
           <a class="nav-link btn btn-outline-light" routerLink="/fav" role="button" *ngIf="user && user.member">Favorites</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn btn-outline-light" routerLink="/admin" role="button" *ngIf="user && user.admin == true">Users list</a>
         </li>
         <li class="nav-item">
           <a class="nav-link btn btn-outline-light" routerLink="" role="button" data-bs-toggle="modal" data-bs-target="#MembershipModal" *ngIf=" user && user.member == false">Membresía</a>

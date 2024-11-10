@@ -23,10 +23,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { PlantInformationPageComponent } from './plant-information-page/plant-information-page.component';
 import { PlantInformationSourcesComponent } from './plant-information-sources/plant-information-sources.component';
 import { FavoritesPageComponent } from './favorites-page/favorites-page.component';
+import { AdminViewComponent } from './admin-view/admin-view.component';
 import { ProfileComponent } from './ProfileComponents/profile/profile.component';
-
-
-
 
 @NgModule({
   declarations: [
@@ -46,7 +44,8 @@ import { ProfileComponent } from './ProfileComponents/profile/profile.component'
     PlantInformationPageComponent,
     PlantInformationSourcesComponent,
     FavoritesPageComponent,
-    ProfileComponent,
+    AdminViewComponent,
+    ProfileComponent
     ],  
   imports: [
     HttpClientModule,

@@ -4,6 +4,7 @@ const path = require('path');
 const jwt = require('jsonwebtoken');
 const { log } = require('console');
 const cors = require('cors');
+const { addSyntheticLeadingComment } = require('typescript');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -83,6 +84,7 @@ app.post('/usuarios', (req, res) => {
         lastName: req.body.lastName,
         email: req.body.email,
         country: req.body.country,
+        admin: req.body.admin,
         favorites: [],
         creditCard: []
     }
@@ -156,7 +158,7 @@ app.post('/login', (req, res) => {
     }
 
     // Generar el token
-    const token = jwt.sign({ id: usuario.id, nombre: "Miau Miaaaaaaaau", username: usuario.username }, SECRET_KEY, { expiresIn: '1h' });
+    const token = jwt.sign({ id: usuario.id, nombre: "Miau Miaaaaaaaau", username: usuario.username}, SECRET_KEY, { expiresIn: '1h' });
 
     res.status(200).json({ message: 'Inicio de sesión exitoso', token, usuario});
 });
