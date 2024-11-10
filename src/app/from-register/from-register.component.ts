@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { AuthenticationService } from '../authentication/authentication.service';
+import { CustomValidators } from '../customValidators/passwordValidator';
 
 declare var bootstrap: any;  // Declara bootstrap para usar sus métodos
 
@@ -21,9 +22,13 @@ export class FromRegisterComponent {
       firstName:['', [Validators.required]],
       lastName: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      passwordConfirmation: ['', Validators.required],
+      passwordConfirmation: ['', Validators.required,],
       country: ['', Validators.required]
-    });
+    },
+    {
+      validators: [CustomValidators.passwordMatch]
+    }
+  );
   }
 
   registerUser() {

@@ -12,11 +12,6 @@ export class HeaderComponent implements OnInit{
   constructor(private AuthenticationService: AuthenticationService){}
 
   user?: Client;
-  // showProfileSidebar = false;
-
-  // ProfileSidebar() {
-  //   this.showProfileSidebar = !this.showProfileSidebar;
-  // }
 
   ngOnInit(){
     this.AuthenticationService.loggedInUser$.subscribe(user => {
@@ -27,5 +22,9 @@ export class HeaderComponent implements OnInit{
   logOut(){
     this.AuthenticationService.logout();
   }
-  
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 }
