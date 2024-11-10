@@ -3,7 +3,7 @@
     "id": 1,
     "username": "ss",
     "password": "123456",
-    "member": false,
+    "member": true,
     "firstName": "sebastian",
     "lastName": "galvan",
     "email": "seba@asd.com",
@@ -21,20 +21,7 @@
     "lastName": "galvan",
     "email": "matu@asd.com",
     "country": "argentina",
-    "admin":false,
-    "favorites": [],
-    "creditCard": []
-  },
-  {
-    "id": 3,
-    "username": "yb",
-    "password": "123456",
-    "member": false,
-    "firstName": "yahveh",
-    "lastName": "baccaro",
-    "email": "yb@asd.com",
-    "country": "portugal",
-    "admin":false,
+    "admin": false,
     "favorites": [],
     "creditCard": []
   },
@@ -47,7 +34,7 @@
     "lastName": "Baccaro",
     "email": "joshuabaccaro@gmail.com",
     "country": "Argentina",
-    "admin":false,
+    "admin": false,
     "favorites": [
       {
         "id": 77116,
@@ -119,7 +106,7 @@
     "lastName": "doe",
     "email": "jd@asd-com",
     "country": "us",
-    "admin":false,
+    "admin": false,
     "favorites": [],
     "creditCard": []
   },
@@ -130,9 +117,9 @@
     "member": true,
     "firstName": "Yahveh",
     "lastName": "Baccaro",
-    "email": "yahveh@gmail.com",
-    "country": "ar",
-    "admin":false,
+    "email": "yahvehBacca@gmail.com",
+    "country": "Argentina",
+    "admin": false,
     "favorites": [
       {
         "id": 227114,
@@ -161,9 +148,14 @@
       {
         "id": 256621,
         "note": "a dance with the"
+      },
+      {
+        "id": 159974,
+        "note": ""
       }
     ],
-    "creditCard": []
+    "creditCard": [],
+    "birthDate": "2002-08-15"
   },
   {
     "id": 7,
@@ -174,7 +166,7 @@
     "lastName": "Tian",
     "email": "tian@gmail.com",
     "country": "ar",
-    "admin":false,
+    "admin": false,
     "favorites": [],
     "creditCard": []
   },
@@ -187,7 +179,7 @@
     "lastName": "baccaro",
     "email": "js@gmail.com",
     "country": "ar",
-    "admin":false,
+    "admin": false,
     "favorites": [],
     "creditCard": [
       {
@@ -217,7 +209,7 @@
     "lastName": "kumar",
     "email": "jp@gmail.com",
     "country": "ca",
-    "admin":false,
+    "admin": false,
     "favorites": [],
     "creditCard": []
   },
@@ -232,5 +224,40 @@
     "country": "us",
     "favorites": [],
     "creditCard": []
+  },
+  {
+    "id": 11,
+    "username": "capo",
+    "password": "111111",
+    "member": true,
+    "firstName": "ca",
+    "lastName": "po",
+    "email": "ca@gmail.com",
+    "country": "ar",
+    "admin": false,
+    "favorites": [
+      {
+        "id": 234144,
+        "note": "djsadnsjd askjdasdjndapdksadjakd nsaodjasl idjasdkasnldkasjd klasdlksadldks"
+      },
+      {
+        "id": 127300,
+        "note": "sslsndsldljdnldndalndsalds"
+      },
+      {
+        "id": 233328,
+        "note": ""
+      }
+    ],
+    "creditCard": [
+      {
+        "name": "elcapo",
+        "number": "1111 1211 2222 3333",
+        "date": "01/04",
+        "cvv": "333",
+        "address": "calle 45",
+        "country": "us"
+      }
+    ]
   }
 ]

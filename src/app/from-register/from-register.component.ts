@@ -18,6 +18,7 @@ export class FromRegisterComponent {
   constructor(private fb: FormBuilder, private http: HttpClient, private AuthenticationService: AuthenticationService) {
     this.registerForm = this.fb.group({
       username: ['', Validators.required],
+      birthDate: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       firstName:['', [Validators.required]],
       lastName: ['', [Validators.required]],
@@ -48,6 +49,7 @@ export class FromRegisterComponent {
       member: false,
       firstName: this.registerForm.value.firstName,
       lastName: this.registerForm.value.lastName,
+      birthDate: this.registerForm.value.birthDate,
       email: this.registerForm.value.email,
       country: this.registerForm.value.country,
       admin: false,
@@ -67,7 +69,7 @@ export class FromRegisterComponent {
         
         const url = 'http://localhost:3001/login'; 
         const body = {
-          email: newUser.email,
+          username: newUser.username,
           password: newUser.password
         };
 
@@ -77,7 +79,7 @@ export class FromRegisterComponent {
               this.AuthenticationService.login(users);
               alert('Login successful');
 
-              const modalElement = document.getElementById('logInModal');
+              const modalElement = document.getElementById('RegisterModal');
               const modalInstance = bootstrap.Modal.getInstance(modalElement);
               modalInstance.hide();
           
