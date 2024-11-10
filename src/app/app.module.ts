@@ -23,6 +23,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { PlantInformationPageComponent } from './plant-information-page/plant-information-page.component';
 import { PlantInformationSourcesComponent } from './plant-information-sources/plant-information-sources.component';
 import { FavoritesPageComponent } from './favorites-page/favorites-page.component';
+import { ProfileComponent } from './ProfileComponents/profile/profile.component';
 
 
 
@@ -45,6 +46,7 @@ import { FavoritesPageComponent } from './favorites-page/favorites-page.componen
     PlantInformationPageComponent,
     PlantInformationSourcesComponent,
     FavoritesPageComponent,
+    ProfileComponent,
     ],  
   imports: [
     HttpClientModule,

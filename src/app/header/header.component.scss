@@ -42,8 +42,55 @@
     background-color: #F2E1AC;
     border: 1px solid #F2E1AC;
 }
+  .btn:focus{
+    color: #40352B; 
+    background-color: #F2E1AC;
+    border: 1px solid #F2E1AC;
+  }
+  .btn:active{
+    color: #40352B; 
+    background-color: #F2E1AC;
+    border: 1px solid #F2E1AC;
+  }
   
   .navbar-brand {
     color: #40352B !important; 
     font-weight: bold; 
 }
+.dropdown-menu {
+  background-color: #F2E1AC; 
+  border-color: #F2E1AC; 
+}
+.dropdown-item:hover{
+  color: #40352B; 
+    background-color: #D9C6A3;
+}
+.icon-toggle-button {
+  position: relative;
+
+  .icon-default {
+    display: inline; /* Visible por defecto */
+  }
+
+  .icon-hover {
+    display: none; /* Oculto por defecto */
+  }
+
+  /* Estilo cuando el botón está en hover o en foco (activo) */
+  &:hover,
+  &:focus {
+    .icon-default {
+      display: none; /* Oculta el icono por defecto en hover y foco */
+    }
+
+    .icon-hover {
+      display: inline; /* Muestra el icono de hover y foco */
+    }
+
+  }
+}
+
+
+
+
+

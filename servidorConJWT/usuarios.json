@@ -40,10 +40,10 @@
     "username": "joshua",
     "password": "123456",
     "member": true,
-    "firstName": "joshua",
-    "lastName": "baccaro",
-    "email": "jb@asd.com",
-    "country": "españa",
+    "firstName": "Joshua",
+    "lastName": "Baccaro",
+    "email": "joshuabaccaro@gmail.com",
+    "country": "Argentina",
     "favorites": [
       {
         "id": 77116,
@@ -103,7 +103,8 @@
         "address": "asd",
         "country": "ar"
       }
-    ]
+    ],
+    "birthDate": "1999-11-25"
   },
   {
     "id": 5,
@@ -166,13 +167,30 @@
     "id": 8,
     "username": "josh",
     "password": "123456",
-    "member": false,
+    "member": true,
     "firstName": "ua",
     "lastName": "baccaro",
     "email": "js@gmail.com",
     "country": "ar",
     "favorites": [],
-    "creditCard": []
+    "creditCard": [
+      {
+        "name": "123123",
+        "number": "1231 2333 3333 3333",
+        "date": "10/20",
+        "cvv": "123",
+        "address": "123123",
+        "country": "ar"
+      },
+      {
+        "name": "111",
+        "number": "1111 1111 1111 1111",
+        "date": "12/20",
+        "cvv": "123",
+        "address": "123",
+        "country": "ar"
+      }
+    ]
   },
   {
     "id": 9,
@@ -183,6 +201,18 @@
     "lastName": "kumar",
     "email": "jp@gmail.com",
     "country": "ca",
+    "favorites": [],
+    "creditCard": []
+  },
+  {
+    "id": 10,
+    "username": "asd",
+    "password": "asdasd",
+    "member": false,
+    "firstName": "asd",
+    "lastName": "asd",
+    "email": "as@gmail.com",
+    "country": "us",
     "favorites": [],
     "creditCard": []
   }
