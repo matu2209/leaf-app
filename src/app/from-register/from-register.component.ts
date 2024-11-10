@@ -45,6 +45,7 @@ export class FromRegisterComponent {
       lastName: this.registerForm.value.lastName,
       email: this.registerForm.value.email,
       country: this.registerForm.value.country,
+      admin: false,
       favorites: [],
       creditCard: []
     };

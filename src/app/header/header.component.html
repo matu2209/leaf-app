@@ -30,6 +30,10 @@
           <li class="nav-item">
             <a class="nav-link btn btn-outline-light" routerLink="" role="button" data-bs-toggle="modal" data-bs-target="#MembershipModal" *ngIf=" user && user.member == false">Membresía</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link btn btn-outline-light" routerLink="/admin" role="button" *ngIf="user && user.admin == true">Users list</a>
+          </li>
+          
         </ul>
 
         <!-- Derecha: Botones de Log In y Register -->

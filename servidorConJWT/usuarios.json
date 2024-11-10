@@ -8,6 +8,7 @@
     "lastName": "galvan",
     "email": "seba@asd.com",
     "country": "brasil",
+    "admin": true,
     "favorites": [],
     "creditCard": []
   },
@@ -20,6 +21,7 @@
     "lastName": "galvan",
     "email": "matu@asd.com",
     "country": "argentina",
+    "admin":false,
     "favorites": [],
     "creditCard": []
   },
@@ -32,6 +34,7 @@
     "lastName": "baccaro",
     "email": "yb@asd.com",
     "country": "portugal",
+    "admin":false,
     "favorites": [],
     "creditCard": []
   },
@@ -44,6 +47,7 @@
     "lastName": "baccaro",
     "email": "jb@asd.com",
     "country": "españa",
+    "admin":false,
     "favorites": [
       {
         "id": 77116,
@@ -114,6 +118,7 @@
     "lastName": "doe",
     "email": "jd@asd-com",
     "country": "us",
+    "admin":false,
     "favorites": [],
     "creditCard": []
   },
@@ -126,6 +131,7 @@
     "lastName": "Baccaro",
     "email": "yahveh@gmail.com",
     "country": "ar",
+    "admin":false,
     "favorites": [
       {
         "id": 227114,
@@ -167,6 +173,7 @@
     "lastName": "Tian",
     "email": "tian@gmail.com",
     "country": "ar",
+    "admin":false,
     "favorites": [],
     "creditCard": []
   },
@@ -179,6 +186,7 @@
     "lastName": "baccaro",
     "email": "js@gmail.com",
     "country": "ar",
+    "admin":false,
     "favorites": [],
     "creditCard": []
   },
@@ -191,6 +199,7 @@
     "lastName": "kumar",
     "email": "jp@gmail.com",
     "country": "ca",
+    "admin":false,
     "favorites": [],
     "creditCard": []
   }
