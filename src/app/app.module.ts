@@ -3,28 +3,28 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomePageComponent } from './home-page/home-page.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { BannerComponent } from './banner/banner.component';
-import { FeaturesComponent } from './features/features.component';
+import { HomePageComponent } from './page-components/home-page-components/home-page/home-page.component';
+import { HeaderComponent } from './page-components/page-structure/header/header.component';
+import { FooterComponent } from './page-components/page-structure/footer/footer.component';
+import { BannerComponent } from './page-components/home-page-components/banner/banner.component';
+import { FeaturesComponent } from './page-components/home-page-components/features/features.component';
 
 import { HttpClientModule } from '@angular/common/http';
 
 import { PlantsMModule } from './plants-m/plants-m.module';
-import { MembershipComponent } from './membership/membership.component';
-import { SearchPageComponent } from './search-page/search-page.component';
-import { FormLogInComponent } from './form-log-in/form-log-in.component';
-import { FromRegisterComponent } from './from-register/from-register.component';
-import { FormMembershipComponent } from './form-membership/form-membership.component';
-import { FilterFormComponent } from './filter-form/filter-form.component';
+import { MembershipComponent } from './page-components/home-page-components/membership/membership.component';
+import { SearchPageComponent } from './page-components/search-page-components/search-page/search-page.component';
+import { FormLogInComponent } from './form-components/form-log-in/form-log-in.component';
+import { FromRegisterComponent } from './form-components/from-register/from-register.component';
+import { FormMembershipComponent } from './form-components/form-membership/form-membership.component';
+import { FilterFormComponent } from './form-components/filter-form/filter-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NotFoundComponent } from './not-found/not-found.component';
-import { PlantInformationPageComponent } from './plant-information-page/plant-information-page.component';
-import { PlantInformationSourcesComponent } from './plant-information-sources/plant-information-sources.component';
-import { FavoritesPageComponent } from './favorites-page/favorites-page.component';
-import { AdminViewComponent } from './admin-view/admin-view.component';
-import { ProfileComponent } from './ProfileComponents/profile/profile.component';
+import { NotFoundComponent } from './plant-display-components/not-found/not-found.component';
+import { PlantInformationPageComponent } from './page-components/plant-information-page-components/plant-information-page/plant-information-page.component';
+import { PlantInformationSourcesComponent } from './page-components/plant-information-page-components/plant-information-sources/plant-information-sources.component';
+import { FavoritesPageComponent } from './page-components/favorite-page-components/favorites-page/favorites-page.component';
+import { AdminViewComponent } from './page-components/admin-page-components/admin-view/admin-view.component';
+import { ProfileComponent } from './page-components/profile-page-components/profile/profile.component';
 
 @NgModule({
   declarations: [

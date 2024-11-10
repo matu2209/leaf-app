@@ -7,9 +7,14 @@
     "firstName": "sebastian",
     "lastName": "galvan",
     "email": "seba@asd.com",
-    "country": "brasil",
+    "country": "Ascension",
     "admin": true,
-    "favorites": [],
+    "favorites": [
+      {
+        "id": 198058,
+        "note": ""
+      }
+    ],
     "creditCard": []
   },
   {
@@ -118,7 +123,7 @@
     "firstName": "Yahveh",
     "lastName": "Baccaro",
     "email": "yahvehBacca@gmail.com",
-    "country": "Argentina",
+    "country": "Argentina Northeast",
     "admin": false,
     "favorites": [
       {
@@ -127,10 +132,6 @@
       },
       {
         "id": 77107,
-        "note": ""
-      },
-      {
-        "id": 181036,
         "note": ""
       },
       {
@@ -152,6 +153,10 @@
       {
         "id": 159974,
         "note": ""
+      },
+      {
+        "id": 262177,
+        "note": "aguante stardew valley"
       }
     ],
     "creditCard": [],
@@ -226,36 +231,36 @@
     "creditCard": []
   },
   {
-    "id": 11,
-    "username": "capo",
-    "password": "111111",
+    "id": 12,
+    "username": "pedro",
+    "password": "333333",
     "member": true,
-    "firstName": "ca",
-    "lastName": "po",
-    "email": "ca@gmail.com",
-    "country": "ar",
+    "firstName": "gomez",
+    "lastName": "pedrinhoooo",
+    "email": "pe@gmail.com",
+    "country": "Argentina South",
     "admin": false,
     "favorites": [
       {
-        "id": 234144,
-        "note": "djsadnsjd askjdasdjndapdksadjakd nsaodjasl idjasdkasnldkasjd klasdlksadldks"
+        "id": 11971,
+        "note": "esta es la que va\n"
       },
       {
-        "id": 127300,
-        "note": "sslsndsldljdnldndalndsalds"
+        "id": 269338,
+        "note": "tomatoe"
       },
       {
-        "id": 233328,
-        "note": ""
+        "id": 206041,
+        "note": "of the value"
       }
     ],
     "creditCard": [
       {
-        "name": "elcapo",
-        "number": "1111 1211 2222 3333",
-        "date": "01/04",
-        "cvv": "333",
-        "address": "calle 45",
+        "name": "pedrinho",
+        "number": "5555 5555 5555 5555",
+        "date": "11/11",
+        "cvv": "432",
+        "address": "calle 634",
         "country": "us"
       }
     ]
