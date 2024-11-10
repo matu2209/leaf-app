@@ -47,10 +47,20 @@
               <div>
                 <label class="form-label">Password confirmation:</label>
                 <input type="password" class="form-control" placeholder="Password confirmation" formControlName="passwordConfirmation">
+                <div *ngIf="registerForm.hasError('passwordMismatch')" class="text-danger">
+                  Password confirmation does not match the password.
+                </div>    
                 <div *ngIf="registerForm.get('passwordConfirmation')?.invalid && registerForm.get('passwordConfirmation')?.touched" class="text-danger">
-                  Please confirm your password.
-                </div>
+                  Password confirmation is required.
+                </div>             
               </div>
+              <div class="col-md-6">
+                <label for="birth-date"><strong>Fecha de nacimiento:</strong></label>
+                <div class="input-group">
+                    <input type="date" id="birth-date" class="form-control" formControlName="birthDate">
+                    <button class="btn btn-outline-primary" type="button"><i class="bi bi-save"></i></button>
+                </div>
+            </div>
               <div>
                 <label class="form-label">Country:</label>
                 <select class="form-control" formControlName="country">

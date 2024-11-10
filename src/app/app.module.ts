@@ -24,9 +24,7 @@ import { PlantInformationPageComponent } from './plant-information-page/plant-in
 import { PlantInformationSourcesComponent } from './plant-information-sources/plant-information-sources.component';
 import { FavoritesPageComponent } from './favorites-page/favorites-page.component';
 import { AdminViewComponent } from './admin-view/admin-view.component';
-
-
-
+import { ProfileComponent } from './ProfileComponents/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +45,7 @@ import { AdminViewComponent } from './admin-view/admin-view.component';
     PlantInformationSourcesComponent,
     FavoritesPageComponent,
     AdminViewComponent,
+    ProfileComponent
     ],  
   imports: [
     HttpClientModule,

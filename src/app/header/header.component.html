@@ -1,53 +1,60 @@
+<!-- header.component.html -->
 <nav class="navbar navbar-expand-lg fixed-top" style="background-color: #697353;">
-    <div class="container-fluid">
-      <!-- Logotipo -->
-      <a class="navbar-brand" routerLink="">
-        <img src="logo-planta.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top">
-      </a>
-      <a class="navbar-brand" routerLink="">Leaf</a>
-      
-      <!-- Botón para móviles -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <div class="container-fluid">
+    <!-- Logotipo -->
+    <a class="navbar-brand" routerLink="">
+      <img src="logo-planta.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top">
+    </a>
+    <a class="navbar-brand" routerLink="">Leaf</a>
 
-      <!-- Elementos de la barra de navegación -->
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link btn btn-outline-light" routerLink="" aria-current="page" role="button">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn btn-outline-light" routerLink="/search" role="button">Explore</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn btn-outline-light" routerLink="" role="button" *ngIf="user">My profile</a>
+    <!-- Botón para móviles -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <!-- Elementos de la barra de navegación -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link btn btn-outline-light" routerLink="" aria-current="page" role="button">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn btn-outline-light" routerLink="/search" role="button">Explore</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn btn-outline-light" routerLink="/fav" role="button" *ngIf="user && user.member">Favorites</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn btn-outline-light" routerLink="/admin" role="button" *ngIf="user && user.admin == true">Users list</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn btn-outline-light" routerLink="" role="button" data-bs-toggle="modal" data-bs-target="#MembershipModal" *ngIf=" user && user.member == false">Membresía</a>
+        </li>
+      </ul>
 
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn btn-outline-light" routerLink="/fav" role="button" *ngIf="user && user.member">Favorites</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn btn-outline-light" routerLink="" role="button" data-bs-toggle="modal" data-bs-target="#MembershipModal" *ngIf=" user && user.member == false">Membresía</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link btn btn-outline-light" routerLink="/admin" role="button" *ngIf="user && user.admin == true">Users list</a>
-          </li>
-          
-        </ul>
-
-        <!-- Derecha: Botones de Log In y Register -->
-        <div class="d-flex">
-          <button class="btn btn-outline-light me-2" type="button" data-bs-toggle="modal" data-bs-target="#logInModal" *ngIf="!user">Log In</button>
-          <button class="btn btn-light me-2" type="button" data-bs-toggle="modal" data-bs-target="#RegisterModal" *ngIf="!user">Register</button>
-          <button class="btn btn-light" type="button" (click)="logOut()" *ngIf="user">Log out</button>
-        </div>
-      </div>
-    </div>
-</nav>
-  <app-form-log-in></app-form-log-in>
-  <app-from-register></app-from-register>
-  <app-form-membership></app-form-membership>
+      <!-- Derecha: Botones de Log In y Register -->
+      <div class="d-flex">
+  <button class="btn btn-outline-light me-2" type="button" data-bs-toggle="modal" data-bs-target="#logInModal" *ngIf="!user">Log In</button>
+  <button class="btn btn-light me-2" type="button" data-bs-toggle="modal" data-bs-target="#RegisterModal" *ngIf="!user">Register</button>
   
+  <div class="dropdown">
+    <button class="btn btn-outline-light dropdown-toggle icon-toggle-button" type="button" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false" *ngIf="user">
+      <i class="bi bi-person icon-default"></i>
+      <i class="bi bi-person-fill icon-hover"></i>
+    </button>
+    
+    <!-- Agrega la clase dropdown-menu-end aquí -->
+    <ul class="dropdown-menu dropdown-menu-lg-end">
+      <li><a class="dropdown-item prfl" routerLink="/profile" role="button" *ngIf="user">My profile</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item prfl" (click)="logOut()" *ngIf="user">Log out</a></li>
+    </ul>
+  </div>  
+</div>
+    </div>
+  </div>
+</nav>
 
-
+<app-form-log-in></app-form-log-in>
+<app-from-register></app-from-register>
+<app-form-membership></app-form-membership>

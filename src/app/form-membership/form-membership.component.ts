@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { AuthenticationService } from '../authentication/authentication.service';
 import { HttpClient } from '@angular/common/http';
 import { Client } from '../../../servidorConJWT/cliente';
-
+declare var bootstrap: any;
 @Component({
   selector: 'app-form-membership',
   templateUrl: './form-membership.component.html',
@@ -116,7 +116,9 @@ export class FormMembershipComponent implements OnInit {
           console.log("Se agrego correctamente la tarjeta");
           alert('Se agrego correctamente la tarjeta');
           this.membershipForm.reset();
-          console.log(this.loggedInUser);
+          const modalElement = document.getElementById('MembershipModal');
+          const modalInstance = bootstrap.Modal.getInstance(modalElement);
+          modalInstance.hide();
         },
         error => {
           console.error("Error al cargar la tarjeta:", error);
