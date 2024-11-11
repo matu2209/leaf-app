@@ -59,34 +59,39 @@
             </div>
         </form>
 
-           <!-- Formulario para cambiar la contraseña -->
-    <div *ngIf="isPasswordChangeVisible">
-        <form [formGroup]="passwordForm" (ngSubmit)="submitPasswordChange()">
-          <div class="row">
-            <div class="col-md-6">
-              <label for="password"><strong>Contraseña:</strong></label>
-              <input type="password" id="password" class="form-control" formControlName="password">
-              <div *ngIf="passwordForm.get('password')?.invalid && passwordForm.get('password')?.touched" class="text-danger">
-                La contraseña debe tener al menos 6 caracteres.
-              </div>
+        <div class="collapse mt-3 password-change-container" id="passwordChangeCollapse">
+            <div class="card card-body">
+                <form [formGroup]="passwordForm" (ngSubmit)="submitPasswordChange()">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="password"><strong>Contraseña:</strong></label>
+                            <input type="password" id="password" class="form-control" formControlName="password">
+                            <div *ngIf="passwordForm.get('password')?.invalid && passwordForm.get('password')?.touched" class="text-danger">
+                                La contraseña debe tener al menos 6 caracteres.
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="passwordConfirmation"><strong>Confirmar Contraseña:</strong></label>
+                            <input type="password" id="passwordConfirmation" class="form-control" formControlName="passwordConfirmation">
+                            <div *ngIf="passwordForm.get('passwordConfirmation')?.invalid && passwordForm.get('passwordConfirmation')?.touched" class="text-danger">
+                                Las contraseñas no coinciden.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-3">
+                        <button type="submit" class="btn btn-primary mt-3" [disabled]="passwordForm.invalid">Guardar Contraseña</button>
+                    </div>
+                </form>
             </div>
-            <div class="col-md-6">
-              <label for="passwordConfirmation"><strong>Confirmar Contraseña:</strong></label>
-              <input type="password" id="passwordConfirmation" class="form-control" formControlName="passwordConfirmation">
-              <div *ngIf="passwordForm.get('passwordConfirmation')?.invalid && passwordForm.get('passwordConfirmation')?.touched" class="text-danger">
-                Las contraseñas no coinciden.
-              </div>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary mt-3" [disabled]="passwordForm.invalid">Guardar Contraseña</button>
-        </form>
-      </div>
-  
-      <hr class="my-4">
-      <div class="card-footer text-center">
-        <button class="btn btn-outline-light me-2" role="button" data-bs-toggle="modal" data-bs-target="#MembershipModal" *ngIf="loggedInUser && !loggedInUser.member">Adquirir Membresía</button>
-        <button class="btn btn-light me-2" (click)="togglePasswordChange()">Modificar Contraseña</button>
-      </div>
+        </div>
+      
+        <hr class="my-4">
+        <div class="card-footer text-center">
+            <button class="btn btn-outline-light me-2" role="button" data-bs-toggle="modal" data-bs-target="#MembershipModal" *ngIf="loggedInUser && !loggedInUser.member">Adquirir Membresía</button>
+            <button class="btn btn-light me-2" data-bs-toggle="collapse" data-bs-target="#passwordChangeCollapse" aria-expanded="false" aria-controls="passwordChangeCollapse">
+                Modificar Contraseña
+            </button>
+        </div>
     </div>
-  </div>
-  <app-form-membership></app-form-membership>
+</div>
+<app-form-membership></app-form-membership>

@@ -36,4 +36,35 @@
     color: #ffffff;
     border: 1px solid #697353;
 }
+.password-change-container {
+  &.collapse {
+      max-height: 0;
+      overflow: hidden;
+  }
+  &.show {
+      max-height: 300px; // Ajusta este valor según el contenido del formulario
+      transition: max-height 0.5s ease;
+  }
+}
+// Aplica un borde verde a todos los inputs y selects en la página
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+select {
+    border: 2px solid #697353; // Verde personalizado
+    border-radius: 4px; // Ajusta el radio si deseas bordes redondeados
+}
+
+// Opcional: Cambiar el color del borde cuando el input esté enfocado
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="date"]:focus,
+select:focus {
+    border-color: #556944; // Verde más oscuro para enfoque
+    box-shadow: 0 0 5px rgba(105, 115, 83, 0.5); // Sombra verde para enfoque
+    outline: none;
+}
+
 
