@@ -25,6 +25,7 @@ import { PlantInformationSourcesComponent } from './page-components/plant-inform
 import { FavoritesPageComponent } from './page-components/favorite-page-components/favorites-page/favorites-page.component';
 import { AdminViewComponent } from './page-components/admin-page-components/admin-view/admin-view.component';
 import { ProfileComponent } from './page-components/profile-page-components/profile/profile.component';
+import { TimerAlertComponent } from './page-components/timer-components/timer-alert/timer-alert.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { ProfileComponent } from './page-components/profile-page-components/prof
     PlantInformationSourcesComponent,
     FavoritesPageComponent,
     AdminViewComponent,
-    ProfileComponent
+    ProfileComponent,
+    TimerAlertComponent
     ],  
   imports: [
     HttpClientModule,

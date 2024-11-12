@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { AuthenticationService } from '../../services/authentication-service/authentication.service';
 import { Router } from '@angular/router';
+import { TimerService } from '../../services/timer-service/timer.service';
 
 declare var bootstrap: any;  // Declara bootstrap para usar sus métodos
 
@@ -15,7 +16,7 @@ declare var bootstrap: any;  // Declara bootstrap para usar sus métodos
 export class FormLogInComponent {
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private authService: AuthenticationService, private router: Router) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private authService: AuthenticationService, private router: Router, public timerService: TimerService ) {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]

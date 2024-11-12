@@ -1,9 +1,10 @@
-<div class="modal fade" id="logInModal" tabindex="-1" aria-labelledby="logInModalLabel" aria-hidden="true">
+<div class="modal fade" id="logInModal" tabindex="-1" aria-labelledby="logInModalLabel" aria-hidden="true"[attr.data-bs-backdrop]="timerService.isTimerExpired ? 'static' : null"
+[attr.data-bs-keyboard]="timerService.isTimerExpired ? 'false' : null">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="logInModalLabel">Log In</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button *ngIf="!timerService.isTimerExpired" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <form [formGroup]="loginForm" (ngSubmit)="validateCredentials()">

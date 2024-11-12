@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-
+import { Component, OnInit } from '@angular/core';
+import { TimerService } from './services/timer-service/timer.service';
+declare var bootstrap: any; 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +8,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'LabIVPlant_1';
+  constructor(private timerService: TimerService) {}
+
+  ngOnInit() {
+
+    this.timerService.startTimer(10000);
+
+    this.timerService.timerEndObservable.subscribe(() => {
+      const timerAlertModal = document.getElementById('TimerAlertModal');
+      if (timerAlertModal) {
+        const bootstrapModal = new bootstrap.Modal(timerAlertModal);
+        bootstrapModal.show();
+      }
+    });
+  }
 }

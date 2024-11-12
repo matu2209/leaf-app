@@ -1,0 +1,22 @@
+h5, label{
+    color:#40352B;
+}
+
+.modal-header{
+    background-color:#697353; 
+}
+.btn:hover {
+    color: #40352B; 
+    background-color: #F2E1AC;
+    border: 1px solid #F2E1AC; 
+}
+.modal-footer{
+    background-color:#697353;
+}
+
+.modal.fade.show {
+    backdrop-filter: blur(5px) brightness(0.8) contrast(1.2) 
+}
+.modal-content {
+    color: #40352B; 
+}

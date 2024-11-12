@@ -4,8 +4,9 @@ import { HttpClient } from '@angular/common/http';
 import { AuthenticationService } from '../../services/authentication-service/authentication.service';
 import { CustomValidators } from '../../customValidators/passwordValidator';
 import { DistributionsService } from '../../services/distribution-service/distributions.service';
+import { TimerService } from '../../services/timer-service/timer.service';
 
-declare var bootstrap: any;  // Declara bootstrap para usar sus métodos
+declare var bootstrap: any; 
 
 
 @Component({
@@ -18,7 +19,7 @@ export class FromRegisterComponent {
   distributions: String [] = [];
 
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private AuthenticationService: AuthenticationService, private DistributionsService: DistributionsService) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private AuthenticationService: AuthenticationService, private DistributionsService: DistributionsService, public timerService: TimerService) {
     this.registerForm = this.fb.group({
       username: ['', Validators.required],
       birthDate: ['', Validators.required],
