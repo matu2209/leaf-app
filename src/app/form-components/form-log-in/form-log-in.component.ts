@@ -41,6 +41,7 @@ export class FormLogInComponent {
         if (users) {          
           this.authService.login(users);
           alert('Login successful');
+          this.timerService.stopTimer();
           this.loginForm.reset();
           //this.router.navigate(['profile']);
 
