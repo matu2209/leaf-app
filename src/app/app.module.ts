@@ -26,6 +26,7 @@ import { FavoritesPageComponent } from './page-components/favorite-page-componen
 import { AdminViewComponent } from './page-components/admin-page-components/admin-view/admin-view.component';
 import { ProfileComponent } from './page-components/profile-page-components/profile/profile.component';
 import { TimerAlertComponent } from './page-components/timer-components/timer-alert/timer-alert.component';
+import { UserViewComponent } from './page-components/user-view/user-view.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { TimerAlertComponent } from './page-components/timer-components/timer-al
     FavoritesPageComponent,
     AdminViewComponent,
     ProfileComponent,
-    TimerAlertComponent
+    TimerAlertComponent,
+    UserViewComponent
     ],  
   imports: [
     HttpClientModule,

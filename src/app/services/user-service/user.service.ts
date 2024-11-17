@@ -24,6 +24,11 @@ export class UserService {
     .toPromise();
   }
 
+  getUserById(clientId: number): Promise<any>{
+    return this.http.get(this.API_URL + `/usuarios/${clientId}`)
+    .toPromise();
+  }
+  
   registerUser(user: Client): Promise<any>{
     return this.http.post(this.API_URL + "/usuarios", user)
     .toPromise();

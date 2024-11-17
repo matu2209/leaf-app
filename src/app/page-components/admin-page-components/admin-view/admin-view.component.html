@@ -25,6 +25,7 @@
                         <button class="btn btn-sm btn-danger" 
                         (click)="deleteUser(client.id)"
                         >Delete</button>
+                        <button class="btn btn-sm btn-primary" [routerLink]="['/view/',client.id]">View</button>
                     </td>
                 </tr>
             </tbody>
