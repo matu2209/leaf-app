@@ -52,6 +52,10 @@ export class AuthenticationService {
     return this.loggedInUserSubject.value !== null;
   }
 
+  isAdmin(): boolean {
+    return this.loggedInUserSubject.value?.admin;
+  }
+
   updateUser(user: Client){
     console.log(user);
     const url = `http://localhost:3001/usuarios/${user.id}`; // RUTA JSON SERVER
