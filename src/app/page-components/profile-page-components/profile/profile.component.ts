@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthenticationService } from '../../../services/authentication-service/authentication.service';
 import { Client } from '../../../../../servidorConJWT/cliente';
-import { CustomValidators } from '../../../customValidators/passwordValidator';
+import { CustomValidators } from '../../../customValidators/custom-Validators';
 import { DistributionsService } from '../../../services/distribution-service/distributions.service';
 
 @Component({

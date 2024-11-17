@@ -71,7 +71,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-outline-light">Accept</button>
+            <button type="submit" class="btn btn-outline-light" [disabled]="!membershipForm.valid">Accept</button>
           </div>
         </form>
       </div>

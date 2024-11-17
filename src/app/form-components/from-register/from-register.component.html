@@ -13,8 +13,13 @@
               <div class="mb-2">
                 <label class="form-label">Username:</label>
                 <input type="text" class="form-control" placeholder="Username" formControlName="username">
-                <div *ngIf="registerForm.get('username')?.invalid && registerForm.get('username')?.touched" class="text-danger">
-                  Username is required.
+                <div *ngIf="!registerForm.get('username')?.valid && (registerForm.get('username')?.dirty || registerForm.get('username')?.touched)">
+                  <div *ngIf="registerForm.get('username')?.hasError('required')" class="text-danger">
+                    Username is required.
+                  </div>
+                  <div *ngIf="registerForm.get('username')?.hasError('usernameExists')" class="text-danger">
+                    Username already exists.
+                  </div>
                 </div>
               </div>
               <div>
@@ -73,7 +78,7 @@
             </div>
           </div>
           <div class="modal-footer">
-            <button type="submit" class="btn btn-outline-light">Accept</button>
+            <button type="submit" class="btn btn-outline-light" [disabled]="!registerForm.valid">Accept</button>
           </div>
         </form>
       </div>

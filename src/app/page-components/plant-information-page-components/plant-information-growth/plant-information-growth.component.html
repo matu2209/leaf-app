@@ -32,6 +32,18 @@
           <td>Soil salinity</td>
           <td>{{ plantData  .growth.soil_salinity }}</td>
         </tr>
+        <tr *ngIf="plantData.growth.growth_months">
+          <td>Growth months</td>
+          <td>{{ plantData  .growth.growth_months }}</td>
+        </tr>
+        <tr *ngIf="plantData.growth.fruit_months">
+          <td>Fruit months</td>
+          <td>{{ plantData  .growth.fruit_months }}</td>
+        </tr>
+        <tr *ngIf="plantData.growth.bloom_months">
+          <td>Bloom months</td>
+          <td>{{ plantData  .growth.bloom_months }}</td>
+        </tr>
       </tbody>
     </table>
   </div>

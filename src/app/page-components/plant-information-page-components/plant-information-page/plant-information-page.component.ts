@@ -18,7 +18,7 @@ export class PlantInformationPageComponent implements OnInit{
 
   id: number = 0;
   plantData: any;
-
+  distributionUser: string = "";
   user?: Client;
 
   ngOnInit(): void {
@@ -37,11 +37,12 @@ export class PlantInformationPageComponent implements OnInit{
         
           this.AuthenticationService.loggedInUser$.subscribe(user => {
             this.user = user;
-            
-            if(this.user && this.isFavorite(this.plantData.id)){
-              this.noteForm.setValue({
-                note: this.user?.favorites.find(fav => fav.id === this.plantData.id)?.note
-              });
+            if(this.user){
+              if(this.isFavorite(this.plantData.id)){
+                this.noteForm.setValue({
+                  note: this.user?.favorites.find(fav => fav.id === this.plantData.id)?.note
+                });}
+                this.distributionUser = this.isFavorable();
             }
           });
       },
@@ -85,6 +86,19 @@ export class PlantInformationPageComponent implements OnInit{
       }
     }
     return false;
+  }
+
+  isFavorable(): string{
+    
+    if (Array.isArray(this.plantData.distribution.native) && this.plantData.distribution.native.includes(this.user?.country)) {
+      return `This plant is native to your region (${this.user?.country}) and may be highly favorable.`;
+    }
+    
+    if (Array.isArray(this.plantData.distribution.introduced) && this.plantData.distribution.introduced.includes(this.user?.country)) {
+      return `This plant has been introduced to your region (${this.user?.country}) and may adapt well.`;
+    }
+    
+    return `This plant is not suitable for your region (${this.user?.country}).`;
   }
 
   deleteFromFavorites(id: number){

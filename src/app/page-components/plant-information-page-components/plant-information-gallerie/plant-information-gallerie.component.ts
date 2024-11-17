@@ -9,7 +9,8 @@ declare var bootstrap: any;
 
 export class PlantInformationGallerieComponent {
 
-  @Input() plantData: any; 
+  @Input() plantData: any;
+  @Input() limitImages: boolean = true; 
   selectedImage: string = ''; 
 
 
@@ -18,4 +19,9 @@ export class PlantInformationGallerieComponent {
     const modal = new bootstrap.Modal(document.getElementById('imageModal')); 
     modal.show();
   }
+
+  imagesToShow(array: any[]) {
+    return this.limitImages ? array.slice(0, 2) : array;
+  }
+  
 }
