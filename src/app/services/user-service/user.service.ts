@@ -38,4 +38,9 @@ export class UserService {
     return this.http.post(this.API_URL + "/login", body)
     .toPromise();
   }
+
+  changeState(id: number): Promise<any>{
+    return this.http.get(this.API_URL + `/view/${id}`)
+    .toPromise();
+  }
 }

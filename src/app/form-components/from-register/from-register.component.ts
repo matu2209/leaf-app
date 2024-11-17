@@ -67,6 +67,7 @@ export class FromRegisterComponent {
       newUser.birthDate = this.registerForm.value.birthDate;
       newUser.email = this.registerForm.value.email;
       newUser.country = this.registerForm.value.country;
+      newUser.isActivated = true;
       newUser.admin = false;
 
     console.log(newUser);
