@@ -9,6 +9,7 @@ import { FavoritesPageComponent } from './page-components/favorite-page-componen
 import { AdminViewComponent } from './page-components/admin-page-components/admin-view/admin-view.component';
 import { ProfileComponent } from './page-components/profile-page-components/profile/profile.component';
 import { UserViewComponent } from './page-components/user-view/user-view.component';
+import { AdminGuard } from './guards/admin.guard';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent }, 
@@ -16,9 +17,9 @@ const routes: Routes = [
   { path: 'login', component: FormLogInComponent}, 
   { path: 'plant/:id', component: PlantInformationPageComponent},
   { path: 'fav', component: FavoritesPageComponent},
-  { path: 'admin', component: AdminViewComponent},
+  { path: 'admin', component: AdminViewComponent, canActivate: [AdminGuard]},
   { path: 'profile', component: ProfileComponent},
-  { path: 'view/:id', component: UserViewComponent},
+  { path: 'view/:id', component: UserViewComponent, canActivate: [AdminGuard]},
   { path: '**', redirectTo: '', pathMatch: 'full'}
 
 ];
