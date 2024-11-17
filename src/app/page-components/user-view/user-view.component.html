@@ -1,33 +1,3 @@
-<!-- <div class="container mt-4">
-    <div class="row">
-        
-        <div class="col-12 col-md-4 mb-3">
-            <div class="card">
-                <div class="card-header">
-                    User
-                </div>
-                <div class="card-body">
-                    <h5 class="card-title">Username</h5>
-                    <p class="card-text">{{client.username}}</p>
-                    <h5 class="card-title">First name</h5>
-                    <p class="card-text">{{client.firstName}}</p>
-                    <h5 class="card-title">Last name</h5>
-                    <p class="card-text">{{client.lastName}}</p>
-                    <h5 class="card-title">Birthday</h5>
-                    <p class="card-text">{{client.birthDate}}</p>
-                    <h5 class="card-title">Email</h5>
-                    <p class="card-title">{{client.email}}</p>
-                    <h5 class="card-title">Country</h5>
-                    <p class="card-text">{{client.country}}</p>
-                    <button class="btn btn-primary">Algo!</button>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div> -->
-
-
 <div class="user-view container py-5">
     <div class="card shadow-lg">
         <div class="card-body arriba text-center">
@@ -61,8 +31,8 @@
         </div>
         <hr class="my-4">
             <div class="card-footer text-center">
-                <button class="btn btn-sm btn-danger" *ngIf="client.isActivated" (click)="changeState()">Deactivate</button>
-                <button class="btn btn-sm btn-danger" *ngIf="!client.isActivated" (click)="changeState()">Activate</button>
+                <button class="btn btn-sm btn-success" *ngIf="client.isActivated" (click)="changeState()">Deactivate</button>
+                <button class="btn btn-sm btn-success" *ngIf="!client.isActivated" (click)="changeState()">Activate</button>
             </div>
     </div>
 </div>
