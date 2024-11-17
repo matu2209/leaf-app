@@ -6,6 +6,11 @@
     <!-- Plant Header -->
     <app-plant-information-header [plantData]="plantData"></app-plant-information-header>
 
+    
+    <div *ngIf="user && distributionUser" class="alert alert-info text-center my-3" role="alert">
+      {{ distributionUser }}
+    </div>
+
     <div class="card mb-5" *ngIf="user && user.member && !isFavorite(plantData.id)">
       <div class="card-body">
         <button class="btn boton" (click)="addToFavorite(plantData.id)">
@@ -43,7 +48,7 @@
     <app-plant-information-growth [plantData]="plantData"></app-plant-information-growth>
     
     <!-- Image Galleries -->
-    <app-plant-information-gallerie [plantData]="plantData"></app-plant-information-gallerie>
+    <app-plant-information-gallerie [plantData]="plantData" [limitImages]="!user?.member"></app-plant-information-gallerie>
 
     <!-- Sources Section -->
     <app-plant-information-sources [plantData]="plantData"></app-plant-information-sources>

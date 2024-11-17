@@ -55,6 +55,19 @@ app.get('/usuarios/:id', (req, res) => {
     res.status(200).json(usuario);
 });
 
+// Ruta para obtener un usuario por username (GET)
+app.get('/usuarios/username/:username', (req, res) => {
+    const { username } = req.params;
+    const usuarios = leerUsuarios();
+    const usuario = usuarios.find(u => u.username === username);
+
+    if (!usuario) {
+        return res.status(404).send('Usuario no encontrado');
+    }
+
+    res.status(200).json(usuario);
+});
+
 // Ruta para crear un nuevo usuario (POST)
 /* app.post('/usuarios', (req, res) => {
     const { nombre, email, contraseña } = req.body;
@@ -85,6 +98,7 @@ app.post('/usuarios', (req, res) => {
         email: req.body.email,
         country: req.body.country,
         admin: req.body.admin,
+        birthDate: req.body.birthDate,
         favorites: [],
         creditCard: []
     }
