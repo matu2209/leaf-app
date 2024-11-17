@@ -121,15 +121,11 @@
     "password": "1234567",
     "member": true,
     "firstName": "Yahveh",
-    "lastName": "Baccaro",
-    "email": "yahvehBacca@gmail.com",
+    "lastName": "Baccaropopo",
+    "email": "yahvehBaccaro@gmail.com",
     "country": "Argentina Northeast",
     "admin": false,
     "favorites": [
-      {
-        "id": 227114,
-        "note": ""
-      },
       {
         "id": 77107,
         "note": ""
@@ -147,33 +143,28 @@
         "note": "pero BUENOOOOOOOOOOOOO CHAVALEEEES"
       },
       {
-        "id": 256621,
-        "note": "a dance with the"
-      },
-      {
         "id": 159974,
         "note": ""
       },
       {
         "id": 262177,
         "note": "aguante stardew valley"
+      },
+      {
+        "id": 159802,
+        "note": ""
+      },
+      {
+        "id": 351679,
+        "note": "ojnjnnnnnnnnnnnnjnjnjn"
+      },
+      {
+        "id": 231582,
+        "note": "fhgfhhkjlhjjffgjlhj"
       }
     ],
     "creditCard": [],
     "birthDate": "2002-08-15"
-  },
-  {
-    "id": 7,
-    "username": "halm",
-    "password": "123456",
-    "member": false,
-    "firstName": "Christian",
-    "lastName": "Tian",
-    "email": "tian@gmail.com",
-    "country": "ar",
-    "admin": false,
-    "favorites": [],
-    "creditCard": []
   },
   {
     "id": 8,
@@ -209,14 +200,23 @@
     "id": 9,
     "username": "jp",
     "password": "123456",
-    "member": false,
+    "member": true,
     "firstName": "pablo",
     "lastName": "kumar",
     "email": "jp@gmail.com",
-    "country": "ca",
+    "country": "Amur",
     "admin": false,
     "favorites": [],
-    "creditCard": []
+    "creditCard": [
+      {
+        "name": "qjefsajfnl",
+        "number": "1111 1111 1111 1111",
+        "date": "11/10",
+        "cvv": "321",
+        "address": "calle 532",
+        "country": "br"
+      }
+    ]
   },
   {
     "id": 10,
@@ -264,5 +264,116 @@
         "country": "us"
       }
     ]
+  },
+  {
+    "id": 13,
+    "username": "pepe",
+    "password": "123456789",
+    "member": true,
+    "firstName": "juan",
+    "lastName": "perez",
+    "email": "perez@gmail.com",
+    "country": "Amur",
+    "admin": false,
+    "favorites": [
+      {
+        "id": 413482,
+        "note": "que buena planta"
+      },
+      {
+        "id": 227114,
+        "note": ""
+      }
+    ],
+    "creditCard": [
+      {
+        "name": "gvugv",
+        "number": "1111 1111 1111 1111",
+        "date": "05/48",
+        "cvv": "123",
+        "address": "yywhdnwef",
+        "country": "ca"
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "username": "JuamPGK",
+    "password": "123456",
+    "member": false,
+    "firstName": "Juan",
+    "lastName": "Kumar",
+    "email": "jpkumar@gmail.com",
+    "country": "Argentina Northeast",
+    "admin": false,
+    "favorites": [],
+    "creditCard": []
+  },
+  {
+    "id": 15,
+    "username": "hola1",
+    "password": "123456",
+    "member": true,
+    "firstName": "kamkdasmdk",
+    "lastName": "kaslkasdslakm",
+    "email": "aslkdnsalk@ksamdaka.slsadksad",
+    "country": "Argentina Northwest",
+    "admin": false,
+    "favorites": [
+      {
+        "id": 147642,
+        "note": "luglñkn.kn,m"
+      }
+    ],
+    "creditCard": [
+      {
+        "name": "sadksdk",
+        "number": "1222 2222 2222 2222",
+        "date": "11/11",
+        "cvv": "431",
+        "address": "calle 34234",
+        "country": "us"
+      }
+    ]
+  },
+  {
+    "id": 16,
+    "username": "Dias",
+    "password": "888888",
+    "member": false,
+    "firstName": "m m",
+    "lastName": "mkmkm",
+    "email": "kmk@mkm",
+    "country": "Altay",
+    "admin": false,
+    "favorites": [],
+    "creditCard": []
+  },
+  {
+    "id": 17,
+    "username": "Div",
+    "password": "8888888",
+    "member": false,
+    "firstName": "sadkamskm",
+    "lastName": "kmskdmaskdm",
+    "email": "kskda@dsmk",
+    "country": "Aleutian Is.",
+    "admin": false,
+    "favorites": [],
+    "creditCard": []
+  },
+  {
+    "id": 18,
+    "username": "Torm",
+    "password": "999999",
+    "member": false,
+    "firstName": "Tomas",
+    "lastName": "Black",
+    "email": "tomas@gmail.com",
+    "country": "Argentina South",
+    "admin": false,
+    "favorites": [],
+    "creditCard": [],
+    "birthDate": "2024-11-05"
   }
 ]

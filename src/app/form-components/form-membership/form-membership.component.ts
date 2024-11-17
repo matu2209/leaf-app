@@ -31,9 +31,7 @@ export class FormMembershipComponent implements OnInit {
     
     this.authService.loggedInUser$.subscribe(user => {
       this.loggedInUser = user;
-      if (this.loggedInUser) {
-        console.log(this.loggedInUser.creditCard);
-        
+      if (this.loggedInUser) {        
         this.cards = this.loggedInUser.creditCard;
   }
     });

@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { AuthenticationService } from '../../services/authentication-service/authentication.service';
-import { CustomValidators } from '../../customValidators/passwordValidator';
+import { CustomValidators } from '../../customValidators/custom-Validators';
 import { DistributionsService } from '../../services/distribution-service/distributions.service';
 import { TimerService } from '../../services/timer-service/timer.service';
+import { UserService } from '../../services/user-service/user.service';
+import { Client } from '../../../../servidorConJWT/cliente';
 
 declare var bootstrap: any; 
 
@@ -19,9 +21,11 @@ export class FromRegisterComponent {
   distributions: String [] = [];
 
 
-  constructor(private fb: FormBuilder, private http: HttpClient, private AuthenticationService: AuthenticationService, private DistributionsService: DistributionsService, public timerService: TimerService) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private AuthenticationService: AuthenticationService, private DistributionsService: DistributionsService, public timerService: TimerService,
+    private userService: UserService
+  ) {
     this.registerForm = this.fb.group({
-      username: ['', Validators.required],
+      username: ['', [Validators.required], [CustomValidators.usernameExists(this.userService)]],
       birthDate: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       firstName:['', [Validators.required]],
@@ -53,63 +57,54 @@ export class FromRegisterComponent {
       return;
     }
 
-    const newUser = {
-      username: this.registerForm.value.username,
-      password: this.registerForm.value.password,
-      member: false,
-      firstName: this.registerForm.value.firstName,
-      lastName: this.registerForm.value.lastName,
-      birthDate: this.registerForm.value.birthDate,
-      email: this.registerForm.value.email,
-      country: this.registerForm.value.country,
-      admin: false,
-      favorites: [],
-      creditCard: []
-    };
-    console.log(newUser);
-    const url = 'http://localhost:3001/usuarios'; 
+      let newUser: Client = new Client();
 
-    this.http.post(url, newUser).subscribe(
-      response => {
-        console.log('User registered successfully', response);
+      newUser.username = this.registerForm.value.username;
+      newUser.password = this.registerForm.value.password;
+      newUser.member = false;
+      newUser.firstName = this.registerForm.value.firstName;
+      newUser.lastName = this.registerForm.value.lastName;
+      newUser.birthDate = this.registerForm.value.birthDate;
+      newUser.email = this.registerForm.value.email;
+      newUser.country = this.registerForm.value.country;
+      newUser.admin = false;
+
+    console.log(newUser);
+
+    this.userService.registerUser(newUser)
+    .then(response => {
+      console.log('User registered successfully', response);
         alert('User registered successfully');
         this.registerForm.reset();
-          
-                              
-        
-        const url = 'http://localhost:3001/login'; 
+
         const body = {
           username: newUser.username,
           password: newUser.password
         };
 
-        this.http.post<any[]>(url, body).subscribe(
-          users => {
-            if (users) {          
-              this.AuthenticationService.login(users);
-              alert('Login successful');
+        this.userService.logInUser(body)
+        .then(user => {
+          if (user) {          
+            this.AuthenticationService.login(user);
+            alert('Login successful');
+            console.log("Login successful: ", user);
+            this.timerService.stopTimer();
 
-              const modalElement = document.getElementById('RegisterModal');
-              const modalInstance = bootstrap.Modal.getInstance(modalElement);
-              modalInstance.hide();
-          
-            } else {
-              alert('Invalid username or password');
-            }
-          },
-          error => {
-            console.error('Error:', error);
-            alert('An error occurred while validating credentials');
+            const modalElement = document.getElementById('RegisterModal');
+            const modalInstance = bootstrap.Modal.getInstance(modalElement);
+            modalInstance.hide();
+        
+          } else {
+            alert('Invalid username or password');
           }
-        );
-
-
-
-      },
-      error => {
-        console.error('Error registering user', error);
-        alert('Error registering user');
-      }
-    );
+        })
+        .catch(error => {
+          console.error('Error:', error);
+          alert('An error occurred while validating credentials');
+        })
+    })
+    .catch(error => {
+      alert('Error registering user');
+    });
   }
 }
