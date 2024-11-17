@@ -21,4 +21,18 @@ export class UserViewComponent {
     .catch(error=>alert(error));
   }
 
+  changeState(){
+    this.userService.changeState(this.client.id)
+    .then(response=>{
+      
+      this.client = response.user;
+    })
+    .catch(error=>{
+      console.log(error);
+      
+      alert(error);
+
+    });
+  }
+
 }

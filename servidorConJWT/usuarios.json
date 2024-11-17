@@ -9,6 +9,7 @@
     "email": "seba@asd.com",
     "country": "Ascension",
     "admin": true,
+    "isActivated": true,
     "favorites": [
       {
         "id": 198058,
@@ -27,6 +28,7 @@
     "email": "matu@asd.com",
     "country": "argentina",
     "admin": false,
+    "isActivated": true,
     "favorites": [],
     "creditCard": []
   },
@@ -40,6 +42,7 @@
     "email": "joshuabaccaro@gmail.com",
     "country": "Argentina South",
     "admin": false,
+    "isActivated": true,
     "favorites": [
       {
         "id": 77116,
@@ -112,6 +115,7 @@
     "email": "jd@asd-com",
     "country": "us",
     "admin": false,
+    "isActivated": true,
     "favorites": [],
     "creditCard": []
   },
@@ -125,6 +129,7 @@
     "email": "yahvehBaccaro@gmail.com",
     "country": "Argentina Northeast",
     "admin": false,
+    "isActivated": true,
     "favorites": [
       {
         "id": 77107,
@@ -176,6 +181,7 @@
     "email": "js@gmail.com",
     "country": "ar",
     "admin": false,
+    "isActivated": true,
     "favorites": [],
     "creditCard": [
       {
@@ -206,6 +212,7 @@
     "email": "jp@gmail.com",
     "country": "Amur",
     "admin": false,
+    "isActivated": true,
     "favorites": [],
     "creditCard": [
       {
@@ -240,6 +247,7 @@
     "email": "pe@gmail.com",
     "country": "Argentina South",
     "admin": false,
+    "isActivated": true,
     "favorites": [
       {
         "id": 11971,
@@ -275,6 +283,7 @@
     "email": "perez@gmail.com",
     "country": "Amur",
     "admin": false,
+    "isActivated": true,
     "favorites": [
       {
         "id": 413482,
@@ -306,6 +315,7 @@
     "email": "jpkumar@gmail.com",
     "country": "Argentina Northeast",
     "admin": false,
+    "isActivated": true,
     "favorites": [],
     "creditCard": []
   },
@@ -319,6 +329,7 @@
     "email": "aslkdnsalk@ksamdaka.slsadksad",
     "country": "Argentina Northwest",
     "admin": false,
+    "isActivated": true,
     "favorites": [
       {
         "id": 147642,
@@ -346,6 +357,7 @@
     "email": "kmk@mkm",
     "country": "Altay",
     "admin": false,
+    "isActivated": true,
     "favorites": [],
     "creditCard": []
   },
@@ -359,6 +371,7 @@
     "email": "kskda@dsmk",
     "country": "Aleutian Is.",
     "admin": false,
+    "isActivated": false,
     "favorites": [],
     "creditCard": []
   },
@@ -372,6 +385,7 @@
     "email": "tomas@gmail.com",
     "country": "Argentina South",
     "admin": false,
+    "isActivated": false,
     "favorites": [],
     "creditCard": [],
     "birthDate": "2024-11-05"

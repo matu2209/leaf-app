@@ -99,6 +99,7 @@ app.post('/usuarios', (req, res) => {
         country: req.body.country,
         admin: req.body.admin,
         birthDate: req.body.birthDate,
+        isActivated: req.body.isActivated,
         favorites: [],
         creditCard: []
     }
@@ -238,6 +239,25 @@ app.delete('/tarjetas', autenticarToken, (req, res) => {
     guardarUsuarios(usuarios);
 
     res.status(200).json(usuarios[i].creditCard);
+})
+
+app.get('/view/:id', (req, res) => {
+    const { id } = req.params;
+    const usuarios = leerUsuarios();
+    const usuarioIndex = usuarios.findIndex(u => u.id === parseInt(id));
+    
+    if (usuarioIndex === -1) {
+        return res.status(404).send('Usuario no encontrado');
+    }
+    if (usuarios[usuarioIndex].isActivated){
+        usuarios[usuarioIndex].isActivated = false;
+        guardarUsuarios(usuarios);
+        res.status(200).json({ message: 'Usuario desactivado', user: usuarios[usuarioIndex] });
+    } else {
+        usuarios[usuarioIndex].isActivated = true;
+        guardarUsuarios(usuarios);
+        res.status(200).json({ message: 'Usuario activado', user: usuarios[usuarioIndex] });
+    }
 })
 // Iniciar el servidor
 app.listen(PORT, () => {

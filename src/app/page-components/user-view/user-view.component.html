@@ -59,14 +59,11 @@
                 </div>
             </div>
         </div>
+        <hr class="my-4">
+            <div class="card-footer text-center">
+                <button class="btn btn-sm btn-danger" *ngIf="client.isActivated" (click)="changeState()">Deactivate</button>
+                <button class="btn btn-sm btn-danger" *ngIf="!client.isActivated" (click)="changeState()">Activate</button>
+            </div>
     </div>
 </div>
 
-
-    <!-- <hr class="my-4">
-        <div class="card-footer text-center">
-            <button class="btn btn-outline-light me-2" role="button" data-bs-toggle="modal" data-bs-target="#MembershipModal" *ngIf="">Adquirir Membresía</button>
-            <button class="btn btn-light me-2" data-bs-toggle="collapse" data-bs-target="#passwordChangeCollapse" aria-expanded="false" aria-controls="passwordChangeCollapse">
-                Modificar Contraseña
-            </button>
-        </div> -->
