@@ -25,6 +25,7 @@ export class UserViewComponent {
     this.userService.changeState(this.client.id)
     .then(response=>{
       
+      alert(response.message);
       this.client = response.user;
     })
     .catch(error=>{

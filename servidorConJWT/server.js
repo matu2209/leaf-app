@@ -252,11 +252,11 @@ app.get('/view/:id', (req, res) => {
     if (usuarios[usuarioIndex].isActivated){
         usuarios[usuarioIndex].isActivated = false;
         guardarUsuarios(usuarios);
-        res.status(200).json({ message: 'Usuario desactivado', user: usuarios[usuarioIndex] });
+        res.status(200).json({ message: 'User deactivated', user: usuarios[usuarioIndex] });
     } else {
         usuarios[usuarioIndex].isActivated = true;
         guardarUsuarios(usuarios);
-        res.status(200).json({ message: 'Usuario activado', user: usuarios[usuarioIndex] });
+        res.status(200).json({ message: 'User activated', user: usuarios[usuarioIndex] });
     }
 })
 // Iniciar el servidor

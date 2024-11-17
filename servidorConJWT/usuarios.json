@@ -42,7 +42,7 @@
     "email": "joshuabaccaro@gmail.com",
     "country": "Argentina South",
     "admin": false,
-    "isActivated": true,
+    "isActivated": false,
     "favorites": [
       {
         "id": 77116,
@@ -371,7 +371,7 @@
     "email": "kskda@dsmk",
     "country": "Aleutian Is.",
     "admin": false,
-    "isActivated": false,
+    "isActivated": true,
     "favorites": [],
     "creditCard": []
   },
