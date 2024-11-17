@@ -18,7 +18,8 @@ const routes: Routes = [
   { path: 'fav', component: FavoritesPageComponent},
   { path: 'admin', component: AdminViewComponent},
   { path: 'profile', component: ProfileComponent},
-  { path: 'view/:id', component: UserViewComponent}
+  { path: 'view/:id', component: UserViewComponent},
+  { path: '**', redirectTo: '', pathMatch: 'full'}
 
 ];
 
