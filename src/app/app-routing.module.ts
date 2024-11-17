@@ -8,6 +8,7 @@ import { PlantInformationPageComponent } from './page-components/plant-informati
 import { FavoritesPageComponent } from './page-components/favorite-page-components/favorites-page/favorites-page.component';
 import { AdminViewComponent } from './page-components/admin-page-components/admin-view/admin-view.component';
 import { ProfileComponent } from './page-components/profile-page-components/profile/profile.component';
+import { UserViewComponent } from './page-components/user-view/user-view.component';
 
 const routes: Routes = [
   { path: '', component: HomePageComponent }, 
@@ -16,7 +17,8 @@ const routes: Routes = [
   { path: 'plant/:id', component: PlantInformationPageComponent},
   { path: 'fav', component: FavoritesPageComponent},
   { path: 'admin', component: AdminViewComponent},
-  { path: 'profile', component: ProfileComponent}
+  { path: 'profile', component: ProfileComponent},
+  { path: 'view/:id', component: UserViewComponent}
 
 ];
 

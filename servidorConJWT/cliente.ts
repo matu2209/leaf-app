@@ -10,6 +10,7 @@ export class Client {
     email: string = "";
     country: string = "";
     admin: boolean = false;
+    isActivated: boolean = false;
     favorites: { id: number, note: string }[] = [];
     creditCard: {name: string, number: string, date: string, cvv: string, address: string, country: string }[] = [];
 }

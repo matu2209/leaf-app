@@ -1,0 +1,39 @@
+<div class="user-view container py-5">
+    <div class="card shadow-lg">
+        <div class="card-body arriba text-center">
+            <div class="profile-image mx-auto mb-3">
+                <img src="logo-planta.png" alt="Foto de perfil" class="img-fluid rounded-circle"
+                    style="width: 120px; height: 120px;">
+            </div>
+            <h4 class="card-title mb-1"> {{ client.firstName }} {{ client.lastName }}</h4>
+            <span *ngIf="client.member">Miembro</span>
+        </div>
+        <hr class="my-4">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <label for="username"><strong>Username:</strong></label>
+                    <h5> {{client.username}}</h5>
+                </div>
+                <div class="col-md-6">
+                    <label for="email"><strong>Email:</strong></label>
+                    <h5>{{client.email}}</h5>
+                </div>
+                <div class="col-md-6">
+                    <label for="birth-date"><strong>Birthday:</strong></label>
+                    <h5>{{client.birthDate}}</h5>
+                </div>
+                <div class="col-md-6">
+                    <label for="country"><strong>Country:</strong></label>
+                    <h5>{{client.country}}</h5>
+                </div>
+            </div>
+        </div>
+        <hr class="my-4">
+            <div class="card-footer text-center">
+                <button class="btn btn-sm btn-success" *ngIf="client.isActivated" (click)="changeState()">Deactivate</button>
+                <button class="btn btn-sm btn-success" *ngIf="!client.isActivated" (click)="changeState()">Activate</button>
+            </div>
+    </div>
+</div>
+
