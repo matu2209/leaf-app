@@ -4,7 +4,7 @@ import { AuthenticationService } from '../../../services/authentication-service/
 import { Client } from '../../../../../servidorConJWT/cliente';
 import { CustomValidators } from '../../../customValidators/custom-Validators';
 import { DistributionsService } from '../../../services/distribution-service/distributions.service';
-
+import { ToastNotificationService } from '../../../services/toast-service/toast-notification.service';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -18,7 +18,7 @@ export class ProfileComponent implements OnInit {
 
   distributions: String [] = [];
 
-  constructor(private authService: AuthenticationService, private DistributionsService: DistributionsService) {
+  constructor(private authService: AuthenticationService, private DistributionsService: DistributionsService, private toastNotificationService: ToastNotificationService) {
     this.passwordForm = new FormGroup({
       password: new FormControl('', [Validators.required, Validators.minLength(6)]),
       passwordConfirmation: new FormControl('', [Validators.required])
@@ -63,7 +63,7 @@ export class ProfileComponent implements OnInit {
       this.authService.updateUser(this.loggedInUser).subscribe(
         response => {
           console.log(`${field} actualizado correctamente.`);
-          alert(`${field} actualizado correctamente.`);
+          this.toastNotificationService.showToast("Profile updated successfully!");
         },
         error => {
           console.error(`Error al actualizar ${field}:`, error);
@@ -88,7 +88,7 @@ export class ProfileComponent implements OnInit {
       this.authService.updateUser(this.loggedInUser).subscribe(
         response => {
           console.log('Contraseña actualizada correctamente.');
-          alert('Contraseña actualizada correctamente.');
+          this.toastNotificationService.showToast("Password updated successfully!");
           this.isPasswordChangeVisible = false; // Ocultar el formulario después de guardar
         },
         error => {
@@ -98,5 +98,5 @@ export class ProfileComponent implements OnInit {
       );
     }
   }
-  
+
 }

@@ -12,3 +12,71 @@
 .table td, .table th {
     word-wrap: break-word;
 }
+.admin-view {
+    background-color: #697353; 
+    padding: 20px;
+    border-radius: 8px;
+  
+    h2 {
+      color: #ffffff;
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+  
+    .table-responsive {
+      background-color: #F2E1AC; 
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  
+    table {
+      background-color: #F2E1AC; 
+      width: 100%;
+      border-collapse: collapse;
+  
+      thead {
+        background-color: #697353; 
+        color: #F2E1AC; 
+      }
+  
+      th, td {
+        border: 1px solid #D9C6A3; 
+        padding: 10px;
+        text-align: left;
+        color: #40352B; 
+      }
+  
+      tr:nth-child(even) {
+        background-color: #D9C6A3; 
+      }
+  
+      tr:hover {
+        background-color: #697353; 
+        color: #F2E1AC;
+      }
+    }
+  
+    button {
+      background-color: #697353;
+      color: #ffffff; 
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.9rem;
+  
+      &:hover {
+        background-color: #F2E1AC; 
+        color: #40352B;
+      }
+    }
+  
+    p {
+      color: #40352B; 
+      font-size: 1rem;
+      text-align: center;
+    }
+  }
+  

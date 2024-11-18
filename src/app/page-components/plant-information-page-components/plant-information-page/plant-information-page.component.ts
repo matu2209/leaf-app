@@ -4,7 +4,8 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { PlantsService } from '../../../services/plants-service/plants.service';
 import { AuthenticationService } from '../../../services/authentication-service/authentication.service';
 import { Client } from '../../../../../servidorConJWT/cliente';
-
+import { ToastNotificationService } from '../../../services/toast-service/toast-notification.service';
+declare var bootstrap: any;  
 @Component({
   selector: 'app-plant-information-page',
   templateUrl: './plant-information-page.component.html',
@@ -13,14 +14,15 @@ import { Client } from '../../../../../servidorConJWT/cliente';
 export class PlantInformationPageComponent implements OnInit{
   noteForm!: FormGroup;
 
-  constructor(private fb: FormBuilder, private PlantsService: PlantsService, private route: ActivatedRoute, private AuthenticationService: AuthenticationService){
+  constructor(private fb: FormBuilder, private PlantsService: PlantsService, private route: ActivatedRoute, private AuthenticationService: AuthenticationService, private toastNotificationService: ToastNotificationService){
   }
-
+  message: string = "";
   id: number = 0;
   plantData: any;
   distributionUser: string = "";
   user?: Client;
 
+  spinner: boolean = true;
   ngOnInit(): void {
 
     this.noteForm = this.fb.group({
@@ -45,6 +47,7 @@ export class PlantInformationPageComponent implements OnInit{
                 this.distributionUser = this.isFavorable();
             }
           });
+          this.spinner = false;
       },
       (error) => {
         console.error('Error al obtener el token:', error);
@@ -67,6 +70,7 @@ export class PlantInformationPageComponent implements OnInit{
         .subscribe(
           response => {
             console.log("Planta agregada a favoritos:", { id, note: "" });
+            this.toastNotificationService.showToast(this.plantData.common_name +' has been added to your favorites.');
           },
           error => {
             console.error("Error al actualizar el usuario:", error);
@@ -114,7 +118,8 @@ export class PlantInformationPageComponent implements OnInit{
         this.AuthenticationService.updateUser(this.user)
         .subscribe(
           response => {
-            console.log("Planta agregada a favoritos:", { id, note: "" });
+            console.log("Planta eliminada de favoritos:", { id, note: "" });
+            this.toastNotificationService.showToast(this.plantData.common_name +' has been removed from favorites');
           },
           error => {
             console.error("Error al actualizar el usuario:", error);
@@ -136,6 +141,13 @@ export class PlantInformationPageComponent implements OnInit{
           .subscribe(
             response => {
               console.log("Note updated successfully:", favorite.note);
+              if(favorite.note!== ""){
+                this.toastNotificationService.showToast("the note has been updated to: " + favorite.note);
+              }
+              else{
+                this.toastNotificationService.showToast('Note cleared');
+              }
+              
             },
             error => {
               console.error("Error updating note", error);

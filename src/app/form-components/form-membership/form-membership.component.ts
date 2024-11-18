@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { AuthenticationService } from '../../services/authentication-service/authentication.service';
 import { HttpClient } from '@angular/common/http';
 import { Client } from '../../../../servidorConJWT/cliente';
+import { ToastNotificationService } from '../../services/toast-service/toast-notification.service'; 
 declare var bootstrap: any;
 @Component({
   selector: 'app-form-membership',
@@ -16,7 +17,7 @@ export class FormMembershipComponent implements OnInit {
   showForm: boolean = false;
   loggedInUser? : Client
 
-  constructor(private fb: FormBuilder, private authService: AuthenticationService, private http: HttpClient) {
+  constructor(private fb: FormBuilder, private authService: AuthenticationService, private http: HttpClient,private toast: ToastNotificationService){
     this.membershipForm = this.fb.group({
       cardholderName: ['', Validators.required],
       cardNumber: ['', [Validators.required, Validators.pattern(/^\d{4} \d{4} \d{4} \d{4}$/)]],
@@ -112,7 +113,7 @@ export class FormMembershipComponent implements OnInit {
       .subscribe(
         response => {
           console.log("Se agrego correctamente la tarjeta");
-          alert('Se agrego correctamente la tarjeta');
+          this.toast.showToast("Membership aquired successfully! Your membership is now active. Thank you for choosing Leaf!");  
           this.membershipForm.reset();
           const modalElement = document.getElementById('MembershipModal');
           const modalInstance = bootstrap.Modal.getInstance(modalElement);

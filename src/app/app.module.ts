@@ -27,6 +27,7 @@ import { AdminViewComponent } from './page-components/admin-page-components/admi
 import { ProfileComponent } from './page-components/profile-page-components/profile/profile.component';
 import { TimerAlertComponent } from './page-components/timer-components/timer-alert/timer-alert.component';
 import { UserViewComponent } from './page-components/user-view/user-view.component';
+import { ToastNotificationsComponent } from './alerts/toast-notifications/toast-notifications.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,8 @@ import { UserViewComponent } from './page-components/user-view/user-view.compone
     AdminViewComponent,
     ProfileComponent,
     TimerAlertComponent,
-    UserViewComponent
+    UserViewComponent,
+    ToastNotificationsComponent,
     ],  
   imports: [
     HttpClientModule,

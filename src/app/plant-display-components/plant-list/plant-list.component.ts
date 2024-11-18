@@ -15,6 +15,8 @@ export class PlantListComponent {
 
   plants: any[] = [];
 
+  spinner: boolean = false;
+
   actualPage: String = "1";
   firstPage: String = "";
   previousPage: String = "";
@@ -33,6 +35,7 @@ export class PlantListComponent {
     });
 
     if(!this.PlantsService.token){
+      this.spinner = true;
       this.PlantsService.getToken().subscribe(
         (data) => {
           console.log('Token recibido:', data.token);
@@ -43,12 +46,16 @@ export class PlantListComponent {
           console.error('Error al obtener el token:', error);
         }
       );
-    }else{
+    }
+    else{
       if(this.favPlants){
         this.loadFavoritesPlants();
       }
       else if(this.initplants || this.PlantsService.plants.length == 0){
         this.plants = this.PlantsService.initplants;
+        if(this.PlantsService.initplants.length == 0){
+          this.loadPlants();
+        }
       }
       else{
         this.loadFilteredPlants();
@@ -57,12 +64,14 @@ export class PlantListComponent {
   }
 
   loadPlants(): void {
+    this.spinner = true;
     // Llama a tu servicio para obtener las plantas
     this.PlantsService.getPlants().subscribe(
       (data) => {
         this.plants = data.data; // Guarda los registros de plantas
         this.plants = this.plants.slice(0,9);
         this.PlantsService.initplants = this.plants;
+        this.spinner = false;
         console.log('Plantas recibidas:', this.plants);
       },
       (error) => {
@@ -81,6 +90,7 @@ export class PlantListComponent {
   }
 
   loadFavoritesPlants(){
+    this.spinner = true;
     if (!this.user || !this.user.favorites.length) {
       console.log("No se encontraron plantas favoritas.");
       return;
@@ -95,6 +105,7 @@ export class PlantListComponent {
         // this.plants = results;
         this.plants = results.map((result) => result.data); //recupero solo el atributo data que me interesa
         console.log('Plantas favoritas cargadas:', this.plants);
+        this.spinner = false;
       },
       (error) => {
         console.error('Error al cargar las plantas favoritas:', error);

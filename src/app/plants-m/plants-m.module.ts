@@ -12,6 +12,7 @@ import { PlantInformationDistributionsComponent } from '../page-components/plant
 import { PlantInformationSpecificationsComponent } from '../page-components/plant-information-page-components/plant-information-specifications/plant-information-specifications.component';
 import { PlantInformationGrowthComponent } from '../page-components/plant-information-page-components/plant-information-growth/plant-information-growth.component';
 import { PlantInformationGallerieComponent } from '../page-components/plant-information-page-components/plant-information-gallerie/plant-information-gallerie.component';
+import { SpinnerComponent } from '../spinner/spinner.component';
 
 
 
@@ -25,6 +26,7 @@ import { PlantInformationGallerieComponent } from '../page-components/plant-info
     PlantInformationSpecificationsComponent,
     PlantInformationGrowthComponent,
     PlantInformationGallerieComponent,
+    SpinnerComponent
   ],
   imports: [
     CommonModule,
@@ -37,6 +39,7 @@ import { PlantInformationGallerieComponent } from '../page-components/plant-info
     PlantInformationSpecificationsComponent,
     PlantInformationGrowthComponent,
     PlantInformationGallerieComponent,
+    SpinnerComponent
   ]
 })
 export class PlantsMModule { }

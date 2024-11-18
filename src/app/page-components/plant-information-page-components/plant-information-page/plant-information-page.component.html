@@ -1,6 +1,8 @@
 <br><br>
 <br>
-<br>
+<div class="container text-center mt-5">
+  <app-spinner *ngIf="spinner == true"></app-spinner>
+</div>
 
 <div class="container my-5" *ngIf="plantData">
     <!-- Plant Header -->
@@ -27,7 +29,7 @@
           <div class="input-group">
             <textarea type="text" class="form-control" formControlName="note" placeholder="Write your personal notes about this plant..."></textarea>
             <button class="btn boton" type="submit">
-                Save Note
+              <i class="bi bi-save"></i>
             </button>
           </div>
         </form>
@@ -60,6 +62,6 @@
         </button>
       </div>
     </div>
-  
   </div>
+<!-- <app-toast-notifications [notificationMessage]="message"></app-toast-notifications> -->
   

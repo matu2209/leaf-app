@@ -6,26 +6,34 @@
                     style="width: 120px; height: 120px;">
             </div>
             <h4 class="card-title mb-1"> {{ client.firstName }} {{ client.lastName }}</h4>
-            <span *ngIf="client.member">Miembro</span>
+            <span class="badge bg-primary" *ngIf="client.member">Miembro</span>
         </div>
         <hr class="my-4">
         <div class="card-body">
             <div class="row">
                 <div class="col-md-6">
-                    <label for="username"><strong>Username:</strong></label>
-                    <h5> {{client.username}}</h5>
+                    <label><strong>Nombre de usuario:</strong></label>
+                    <input type="text"class="form-control" value="{{client.username}}">
                 </div>
                 <div class="col-md-6">
-                    <label for="email"><strong>Email:</strong></label>
-                    <h5>{{client.email}}</h5>
+                    <label><strong>Email:</strong></label>
+                    <input type="text" class="form-control" value="{{client.email}}">
                 </div>
                 <div class="col-md-6">
-                    <label for="birth-date"><strong>Birthday:</strong></label>
-                    <h5>{{client.birthDate}}</h5>
+                    <label><strong>Nombre:</strong></label>
+                    <input type="text"class="form-control" value="{{client.firstName}}">
                 </div>
                 <div class="col-md-6">
-                    <label for="country"><strong>Country:</strong></label>
-                    <h5>{{client.country}}</h5>
+                    <label><strong>Apellido:</strong></label>
+                    <input type="text"class="form-control" value="{{client.lastName}}">
+                </div>
+                <div class="col-md-6">
+                    <label><strong>Fecha de nacimiento:</strong></label>
+                    <input type="text"class="form-control" value="{{client.birthDate}}">
+                </div>
+                <div class="col-md-6">
+                    <label><strong>Pais:</strong></label>
+                    <input type="text"class="form-control" value="{{client.country}}">
                 </div>
             </div>
         </div>

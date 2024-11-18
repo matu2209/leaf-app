@@ -66,20 +66,20 @@
                         <div class="col-md-6">
                             <label for="password"><strong>Contraseña:</strong></label>
                             <input type="password" id="password" class="form-control" formControlName="password">
-                            <div *ngIf="passwordForm.get('password')?.invalid && passwordForm.get('password')?.touched" class="text-danger">
+                            <div *ngIf="passwordForm.get('password')?.invalid && (passwordForm.get('password')?.dirty || passwordForm.get('password')?.touched)" class="text-danger">
                                 La contraseña debe tener al menos 6 caracteres.
                             </div>
                         </div>
                         <div class="col-md-6">
                             <label for="passwordConfirmation"><strong>Confirmar Contraseña:</strong></label>
                             <input type="password" id="passwordConfirmation" class="form-control" formControlName="passwordConfirmation">
-                            <div *ngIf="passwordForm.get('passwordConfirmation')?.invalid && passwordForm.get('passwordConfirmation')?.touched" class="text-danger">
+                            <div *ngIf="passwordForm.hasError('passwordMismatch')" class="text-danger">
                                 Las contraseñas no coinciden.
                             </div>
                         </div>
                     </div>
                     <div class="text-center mt-3">
-                        <button type="submit" class="btn btn-primary mt-3" [disabled]="passwordForm.invalid">Guardar Contraseña</button>
+                        <button type="submit" class="btn btn-primary mt-3" data-bs-toggle="collapse" data-bs-target="#passwordChangeCollapse" aria-expanded="false" aria-controls="passwordChangeCollapse" [disabled]="passwordForm.invalid">Guardar Contraseña</button>
                     </div>
                 </form>
             </div>
