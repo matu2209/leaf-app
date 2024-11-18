@@ -47,7 +47,7 @@
     <ul class="dropdown-menu dropdown-menu-lg-end">
       <li><a class="dropdown-item prfl" routerLink="/profile" role="button" *ngIf="user">My profile</a></li>
       <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item prfl" (click)="logOut()" *ngIf="user">Log out</a></li>
+      <li><a class="dropdown-item prfl" (click)="logOut()" routerLink="" *ngIf="user">Log out</a></li>
     </ul>
   </div>  
 </div>
