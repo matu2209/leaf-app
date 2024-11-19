@@ -171,6 +171,9 @@ app.post('/login', (req, res) => {
     if (!usuario) {
         return res.status(401).send('Credenciales incorrectas');
     }
+    if(usuario.isActivated === false){
+        return res.status(403).send('Inactive user');
+    }
 
     // Generar el token
     const token = jwt.sign({ id: usuario.id, nombre: "Miau Miaaaaaaaau", username: usuario.username}, SECRET_KEY, { expiresIn: '1h' });

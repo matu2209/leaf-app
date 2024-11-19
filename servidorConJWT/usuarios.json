@@ -9,7 +9,7 @@
     "email": "seba@asd.com",
     "country": "Ascension",
     "admin": true,
-    "isActivated": false,
+    "isActivated": true,
     "favorites": [
       {
         "id": 128843,
@@ -51,7 +51,7 @@
     "email": "joshuabaccaro@gmail.com",
     "country": "Alabama",
     "admin": false,
-    "isActivated": false,
+    "isActivated": true,
     "favorites": [
       {
         "id": 59830,
@@ -152,7 +152,7 @@
     "email": "jd@asd-com",
     "country": "us",
     "admin": false,
-    "isActivated": true,
+    "isActivated": false,
     "favorites": [],
     "creditCard": []
   },
