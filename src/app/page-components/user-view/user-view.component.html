@@ -6,13 +6,13 @@
                     style="width: 120px; height: 120px;">
             </div>
             <h4 class="card-title mb-1"> {{ client.firstName }} {{ client.lastName }}</h4>
-            <span class="badge bg-primary" *ngIf="client.member">Miembro</span>
+            <span class="badge bg-primary" *ngIf="client.member">Member</span>
         </div>
         <hr class="my-4">
         <div class="card-body">
             <div class="row">
                 <div class="col-md-6">
-                    <label><strong>Nombre de usuario:</strong></label>
+                    <label><strong>Username:</strong></label>
                     <input type="text"class="form-control" value="{{client.username}}">
                 </div>
                 <div class="col-md-6">
@@ -20,19 +20,19 @@
                     <input type="text" class="form-control" value="{{client.email}}">
                 </div>
                 <div class="col-md-6">
-                    <label><strong>Nombre:</strong></label>
+                    <label><strong>Name:</strong></label>
                     <input type="text"class="form-control" value="{{client.firstName}}">
                 </div>
                 <div class="col-md-6">
-                    <label><strong>Apellido:</strong></label>
+                    <label><strong>Lastname:</strong></label>
                     <input type="text"class="form-control" value="{{client.lastName}}">
                 </div>
                 <div class="col-md-6">
-                    <label><strong>Fecha de nacimiento:</strong></label>
+                    <label><strong>Birthday:</strong></label>
                     <input type="text"class="form-control" value="{{client.birthDate}}">
                 </div>
                 <div class="col-md-6">
-                    <label><strong>Pais:</strong></label>
+                    <label><strong>Country:</strong></label>
                     <input type="text"class="form-control" value="{{client.country}}">
                 </div>
             </div>

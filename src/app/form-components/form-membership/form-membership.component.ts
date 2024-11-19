@@ -36,51 +36,9 @@ export class FormMembershipComponent implements OnInit {
         this.cards = this.loggedInUser.creditCard;
   }
     });
-    console.log(this.loggedInUser);
-    
-    // this.cards = [
-    //   {
-    //     cardholderName: 'Alice Johnson',
-    //     cardNumber: '1234 5678 1234 5678',
-    //     expirationDate: '12/25',
-    //     cvv: '123',
-    //     billingAddress: '123 Elm Street',
-    //     country: 'us'
-    //   },
-    //   {
-    //     cardholderName: 'Bob Smith',
-    //     cardNumber: '2345 6789 2345 6789',
-    //     expirationDate: '05/24',
-    //     cvv: '456',
-    //     billingAddress: '456 Oak Avenue',
-    //     country: 'ca'
-    //   },
-    //   {
-    //     cardholderName: 'Carlos Perez',
-    //     cardNumber: '3456 7890 3456 7890',
-    //     expirationDate: '08/26',
-    //     cvv: '789',
-    //     billingAddress: '789 Pine Road',
-    //     country: 'br'
-    //   },
-    //   {
-    //     cardholderName: 'Diana Lopez',
-    //     cardNumber: '4567 8901 4567 8901',
-    //     expirationDate: '11/23',
-    //     cvv: '012',
-    //     billingAddress: '101 Maple Boulevard',
-    //     country: 'ar'
-    //   }
-    // ];
+    //console.log(this.loggedInUser);
   }
   
-  // loadCardDetails() {
-  
-  //   const selectedCard = this.selectedCardControl.value;
-  //   if (selectedCard) {
-  //     this.membershipForm.patchValue(selectedCard);
-  //   }
-  // }
 
   addNewCard() {
     this.membershipForm.reset();
@@ -112,8 +70,8 @@ export class FormMembershipComponent implements OnInit {
       this.authService.updateUser(this.loggedInUser)
       .subscribe(
         response => {
-          console.log("Se agrego correctamente la tarjeta");
-          this.toast.showToast("Membership aquired successfully! Your membership is now active. Thank you for choosing Leaf!");  
+          //console.log("Se agrego correctamente la tarjeta");
+          this.toast.showToast("Membership aquired successfully! Your membership is now active. Thanks!");  
           this.membershipForm.reset();
           const modalElement = document.getElementById('MembershipModal');
           const modalInstance = bootstrap.Modal.getInstance(modalElement);

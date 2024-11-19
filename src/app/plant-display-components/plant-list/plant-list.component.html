@@ -1,5 +1,8 @@
 
+<app-not-found *ngIf="this.plants.length == 0 && spinner == false"></app-not-found>
+
 <app-spinner *ngIf="spinner == true"></app-spinner>
+
 <div class="container">
     <div class="row">
       <div class="col-md-4" *ngFor="let plant of plants">

@@ -5,7 +5,7 @@
                 <img src="logo-planta.png" alt="Foto de perfil" class="img-fluid rounded-circle" style="width: 120px; height: 120px;">
             </div>
             <h4 class="card-title mb-1">{{ profileForm.value.firstName }} {{ profileForm.value.lastName }}</h4>
-            <span class="badge bg-primary" *ngIf="loggedInUser && loggedInUser.member">Miembro</span>
+            <span class="badge bg-primary" *ngIf="loggedInUser && loggedInUser.member">Member</span>
         </div>
         <hr class="my-4">
         
@@ -13,7 +13,7 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-md-6">
-                        <label for="username"><strong>Nombre de usuario:</strong></label>
+                        <label for="username"><strong>Username:</strong></label>
                         <input type="text" id="username" class="form-control" formControlName="username" >
                     </div>
                     <div class="col-md-6">
@@ -24,28 +24,28 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="first-name"><strong>Nombre:</strong></label>
+                        <label for="first-name"><strong>Name:</strong></label>
                         <div class="input-group">
                             <input type="text" id="first-name" class="form-control" formControlName="firstName">
                             <button class="btn btn-outline-primary" type="button" (click)="submitChange('firstName')"><i class="bi bi-save"></i></button>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="last-name"><strong>Apellido:</strong></label>
+                        <label for="last-name"><strong>Lastname:</strong></label>
                         <div class="input-group">
                             <input type="text" id="last-name" class="form-control" formControlName="lastName">
                             <button class="btn btn-outline-primary" type="button" (click)="submitChange('lastName')"><i class="bi bi-save"></i></button>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="birth-date"><strong>Fecha de nacimiento:</strong></label>
+                        <label for="birth-date"><strong>Birthday:</strong></label>
                         <div class="input-group">
                             <input type="date" id="birth-date" class="form-control" formControlName="birthDate">
                             <button class="btn btn-outline-primary" type="button" (click)="submitChange('birthDate')"><i class="bi bi-save"></i></button>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="country"><strong>País:</strong></label>
+                        <label for="country"><strong>Country:</strong></label>
                         <div class="input-group">
                             <select id="country" class="form-control" formControlName="country">
                                 <option *ngFor="let dist of distributions" [value]="dist">{{ dist }}</option>
@@ -64,22 +64,25 @@
                 <form [formGroup]="passwordForm" (ngSubmit)="submitPasswordChange()">
                     <div class="row">
                         <div class="col-md-6">
-                            <label for="password"><strong>Contraseña:</strong></label>
+                            <label for="password"><strong>Password:</strong></label>
                             <input type="password" id="password" class="form-control" formControlName="password">
                             <div *ngIf="passwordForm.get('password')?.invalid && (passwordForm.get('password')?.dirty || passwordForm.get('password')?.touched)" class="text-danger">
-                                La contraseña debe tener al menos 6 caracteres.
+                                The password must be at least 6 characters long.
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <label for="passwordConfirmation"><strong>Confirmar Contraseña:</strong></label>
+                            <label for="passwordConfirmation"><strong>Confirm password:</strong></label>
                             <input type="password" id="passwordConfirmation" class="form-control" formControlName="passwordConfirmation">
                             <div *ngIf="passwordForm.hasError('passwordMismatch')" class="text-danger">
-                                Las contraseñas no coinciden.
+                                The passwords do not match.
                             </div>
                         </div>
                     </div>
                     <div class="text-center mt-3">
-                        <button type="submit" class="btn btn-primary mt-3" data-bs-toggle="collapse" data-bs-target="#passwordChangeCollapse" aria-expanded="false" aria-controls="passwordChangeCollapse" [disabled]="passwordForm.invalid">Guardar Contraseña</button>
+                        <button type="submit" class="btn btn-primary mt-3" data-bs-toggle="collapse" data-bs-target="#passwordChangeCollapse" 
+                        aria-expanded="false" aria-controls="passwordChangeCollapse" [disabled]="passwordForm.invalid">
+                            Save password
+                        </button>
                     </div>
                 </form>
             </div>
@@ -89,7 +92,7 @@
         <div class="card-footer text-center">
             <button class="btn btn-outline-light me-2" role="button" data-bs-toggle="modal" data-bs-target="#MembershipModal" *ngIf="loggedInUser && !loggedInUser.member">Adquirir Membresía</button>
             <button class="btn btn-light me-2" data-bs-toggle="collapse" data-bs-target="#passwordChangeCollapse" aria-expanded="false" aria-controls="passwordChangeCollapse">
-                Modificar Contraseña
+                Change password
             </button>
         </div>
     </div>

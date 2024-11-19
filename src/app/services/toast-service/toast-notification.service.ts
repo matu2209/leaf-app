@@ -7,7 +7,7 @@ export class ToastNotificationService {
 
   constructor() { }
   showToast(alertMessage: string){
-    console.log(alertMessage);
+    //console.log(alertMessage);
     const toastElement = document.getElementById('liveToast');
     if(toastElement) {
     const body = toastElement.querySelector('.toast-body');

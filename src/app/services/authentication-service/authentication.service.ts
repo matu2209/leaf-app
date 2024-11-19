@@ -57,7 +57,7 @@ export class AuthenticationService {
   }
 
   updateUser(user: Client){
-    console.log(user);
+    //console.log(user);
     const url = `http://localhost:3001/usuarios/${user.id}`; // RUTA JSON SERVER
   
     const body = {

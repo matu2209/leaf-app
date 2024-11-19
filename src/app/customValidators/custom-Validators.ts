@@ -19,7 +19,6 @@ export class CustomValidators {
       else {
         return userService.getByuserName(control.value)
             .then(response => {
-                console.log("que ond apa");
                 return response ? { 'usernameExists': { value: control.value } } : null;
             })
             .catch(error => {

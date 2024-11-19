@@ -46,7 +46,7 @@ export class PlantsService{
     const apiUrl = `https://trefle.io/api/v1/plants?token=${this.token}${query}&page=${page}`;
     this.lastFilter = `${query}`;
     
-    console.log(apiUrl);
+    //console.log(apiUrl);
     return this.http.get(apiUrl); 
   }
 
@@ -56,7 +56,7 @@ export class PlantsService{
     }
     const apiUrl = `https://trefle.io/api/v1/plants?token=${this.token}&filter[common_name]=${query}`;
 
-    console.log(apiUrl);
+    //console.log(apiUrl);
     return this.http.get(apiUrl); 
   }
 
@@ -64,10 +64,10 @@ export class PlantsService{
     if (!this.token) {
       throw new Error('Token no disponible');
     }
-    console.log("el id que busco en la api es: ", id);
+    //console.log("el id que busco en la api es: ", id);
     const apiUrl = `https://trefle.io/api/v1/species/${id}?token=${this.token}`;
 
-    console.log(apiUrl);
+    //console.log(apiUrl);
     return this.http.get(apiUrl); 
   }
 }

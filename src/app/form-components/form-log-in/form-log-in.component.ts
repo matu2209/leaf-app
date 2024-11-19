@@ -5,6 +5,7 @@ import { AuthenticationService } from '../../services/authentication-service/aut
 import { Router } from '@angular/router';
 import { TimerService } from '../../services/timer-service/timer.service';
 import { UserService } from '../../services/user-service/user.service';
+import { ToastNotificationService } from '../../services/toast-service/toast-notification.service';
 
 declare var bootstrap: any;  // Declara bootstrap para usar sus métodos
 
@@ -18,7 +19,7 @@ export class FormLogInComponent {
   loginForm: FormGroup;
 
   constructor(private fb: FormBuilder, private http: HttpClient, private authService: AuthenticationService, private router: Router, public timerService: TimerService,
-    private UserService: UserService) {
+    private UserService: UserService, private toast: ToastNotificationService ) {
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
@@ -39,8 +40,9 @@ export class FormLogInComponent {
       .then(user => {
         if (user) {          
           this.authService.login(user);
-          alert('Login successful');
+          //alert('Login successful');
           console.log("Login successful: ", user);
+          this.toast.showToast("Login successful!");  
           this.timerService.stopTimer();
           this.loginForm.reset();
 

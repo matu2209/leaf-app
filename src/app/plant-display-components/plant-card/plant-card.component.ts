@@ -6,11 +6,10 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./plant-card.component.scss']
 })
 export class PlantCardComponent {
-  @Input() plant: any;  // Recibir la planta desde el componente padre
+  @Input() plant: any; 
 
   onCardClick(plant: any): void {
-    console.log('Tarjeta clickeada:', plant);
-    // Aquí puedes agregar la funcionalidad que desees
+    //console.log('Tarjeta clickeada:', plant);
   }
   
 }

@@ -103,7 +103,7 @@ export class FilterFormComponent {
 
     this.PlantsService.getByFilters(queryString, "1").subscribe(
       response => {
-        console.log(response.data);
+        //console.log(response.data);
         this.PlantsService.plants = response.data;
 
         this.PlantsService.actualPage = this.getPageNumber(response.links.self);

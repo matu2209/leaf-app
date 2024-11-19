@@ -12,11 +12,12 @@ declare var bootstrap: any;
   styleUrl: './plant-information-page.component.scss'
 })
 export class PlantInformationPageComponent implements OnInit{
-  noteForm!: FormGroup;
 
   constructor(private fb: FormBuilder, private PlantsService: PlantsService, private route: ActivatedRoute, private AuthenticationService: AuthenticationService, private toastNotificationService: ToastNotificationService){
   }
   message: string = "";
+  userNote: string = "";
+
   id: number = 0;
   plantData: any;
   distributionUser: string = "";
@@ -25,25 +26,23 @@ export class PlantInformationPageComponent implements OnInit{
   spinner: boolean = true;
   ngOnInit(): void {
 
-    this.noteForm = this.fb.group({
-      note: new FormControl("")
-    });
-
     this.id = Number(this.route.snapshot.paramMap.get('id'));
-    console.log(this.id);
+    //console.log(this.id);
 
     this.PlantsService.getById(this.id).subscribe(
       (data) => {
         this.plantData = data.data;
-        console.log('data recivida:', data);
+        //console.log('data recivida:', data);
         
           this.AuthenticationService.loggedInUser$.subscribe(user => {
             this.user = user;
             if(this.user){
               if(this.isFavorite(this.plantData.id)){
-                this.noteForm.setValue({
-                  note: this.user?.favorites.find(fav => fav.id === this.plantData.id)?.note
-                });}
+                //  this.noteForm.setValue({
+                //   note: this.user?.favorites.find(fav => fav.id === this.plantData.id)?.note
+                //  });
+                this.userNote = String(this.user?.favorites.find(fav => fav.id === this.plantData.id)?.note);
+              }
                 this.distributionUser = this.isFavorable();
             }
           });
@@ -69,7 +68,7 @@ export class PlantInformationPageComponent implements OnInit{
         this.AuthenticationService.updateUser(this.user)
         .subscribe(
           response => {
-            console.log("Planta agregada a favoritos:", { id, note: "" });
+            //console.log("Planta agregada a favoritos:", { id, note: "" });
             this.toastNotificationService.showToast(this.plantData.common_name +' has been added to your favorites.');
           },
           error => {
@@ -118,7 +117,7 @@ export class PlantInformationPageComponent implements OnInit{
         this.AuthenticationService.updateUser(this.user)
         .subscribe(
           response => {
-            console.log("Planta eliminada de favoritos:", { id, note: "" });
+            //console.log("Planta eliminada de favoritos:", { id, note: "" });
             this.toastNotificationService.showToast(this.plantData.common_name +' has been removed from favorites');
           },
           error => {
@@ -126,21 +125,21 @@ export class PlantInformationPageComponent implements OnInit{
           }
         );
       } else {
-        console.log("La planta ya está en favoritos.");
+        //console.log("La planta ya está en favoritos.");
       }
     }
   }
 
-  updateNote(id: number){
+  updateNote(newNote: string){
     if(this.user){
-      const note: string = this.noteForm.value.note;
+      const note: string = newNote;
       const favorite = this.user.favorites.find(fav => fav.id === this.plantData.id);
       if (favorite) {
-        favorite.note = note; // Obtén el valor del FormControl
+        favorite.note = note; 
         this.AuthenticationService.updateUser(this.user)
           .subscribe(
             response => {
-              console.log("Note updated successfully:", favorite.note);
+              //console.log("Note updated successfully:", favorite.note);
               if(favorite.note!== ""){
                 this.toastNotificationService.showToast("the note has been updated to: " + favorite.note);
               }

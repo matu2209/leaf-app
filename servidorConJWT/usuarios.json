@@ -10,7 +10,12 @@
     "country": "Ascension",
     "admin": true,
     "isActivated": false,
-    "favorites": [],
+    "favorites": [
+      {
+        "id": 128843,
+        "note": ""
+      }
+    ],
     "creditCard": []
   },
   {
@@ -154,7 +159,7 @@
   {
     "id": 6,
     "username": "Dia",
-    "password": "1234567",
+    "password": "12345678",
     "member": true,
     "firstName": "Yahveh",
     "lastName": "Baccaropopo",
@@ -164,15 +169,7 @@
     "isActivated": true,
     "favorites": [
       {
-        "id": 77107,
-        "note": ""
-      },
-      {
         "id": 122042,
-        "note": ""
-      },
-      {
-        "id": 109482,
         "note": ""
       },
       {
@@ -181,23 +178,47 @@
       },
       {
         "id": 159974,
-        "note": ""
+        "note": "me encanta stardew valley papaaaaaaaaaaaaaaaaa\n"
       },
       {
         "id": 262177,
-        "note": "aguante stardew valley"
-      },
-      {
-        "id": 159802,
-        "note": ""
-      },
-      {
-        "id": 351679,
-        "note": "ojnjnnnnnnnnnnnnjnjnjn"
+        "note": "aguante stardew valley!!!"
       },
       {
         "id": 231582,
         "note": "fhgfhhkjlhjjffgjlhj"
+      },
+      {
+        "id": 351679,
+        "note": ""
+      },
+      {
+        "id": 230202,
+        "note": "esto esta genial 1.01"
+      },
+      {
+        "id": 109482,
+        "note": ""
+      },
+      {
+        "id": 236519,
+        "note": "wit"
+      },
+      {
+        "id": 227114,
+        "note": "sdads\n"
+      },
+      {
+        "id": 231147,
+        "note": ""
+      },
+      {
+        "id": 77107,
+        "note": ""
+      },
+      {
+        "id": 225454,
+        "note": ""
       }
     ],
     "creditCard": [],
@@ -421,5 +442,49 @@
     "favorites": [],
     "creditCard": [],
     "birthDate": "2024-11-05"
+  },
+  {
+    "id": 19,
+    "username": "martin",
+    "password": "999999",
+    "member": true,
+    "firstName": "martin",
+    "lastName": "martinez",
+    "email": "martin@gmail.com",
+    "country": "Brazil Northeast",
+    "admin": false,
+    "birthDate": "2024-11-05",
+    "isActivated": true,
+    "favorites": [
+      {
+        "id": 102667,
+        "note": "nota personall"
+      }
+    ],
+    "creditCard": [
+      {
+        "name": "martin",
+        "number": "9999 9999 9999 9999",
+        "date": "11/11",
+        "cvv": "987",
+        "address": "calle 353",
+        "country": "us"
+      }
+    ]
+  },
+  {
+    "id": 20,
+    "username": "MVP",
+    "password": "333333",
+    "member": false,
+    "firstName": "Michael",
+    "lastName": "Page",
+    "email": "mvp@gmail.com",
+    "country": "Angola",
+    "admin": false,
+    "birthDate": "2024-11-03",
+    "isActivated": true,
+    "favorites": [],
+    "creditCard": []
   }
 ]

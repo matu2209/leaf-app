@@ -38,7 +38,7 @@ export class PlantListComponent {
       this.spinner = true;
       this.PlantsService.getToken().subscribe(
         (data) => {
-          console.log('Token recibido:', data.token);
+          //console.log('Token recibido:', data.token);
           this.PlantsService.token = data.token;
           this.loadPlants(); 
         },
@@ -65,14 +65,13 @@ export class PlantListComponent {
 
   loadPlants(): void {
     this.spinner = true;
-    // Llama a tu servicio para obtener las plantas
     this.PlantsService.getPlants().subscribe(
       (data) => {
-        this.plants = data.data; // Guarda los registros de plantas
+        this.plants = data.data; 
         this.plants = this.plants.slice(0,9);
         this.PlantsService.initplants = this.plants;
         this.spinner = false;
-        console.log('Plantas recibidas:', this.plants);
+        //console.log('Plantas recibidas:', this.plants);
       },
       (error) => {
         console.error('Error al obtener las plantas:', error);
@@ -90,21 +89,21 @@ export class PlantListComponent {
   }
 
   loadFavoritesPlants(){
-    this.spinner = true;
     if (!this.user || !this.user.favorites.length) {
-      console.log("No se encontraron plantas favoritas.");
+      //console.log("No se encontraron plantas favoritas.");
       return;
     }
-  
+    this.spinner = true;
     // Crear un array de Observables para obtener cada planta por su ID
-    const favoriteRequests = this.user.favorites.map((favorite) => this.PlantsService.getById(favorite.id));
+    const favoriteRequests = this.user.favorites.map(
+      (favorite) => this.PlantsService.getById(favorite.id));
   
     // forkJoin es esperar a que todas las solicitudes que hay en el arrego favoriteequest terminen
     forkJoin(favoriteRequests).subscribe(
       (results) => {
         // this.plants = results;
         this.plants = results.map((result) => result.data); //recupero solo el atributo data que me interesa
-        console.log('Plantas favoritas cargadas:', this.plants);
+        //console.log('Plantas favoritas cargadas:', this.plants);
         this.spinner = false;
       },
       (error) => {
@@ -119,7 +118,7 @@ export class PlantListComponent {
 
   changePage(page: String){
     this.actualPage = page;
-    console.log("pagina actual : " + this.actualPage);
+    //console.log("pagina actual : " + this.actualPage);
     this.PlantsService.getByFilters(this.PlantsService.lastFilter, page).subscribe(
       response => {
         this.PlantsService.plants = response.data;
@@ -128,8 +127,8 @@ export class PlantListComponent {
         this.PlantsService.previousPage = this.getPageNumber(response.links.prev);
         this.PlantsService.nextPage = this.getPageNumber(response.links.next);
 
-        console.log(this.PlantsService.previousPage);
-        console.log(this.PlantsService.nextPage);
+        //console.log(this.PlantsService.previousPage);
+        //console.log(this.PlantsService.nextPage);
 
         this.previousPage = this.PlantsService.previousPage;
         this.nextPage = this.PlantsService.nextPage;

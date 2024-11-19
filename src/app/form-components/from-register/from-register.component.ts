@@ -7,6 +7,7 @@ import { DistributionsService } from '../../services/distribution-service/distri
 import { TimerService } from '../../services/timer-service/timer.service';
 import { UserService } from '../../services/user-service/user.service';
 import { Client } from '../../../../servidorConJWT/cliente';
+import { ToastNotificationService } from '../../services/toast-service/toast-notification.service';
 
 declare var bootstrap: any; 
 
@@ -22,7 +23,7 @@ export class FromRegisterComponent {
 
 
   constructor(private fb: FormBuilder, private http: HttpClient, private AuthenticationService: AuthenticationService, private DistributionsService: DistributionsService, public timerService: TimerService,
-    private userService: UserService
+    private userService: UserService, private toast: ToastNotificationService
   ) {
     this.registerForm = this.fb.group({
       username: ['', [Validators.required], [CustomValidators.usernameExists(this.userService)]],
@@ -42,7 +43,6 @@ export class FromRegisterComponent {
     this.DistributionsService.getDistribution()
       .subscribe((data: string[]) => {
         this.distributions = data;
-        console.log(this.distributions);
       });
   }
 
@@ -74,8 +74,8 @@ export class FromRegisterComponent {
 
     this.userService.registerUser(newUser)
     .then(response => {
-      console.log('User registered successfully', response);
-        alert('User registered successfully');
+        console.log('User registered successfully', response);
+        this.toast.showToast("Registered successfully!");  
         this.registerForm.reset();
 
         const body = {
@@ -87,8 +87,8 @@ export class FromRegisterComponent {
         .then(user => {
           if (user) {          
             this.AuthenticationService.login(user);
-            alert('Login successful');
-            console.log("Login successful: ", user);
+            //alert('Login successful');
+            //console.log("Login successful: ", user);
             this.timerService.stopTimer();
 
             const modalElement = document.getElementById('RegisterModal');

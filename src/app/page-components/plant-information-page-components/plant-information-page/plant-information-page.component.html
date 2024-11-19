@@ -1,5 +1,6 @@
-<br><br>
-<br>
+<br><br><br>
+
+
 <div class="container text-center mt-5">
   <app-spinner *ngIf="spinner == true"></app-spinner>
 </div>
@@ -21,24 +22,8 @@
       </div>
     </div>
 
-     <!-- Campo de notas personales con formulario reactivo -->
-    <div class="card mb-5" *ngIf="user && user.member && isFavorite(plantData.id)">
-      <div class="card-body">
-        <form [formGroup]="noteForm" (ngSubmit)="updateNote(plantData.id)">
-          <label for="noteInput" class="form-label">Personal Note</label>
-          <div class="input-group">
-            <textarea type="text" class="form-control" formControlName="note" placeholder="Write your personal notes about this plant..."></textarea>
-            <button class="btn boton" type="submit">
-              <i class="bi bi-save"></i>
-            </button>
-          </div>
-        </form>
-        <small class="text-muted mt-2 d-block">Your notes are saved privately.</small>
-      </div>
-    </div>
-
-
-
+    <!-- Campo de notas personales con formulario reactivo -->
+    <app-note-form *ngIf="user && user.member && isFavorite(plantData.id)" [userNote]="userNote" (updateNote)="updateNote($event)"></app-note-form>
    
     <!-- Plant distributions -->
     <app-plant-information-distributions [plantData]="plantData"></app-plant-information-distributions>
@@ -63,5 +48,4 @@
       </div>
     </div>
   </div>
-<!-- <app-toast-notifications [notificationMessage]="message"></app-toast-notifications> -->
   

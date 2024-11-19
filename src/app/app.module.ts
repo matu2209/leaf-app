@@ -19,7 +19,6 @@ import { FromRegisterComponent } from './form-components/from-register/from-regi
 import { FormMembershipComponent } from './form-components/form-membership/form-membership.component';
 import { FilterFormComponent } from './form-components/filter-form/filter-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NotFoundComponent } from './plant-display-components/not-found/not-found.component';
 import { PlantInformationPageComponent } from './page-components/plant-information-page-components/plant-information-page/plant-information-page.component';
 import { PlantInformationSourcesComponent } from './page-components/plant-information-page-components/plant-information-sources/plant-information-sources.component';
 import { FavoritesPageComponent } from './page-components/favorite-page-components/favorites-page/favorites-page.component';
@@ -28,6 +27,7 @@ import { ProfileComponent } from './page-components/profile-page-components/prof
 import { TimerAlertComponent } from './page-components/timer-components/timer-alert/timer-alert.component';
 import { UserViewComponent } from './page-components/user-view/user-view.component';
 import { ToastNotificationsComponent } from './alerts/toast-notifications/toast-notifications.component';
+import { NoteFormComponent } from './form-components/note-form/note-form.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +43,6 @@ import { ToastNotificationsComponent } from './alerts/toast-notifications/toast-
     FromRegisterComponent,
     FormMembershipComponent,
     FilterFormComponent,
-    NotFoundComponent,
     PlantInformationPageComponent,
     PlantInformationSourcesComponent,
     FavoritesPageComponent,
@@ -52,6 +51,7 @@ import { ToastNotificationsComponent } from './alerts/toast-notifications/toast-
     TimerAlertComponent,
     UserViewComponent,
     ToastNotificationsComponent,
+    NoteFormComponent,
     ],  
   imports: [
     HttpClientModule,

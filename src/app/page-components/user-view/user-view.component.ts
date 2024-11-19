@@ -16,10 +16,10 @@ export class UserViewComponent {
   ngOnInit():void{
     let userId =Number (this.route.snapshot.paramMap.get('id'));
     this.userService.getUserById(userId)
-    .then(response=>{
-      this.client = response;
-    })
-    .catch(error=>alert(error));
+      .then(response=>{
+        this.client = response;
+      })
+      .catch(error=>alert(error));
   }
 
   changeState(){
@@ -35,9 +35,7 @@ export class UserViewComponent {
     })
     .catch(error=>{
       console.log(error);
-      
       alert(error);
-
     });
   }
 

@@ -44,7 +44,6 @@ export class ProfileComponent implements OnInit {
     this.DistributionsService.getDistribution()
     .subscribe((data: string[]) => {
       this.distributions = data;
-      console.log(this.distributions);
     });
 
   }
@@ -62,7 +61,7 @@ export class ProfileComponent implements OnInit {
       (this.loggedInUser as any)[field] = this.profileForm.get(field)?.value;
       this.authService.updateUser(this.loggedInUser).subscribe(
         response => {
-          console.log(`${field} actualizado correctamente.`);
+          //console.log(`${field} actualizado correctamente.`);
           this.toastNotificationService.showToast("Profile updated successfully!");
         },
         error => {
@@ -81,13 +80,11 @@ export class ProfileComponent implements OnInit {
 
     const newPassword = this.passwordForm.get('password')?.value;
     if (this.loggedInUser) {
-      // Actualizamos la contraseña directamente en el objeto loggedInUser
       this.loggedInUser.password = newPassword;
 
-      // Llamamos a updateUser para actualizar el usuario con la nueva contraseña
       this.authService.updateUser(this.loggedInUser).subscribe(
         response => {
-          console.log('Contraseña actualizada correctamente.');
+          //console.log('Contraseña actualizada correctamente.');
           this.toastNotificationService.showToast("Password updated successfully!");
           this.isPasswordChangeVisible = false; // Ocultar el formulario después de guardar
         },

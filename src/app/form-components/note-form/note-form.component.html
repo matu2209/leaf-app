@@ -1,0 +1,16 @@
+<div class="card mb-5">
+    <div class="card-body">
+      <form [formGroup]="noteForm" (ngSubmit)="noteSubmit()">
+        <label for="noteInput" class="form-label">Personal Note</label>
+        <div class="input-group">
+          <textarea type="text" class="form-control" formControlName="note" placeholder="Write your personal notes about this plant...">
+
+          </textarea>
+          <button class="btn boton" type="submit">
+            <i class="bi bi-save"></i>
+          </button>
+        </div>
+      </form>
+      <small class="text-muted mt-2 d-block">Your notes are saved privately.</small>
+    </div>
+  </div>
