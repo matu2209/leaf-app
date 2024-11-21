@@ -162,7 +162,7 @@
     "password": "12345678",
     "member": true,
     "firstName": "Yahveh",
-    "lastName": "Baccaropopo",
+    "lastName": "Baccarop",
     "email": "yahvehBaccaro@gmail.com",
     "country": "Argentina Northeast",
     "admin": false,
@@ -205,10 +205,6 @@
         "note": "wit"
       },
       {
-        "id": 227114,
-        "note": "sdads\n"
-      },
-      {
         "id": 231147,
         "note": ""
       },
@@ -219,6 +215,10 @@
       {
         "id": 225454,
         "note": ""
+      },
+      {
+        "id": 227114,
+        "note": "sdads\n"
       }
     ],
     "creditCard": [],
@@ -486,5 +486,34 @@
     "isActivated": true,
     "favorites": [],
     "creditCard": []
+  },
+  {
+    "id": 21,
+    "username": "pedro1o",
+    "password": "999999",
+    "member": true,
+    "firstName": "pedro1",
+    "lastName": "gomez",
+    "email": "pedro@gmail.com",
+    "country": "Andaman Is.",
+    "admin": false,
+    "birthDate": "2024-11-20",
+    "isActivated": true,
+    "favorites": [
+      {
+        "id": 109482,
+        "note": ""
+      }
+    ],
+    "creditCard": [
+      {
+        "name": "pedro",
+        "number": "8888 7777 6666 5555",
+        "date": "11/11",
+        "cvv": "653",
+        "address": "calle 8723",
+        "country": "us"
+      }
+    ]
   }
 ]

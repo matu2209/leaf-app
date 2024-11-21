@@ -87,6 +87,7 @@ export class ProfileComponent implements OnInit {
           //console.log('Contraseña actualizada correctamente.');
           this.toastNotificationService.showToast("Password updated successfully!");
           this.isPasswordChangeVisible = false; // Ocultar el formulario después de guardar
+          this.passwordForm.reset();
         },
         error => {
           console.error('Error al actualizar la contraseña:', error);
