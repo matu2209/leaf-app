@@ -1,0 +1,14 @@
+{
+    "questions": [
+      {
+        "id": 1,
+        "userId": 101,
+        "question": "¿Cómo cuidar una Monstera deliciosa?",
+        "answers": [
+          { "id": 201, "userId": 102, "answer": "La monstera prefiere luz indirecta y riego moderado." },
+          { "id": 202, "userId": 103, "answer": "Evita el exceso de agua para prevenir raíces podridas." }
+        ]
+      }
+    ]
+  }
+  
