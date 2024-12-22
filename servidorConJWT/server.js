@@ -10,6 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const usuariosFilePath = path.join(__dirname, 'usuarios.json');
 const cardsFilePath = path.join(__dirname, 'tarjetas.json');
+const foroFilePath = path.join(__dirname, 'foro.json');
 const SECRET_KEY = 'mi_clave_secreta'; // Cambia esto por una clave más segura
 
 // Middleware
@@ -27,15 +28,23 @@ const readCards = () => {
     return JSON.parse(data);
 };
 
+// Función para leer el foro desde el archivo
+const leerForo = () => {
+    const data = fs.readFileSync(foroFilePath);
+    return JSON.parse(data);
+};
+
 // Función para guardar usuarios en el archivo
 const guardarUsuarios = (usuarios) => {
     fs.writeFileSync(usuariosFilePath, JSON.stringify(usuarios, null, 2));
 };
 
-const guardarTarjetas = () => {
-    const data = fs.readFileSync(cardsFilePath);
-    return JSON.parse(data);
+// Función para guardar foro en el archivo
+const guardarForo = (posteos) => {
+    fs.writeFileSync(foroFilePath, JSON.stringify(posteos, null, 2));
 };
+
+
 // Ruta para obtener todos los usuarios (GET)
 app.get('/usuarios', (req, res) => {
     const usuarios = leerUsuarios();
@@ -183,8 +192,9 @@ app.post('/login', (req, res) => {
 
 // Middleware para proteger rutas
 const autenticarToken = (req, res, next) => {
-    const token = req.headers['authorization'];
-
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1]; // Toma solo el token sin el prefijo 'Bearer'
+    
     if (!token) {
         return res.sendStatus(401); // No autorizado
     }
@@ -262,6 +272,33 @@ app.get('/view/:id', (req, res) => {
         res.status(200).json({ message: 'User activated', user: usuarios[usuarioIndex] });
     }
 })
+
+
+app.get('/foro', autenticarToken, (req, res) => {
+    const posteos = leerForo();
+
+    if (posteos.length === 0) {
+        return res.status(404).send('no existen publicaciones');
+    }
+
+    res.status(200).json(posteos);
+})
+
+app.post('/foro', autenticarToken, (req, res) => {
+    const posteos = leerForo();
+    var post = {
+        id: posteos.length ? posteos[posteos.length - 1].id + 1 : 1,
+        username: req.body.username,
+        category: req.body.category,
+        post: req.body.post,
+        answers: []
+    }
+    posteos.push(post);
+    guardarForo(posteos);
+    res.status(201).json(post);
+})
+
+
 // Iniciar el servidor
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
