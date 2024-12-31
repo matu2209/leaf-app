@@ -291,9 +291,36 @@ app.post('/foro', autenticarToken, (req, res) => {
         username: req.body.username,
         category: req.body.category,
         post: req.body.post,
-        answers: []
+        comments: [],
+        date: req.body.date
     }
     posteos.push(post);
+    guardarForo(posteos);
+    res.status(201).json(post);
+})
+
+app.post('/foro/comment', autenticarToken, (req, res) => {
+    const posteos = leerForo();
+    const postId = req.body.postId;
+    // const post = posteos.find(post => post.id === postId);
+    const postIndex = posteos.findIndex(post => post.id === postId);
+    const post = posteos[postIndex];
+
+    if (!post) {
+        return res.status(404).json({ message: 'Post not found' });
+      }
+
+      const newCommentId = post.comments.length ? `${postId}-${parseInt(post.comments[post.comments.length - 1].id.split('-')[1]) + 1}` : `${postId}-1`;
+
+    var comment = {
+        id: newCommentId,
+        username: req.body.username,
+        comment: req.body.comment,
+        date: req.body.date
+    }
+
+    post.comments.push(comment);
+    posteos[postIndex] = post;
     guardarForo(posteos);
     res.status(201).json(post);
 })

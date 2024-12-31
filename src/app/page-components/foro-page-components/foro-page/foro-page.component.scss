@@ -13,16 +13,37 @@
   top: 20%;
 }
 
+.perzo-text{
+  color:#ffffff;
+}
+
 div{
   color: #40352B;
 }
 
+.card{
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.cardPost{
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 .card-header{
-  background-color: #F2E1AC;
+  color: #ffffff;
+  background-color: #697353;
+  border-top-left-radius: 15px; 
+  border-top-right-radius: 15px;
+  padding: 10px 15px;
 }
 .card-body{
   background-color: #ffffff;
+  border-bottom-left-radius: 15px; 
+  border-bottom-right-radius: 15px;
+  line-height: 1.6;
 }
+
 .icon-toggle-button {
   position: relative;
 

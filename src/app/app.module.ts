@@ -31,6 +31,7 @@ import { NoteFormComponent } from './form-components/note-form/note-form.compone
 import { ForoPageComponent } from './page-components/foro-page-components/foro-page/foro-page.component';
 import { ForumPostComponentComponent } from './form-components/forum-post-component/forum-post-component.component';
 import { ForumCommentComponentComponent } from './form-components/forum-comment-component/forum-comment-component.component';
+import { CommentSectionComponent } from './page-components/foro-page-components/comment-section/comment-section.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +59,7 @@ import { ForumCommentComponentComponent } from './form-components/forum-comment-
     ForoPageComponent,
     ForumPostComponentComponent,
     ForumCommentComponentComponent,
+    CommentSectionComponent,
     ],  
   imports: [
     HttpClientModule,

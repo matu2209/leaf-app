@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Post } from '../../../../../servidorConJWT/post';
 import { ForumService } from '../../../services/forumService/forum.service';
 
+
 declare var bootstrap: any; 
 
 @Component({
@@ -22,17 +23,27 @@ export class ForoPageComponent implements AfterViewInit {
       new bootstrap.Tooltip(tooltipTriggerEl);
     });
   }
+  
 
   ngOnInit() {
     this.forumService.getForo(); // cargar foro
-
+    
     this.forumService.foroSubject$.subscribe(questions => {
-      this.foro = questions.reverse();
+      this.foro = questions;
     });
+
+    const backToTopButton = document.getElementById('backToTopButton');
+    if (backToTopButton) {
+      backToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' }); 
+      });
+    }
+    
   }
 
-
-
+  openCommentModal(id: number){
+    this.forumService.currentPostId = id;
+  }
 
   
 }

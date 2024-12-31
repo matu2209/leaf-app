@@ -1,4 +1,4 @@
-import { Answers } from "./answer";
+import { Comment } from "./comment";
 
 export class Post {
 
@@ -6,5 +6,6 @@ export class Post {
     username: string = "";
     category: string = "";
     post: string = "";
-    answers: Answers[] = [];
+    comments: Comment[] = [];
+    date: Date = new Date();
 }

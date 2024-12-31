@@ -2,10 +2,12 @@
 <div class="container mt-4 px-5">
 
     <div class="perzo-top fixed-top d-flex flex-column align-items-start ms-2" style="width: fit-content;">
-        <button class="btn rounded-circle mb-2" data-bs-toggle="modal" data-bs-target="#forumPostModal">
-            <i class="bi bi-plus-lg"></i>
-        </button>
-        <button class="btn rounded-circle  mb-2" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="right" data-bs-title="Back to top">
+        <div data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="right" data-bs-title="New post">
+            <button class="btn rounded-circle mb-2" data-bs-toggle="modal" data-bs-target="#forumPostModal">
+                <i class="bi bi-plus-lg"></i>
+            </button>
+        </div>
+        <button class="btn rounded-circle  mb-2" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="right" data-bs-title="Back to top" id="backToTopButton">
             <i class="bi bi-arrow-up"></i>
         </button>
         <button class="btn rounded-circle  mb-2" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="right" data-bs-title="Filter">
@@ -16,9 +18,12 @@
     <div class="mx-5">
         <h2 class="text-center mt-5 mb-5">Foro</h2>
     
-        <div *ngFor="let question of foro" class="card mb-3">
-            <div class="card-header">
-                <strong>{{ question.username }}</strong> - <small>{{ question.category | titlecase }}</small>
+        <div *ngFor="let question of foro" class="card cardPost mb-3">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <div class="perzo-text">
+                    <strong>{{ question.username }}</strong> - <small>{{ question.category | titlecase }}</small>
+                </div>
+                <small class="ms-auto">{{ question.date | date:'dd/MM/yyyy, h:mm a' }}</small>
             </div>
 
             <div class="card-body">
@@ -37,13 +42,16 @@
 
                     <div class="card border-0"><hr></div>
 
-                    <button class="btn mb-2 rounded-pill" type="button" data-bs-toggle="modal" data-bs-target="#commentModal">
+                    <button class="btn mb-2 rounded-pill" type="button" (click)="openCommentModal(question.id)" 
+                        data-bs-toggle="modal" data-bs-target="#commentModal">
                         <i class="bi bi-plus-lg"></i> Add comment
                     </button>
 
-                    <div *ngFor="let answer of question.answers" class="card mb-2">
+                    <div *ngFor="let comment of question.comments" class="card mb-2">
                         <div class="card-body">
-                            <p><strong>{{ answer.username }}:</strong> {{ answer.answer }}</p>
+                            <strong>{{ comment.username }}</strong> - <small>{{ comment.date | date:'dd/MM/yyyy, h:mm a' }}</small>
+                            <br>
+                            <p>{{ comment.comment }}</p>
                         </div>
                     </div>
                 </div> 

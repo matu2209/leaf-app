@@ -8,7 +8,7 @@ import { ToastNotificationService } from '../../services/toast-service/toast-not
 import { ForumService } from '../../services/forumService/forum.service';
 import { Post } from '../../../../servidorConJWT/post';
 import { AuthenticationService } from '../../services/authentication-service/authentication.service';
-declare var bootstrap: any;  // Declara bootstrap para usar sus métodos
+declare var bootstrap: any; 
 @Component({
   selector: 'app-forum-post-component',
   templateUrl: './forum-post-component.component.html',
@@ -37,6 +37,7 @@ export class ForumPostComponentComponent {
    newPost.category = this.postForm.value.category;
    newPost.post = this.postForm.value.postContent;
    newPost.username = this.AuthenticationService.loggedInUserName;
+   newPost.date = new Date();
    
     this.forumService.post(newPost)
       .then(response => {

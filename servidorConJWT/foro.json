@@ -1,151 +1,248 @@
 [
   {
     "id": 1,
-    "username": "plantaLover101",
+    "username": "plantLover101",
     "category": "question",
-    "post": "¿Cómo cuidar una Monstera deliciosa?",
-    "answers": [
+    "post": "How to care for a Monstera deliciosa?",
+    "comments": [
       {
-        "id": 201,
-        "username": "verdeFeliz",
-        "answer": "La monstera prefiere luz indirecta y riego moderado."
-      },
-      {
-        "id": 202,
-        "username": "jardineroPro",
-        "answer": "Evita el exceso de agua para prevenir raíces podridas."
+        "id": "1-1",
+        "username": "greenThumb",
+        "comment": "It prefers indirect light and moderate watering.",
+        "date": "2024-12-31T12:34:56.789Z"
       }
-    ]
+    ],
+    "date": "2024-12-31T12:34:56.789Z"
   },
   {
     "id": 2,
-    "username": "sucuFan2023",
+    "username": "succulentFan2023",
     "category": "question",
-    "post": "¿Cuál es la mejor forma de propagar suculentas?",
-    "answers": [
+    "post": "What's the best way to propagate succulents?",
+    "comments": [
       {
-        "id": 203,
-        "username": "verdeFeliz",
-        "answer": "Se pueden propagar por hojas o esquejes."
+        "id": "2-1",
+        "username": "plantGuru",
+        "comment": "You can propagate by leaves or cuttings.",
+        "date": "2024-12-31T12:34:56.789Z"
+      },
+      {
+        "id": "2-2",
+        "username": "cactusKing",
+        "comment": "Make sure the cuttings dry before planting them.",
+        "date": "2024-12-31T13:00:00.000Z"
       }
-    ]
+    ],
+    "date": "2024-12-31T12:34:56.789Z"
   },
   {
     "id": 3,
     "username": "dataFixer2023",
     "category": "bug",
-    "post": "La descripción de la planta Aloe vera está incompleta. ¿Podrían corregirla?",
-    "answers": [
+    "post": "The Aloe vera plant description is incomplete. Can you fix it?",
+    "comments": [
       {
-        "id": 204,
+        "id": "3-1",
         "username": "adminBot",
-        "answer": "Gracias por reportarlo. Revisaremos la información lo antes posible."
+        "comment": "Thanks for the report. We will review the information soon.",
+        "date": "2024-12-31T12:34:56.789Z"
+      },
+      {
+        "id": "3-2",
+        "username": "Dia",
+        "comment": "sdads",
+        "date": "2024-12-31T19:03:34.888Z"
       }
-    ]
+    ],
+    "date": "2024-12-31T12:34:56.789Z"
   },
   {
     "id": 4,
     "username": "plantGeek",
     "category": "question",
-    "post": "¿Es seguro tener una Dieffenbachia en casa con mascotas?",
-    "answers": [
+    "post": "Is it safe to have a Dieffenbachia in a house with pets?",
+    "comments": [
       {
-        "id": 205,
-        "username": "greenVet",
-        "answer": "No, es tóxica para mascotas. Mejor mantenerla fuera de su alcance."
+        "id": "4-1",
+        "username": "vetExpert",
+        "comment": "No, it's toxic to pets. Better keep it out of their reach.",
+        "date": "2024-12-31T12:34:56.789Z"
+      },
+      {
+        "id": "4-2",
+        "username": "animalLover",
+        "comment": "I’d recommend choosing a safer plant like Spider Plant.",
+        "date": "2024-12-31T13:10:00.000Z"
       }
-    ]
+    ],
+    "date": "2024-12-31T12:34:56.789Z"
   },
   {
     "id": 5,
     "username": "errorHunter",
     "category": "bug",
-    "post": "La imagen de la planta Ficus elastica no carga correctamente.",
-    "answers": [
+    "post": "The image of the Ficus elastica doesn’t load correctly.",
+    "comments": [
       {
-        "id": 206,
+        "id": "5-1",
         "username": "adminBot",
-        "answer": "Gracias por el aviso. Estamos solucionando este problema."
+        "comment": "Thanks for the notice. We are working on fixing the issue.",
+        "date": "2024-12-31T12:34:56.789Z"
       }
-    ]
+    ],
+    "date": "2024-12-31T12:34:56.789Z"
   },
   {
     "id": 6,
     "username": "natureLover22",
     "category": "question",
-    "post": "¿Qué tipo de luz necesita un Pothos dorado?",
-    "answers": [
+    "post": "What kind of light does a Golden Pothos need?",
+    "comments": [
       {
-        "id": 207,
-        "username": "verdeFeliz",
-        "answer": "Prefiere luz indirecta brillante, pero tolera condiciones más oscuras."
+        "id": "6-1",
+        "username": "greenThumb",
+        "comment": "It prefers bright indirect light, but can tolerate darker areas.",
+        "date": "2024-12-31T12:34:56.789Z"
       }
-    ]
+    ],
+    "date": "2024-12-31T12:34:56.789Z"
   },
   {
     "id": 7,
     "username": "plantChecker",
     "category": "bug",
-    "post": "La planta 'Cactus de Navidad' aparece como 'Cactus de Pascua' en la lista. ¿Es correcto?",
-    "answers": [
+    "post": "The 'Christmas Cactus' appears as 'Easter Cactus' in the list. Is that correct?",
+    "comments": [
       {
-        "id": 208,
+        "id": "7-1",
         "username": "botanicaPro",
-        "answer": "Buen punto. Revisaremos el nombre botánico para verificarlo."
+        "comment": "Good catch! We will review the botanical name.",
+        "date": "2024-12-31T12:34:56.789Z"
       }
-    ]
+    ],
+    "date": "2024-12-31T12:34:56.789Z"
   },
   {
     "id": 8,
     "username": "cactusLover88",
     "category": "question",
-    "post": "¿Cuántas veces al mes debería regar un cactus?",
-    "answers": [
+    "post": "How many times a month should I water a cactus?",
+    "comments": [
       {
-        "id": 209,
+        "id": "8-1",
         "username": "dryGardener",
-        "answer": "En promedio, una vez al mes es suficiente. Deja secar el suelo entre riegos."
+        "comment": "On average, once a month is enough. Let the soil dry out between waterings.",
+        "date": "2024-12-31T12:34:56.789Z"
       }
-    ]
+    ],
+    "date": "2024-12-31T12:34:56.789Z"
   },
   {
     "id": 9,
     "username": "bugBuster",
     "category": "bug",
-    "post": "El nombre científico de 'Palma Areca' no coincide con la información oficial.",
-    "answers": [
+    "post": "The scientific name of 'Areca Palm' doesn't match the official data.",
+    "comments": [
       {
-        "id": 210,
+        "id": "9-1",
         "username": "adminBot",
-        "answer": "Estamos verificando la información con nuestras fuentes."
+        "comment": "We are verifying the information with our sources.",
+        "date": "2024-12-31T12:34:56.789Z"
       }
-    ]
+    ],
+    "date": "2024-12-31T12:34:56.789Z"
   },
   {
     "id": 10,
     "username": "plantEnthusiast",
     "category": "question",
-    "post": "¿Qué plantas ayudan a purificar el aire en interiores?",
-    "answers": [
+    "post": "What plants help purify the air indoors?",
+    "comments": [
       {
-        "id": 211,
+        "id": "10-1",
         "username": "verdeFeliz",
-        "answer": "Algunas opciones son el Lirio de la Paz, el Ficus, y la Sansevieria."
+        "comment": "Some options include Peace Lily, Ficus, and Sansevieria.",
+        "date": "2024-12-31T12:34:56.789Z"
+      },
+      {
+        "id": "10-2",
+        "username": "greenThumb",
+        "comment": "Aloe Vera is also a great air purifier!",
+        "date": "2024-12-31T13:20:00.000Z"
       }
-    ]
+    ],
+    "date": "2024-12-31T12:34:56.789Z"
   },
   {
     "id": 11,
     "username": "Dia",
-    "category": "anuncio",
-    "post": "probando1\n",
-    "answers": []
+    "category": "sugerencia",
+    "post": "post 1",
+    "comments": [
+      {
+        "id": "11-1",
+        "username": "Dia",
+        "comment": "comentario 1",
+        "date": "2024-12-31T19:25:32.573Z"
+      },
+      {
+        "id": "11-2",
+        "username": "Dia",
+        "comment": "comentario 2",
+        "date": "2024-12-31T19:25:54.309Z"
+      },
+      {
+        "id": "11-3",
+        "username": "Dia",
+        "comment": "comentario 3",
+        "date": "2024-12-31T19:31:05.220Z"
+      },
+      {
+        "id": "11-4",
+        "username": "Dia",
+        "comment": "addsadasdsdsadsa",
+        "date": "2024-12-31T19:57:35.983Z"
+      },
+      {
+        "id": "11-5",
+        "username": "Dia",
+        "comment": "s",
+        "date": "2024-12-31T19:57:48.185Z"
+      },
+      {
+        "id": "11-6",
+        "username": "Dia",
+        "comment": "a",
+        "date": "2024-12-31T19:59:47.375Z"
+      }
+    ],
+    "date": "2024-12-31T19:25:23.259Z"
   },
   {
     "id": 12,
     "username": "Dia",
-    "category": "anuncio",
-    "post": "probando2",
-    "answers": []
+    "category": "sugerencia",
+    "post": "post 2",
+    "comments": [
+      {
+        "id": "12-1",
+        "username": "Dia",
+        "comment": "sfdfsd",
+        "date": "2024-12-31T20:02:20.380Z"
+      },
+      {
+        "id": "12-2",
+        "username": "Dia",
+        "comment": "adsadasdasda",
+        "date": "2024-12-31T20:02:28.647Z"
+      },
+      {
+        "id": "12-3",
+        "username": "Dia",
+        "comment": "asdsdasds",
+        "date": "2024-12-31T20:03:04.905Z"
+      }
+    ],
+    "date": "2024-12-31T19:31:58.217Z"
   }
 ]
