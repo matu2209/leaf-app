@@ -37,7 +37,6 @@ export class ForumPostComponentComponent {
    newPost.category = this.postForm.value.category;
    newPost.post = this.postForm.value.postContent;
    newPost.username = this.AuthenticationService.loggedInUserName;
-   newPost.date = new Date();
    
     this.forumService.post(newPost)
       .then(response => {

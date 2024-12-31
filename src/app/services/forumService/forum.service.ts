@@ -60,12 +60,11 @@ export class ForumService {
       const postIndex = foro.findIndex(post => post.id === updatedPost.id);
 
       if (postIndex !== -1) {
-      foro[postIndex] = updatedPost;
+      foro[postIndex].comments = updatedPost.comments;
       this.foroSubject.next(foro);
       }
       
     });
-
   }
 
 }

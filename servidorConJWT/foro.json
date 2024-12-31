@@ -46,12 +46,6 @@
         "username": "adminBot",
         "comment": "Thanks for the report. We will review the information soon.",
         "date": "2024-12-31T12:34:56.789Z"
-      },
-      {
-        "id": "3-2",
-        "username": "Dia",
-        "comment": "sdads",
-        "date": "2024-12-31T19:03:34.888Z"
       }
     ],
     "date": "2024-12-31T12:34:56.789Z"
@@ -172,77 +166,5 @@
       }
     ],
     "date": "2024-12-31T12:34:56.789Z"
-  },
-  {
-    "id": 11,
-    "username": "Dia",
-    "category": "sugerencia",
-    "post": "post 1",
-    "comments": [
-      {
-        "id": "11-1",
-        "username": "Dia",
-        "comment": "comentario 1",
-        "date": "2024-12-31T19:25:32.573Z"
-      },
-      {
-        "id": "11-2",
-        "username": "Dia",
-        "comment": "comentario 2",
-        "date": "2024-12-31T19:25:54.309Z"
-      },
-      {
-        "id": "11-3",
-        "username": "Dia",
-        "comment": "comentario 3",
-        "date": "2024-12-31T19:31:05.220Z"
-      },
-      {
-        "id": "11-4",
-        "username": "Dia",
-        "comment": "addsadasdsdsadsa",
-        "date": "2024-12-31T19:57:35.983Z"
-      },
-      {
-        "id": "11-5",
-        "username": "Dia",
-        "comment": "s",
-        "date": "2024-12-31T19:57:48.185Z"
-      },
-      {
-        "id": "11-6",
-        "username": "Dia",
-        "comment": "a",
-        "date": "2024-12-31T19:59:47.375Z"
-      }
-    ],
-    "date": "2024-12-31T19:25:23.259Z"
-  },
-  {
-    "id": 12,
-    "username": "Dia",
-    "category": "sugerencia",
-    "post": "post 2",
-    "comments": [
-      {
-        "id": "12-1",
-        "username": "Dia",
-        "comment": "sfdfsd",
-        "date": "2024-12-31T20:02:20.380Z"
-      },
-      {
-        "id": "12-2",
-        "username": "Dia",
-        "comment": "adsadasdasda",
-        "date": "2024-12-31T20:02:28.647Z"
-      },
-      {
-        "id": "12-3",
-        "username": "Dia",
-        "comment": "asdsdasds",
-        "date": "2024-12-31T20:03:04.905Z"
-      }
-    ],
-    "date": "2024-12-31T19:31:58.217Z"
   }
 ]
