@@ -1,14 +1,170 @@
-{
-    "questions": [
+[
+  {
+    "id": 1,
+    "username": "plantLover101",
+    "category": "question",
+    "post": "How to care for a Monstera deliciosa?",
+    "comments": [
       {
-        "id": 1,
-        "userId": 101,
-        "question": "¿Cómo cuidar una Monstera deliciosa?",
-        "answers": [
-          { "id": 201, "userId": 102, "answer": "La monstera prefiere luz indirecta y riego moderado." },
-          { "id": 202, "userId": 103, "answer": "Evita el exceso de agua para prevenir raíces podridas." }
-        ]
+        "id": "1-1",
+        "username": "greenThumb",
+        "comment": "It prefers indirect light and moderate watering.",
+        "date": "2024-12-31T12:34:56.789Z"
       }
-    ]
+    ],
+    "date": "2024-12-31T12:34:56.789Z"
+  },
+  {
+    "id": 2,
+    "username": "succulentFan2023",
+    "category": "question",
+    "post": "What's the best way to propagate succulents?",
+    "comments": [
+      {
+        "id": "2-1",
+        "username": "plantGuru",
+        "comment": "You can propagate by leaves or cuttings.",
+        "date": "2024-12-31T12:34:56.789Z"
+      },
+      {
+        "id": "2-2",
+        "username": "cactusKing",
+        "comment": "Make sure the cuttings dry before planting them.",
+        "date": "2024-12-31T13:00:00.000Z"
+      }
+    ],
+    "date": "2024-12-31T12:34:56.789Z"
+  },
+  {
+    "id": 3,
+    "username": "dataFixer2023",
+    "category": "bug",
+    "post": "The Aloe vera plant description is incomplete. Can you fix it?",
+    "comments": [
+      {
+        "id": "3-1",
+        "username": "adminBot",
+        "comment": "Thanks for the report. We will review the information soon.",
+        "date": "2024-12-31T12:34:56.789Z"
+      }
+    ],
+    "date": "2024-12-31T12:34:56.789Z"
+  },
+  {
+    "id": 4,
+    "username": "plantGeek",
+    "category": "question",
+    "post": "Is it safe to have a Dieffenbachia in a house with pets?",
+    "comments": [
+      {
+        "id": "4-1",
+        "username": "vetExpert",
+        "comment": "No, it's toxic to pets. Better keep it out of their reach.",
+        "date": "2024-12-31T12:34:56.789Z"
+      },
+      {
+        "id": "4-2",
+        "username": "animalLover",
+        "comment": "I’d recommend choosing a safer plant like Spider Plant.",
+        "date": "2024-12-31T13:10:00.000Z"
+      }
+    ],
+    "date": "2024-12-31T12:34:56.789Z"
+  },
+  {
+    "id": 5,
+    "username": "errorHunter",
+    "category": "bug",
+    "post": "The image of the Ficus elastica doesn’t load correctly.",
+    "comments": [
+      {
+        "id": "5-1",
+        "username": "adminBot",
+        "comment": "Thanks for the notice. We are working on fixing the issue.",
+        "date": "2024-12-31T12:34:56.789Z"
+      }
+    ],
+    "date": "2024-12-31T12:34:56.789Z"
+  },
+  {
+    "id": 6,
+    "username": "natureLover22",
+    "category": "question",
+    "post": "What kind of light does a Golden Pothos need?",
+    "comments": [
+      {
+        "id": "6-1",
+        "username": "greenThumb",
+        "comment": "It prefers bright indirect light, but can tolerate darker areas.",
+        "date": "2024-12-31T12:34:56.789Z"
+      }
+    ],
+    "date": "2024-12-31T12:34:56.789Z"
+  },
+  {
+    "id": 7,
+    "username": "plantChecker",
+    "category": "bug",
+    "post": "The 'Christmas Cactus' appears as 'Easter Cactus' in the list. Is that correct?",
+    "comments": [
+      {
+        "id": "7-1",
+        "username": "botanicaPro",
+        "comment": "Good catch! We will review the botanical name.",
+        "date": "2024-12-31T12:34:56.789Z"
+      }
+    ],
+    "date": "2024-12-31T12:34:56.789Z"
+  },
+  {
+    "id": 8,
+    "username": "cactusLover88",
+    "category": "question",
+    "post": "How many times a month should I water a cactus?",
+    "comments": [
+      {
+        "id": "8-1",
+        "username": "dryGardener",
+        "comment": "On average, once a month is enough. Let the soil dry out between waterings.",
+        "date": "2024-12-31T12:34:56.789Z"
+      }
+    ],
+    "date": "2024-12-31T12:34:56.789Z"
+  },
+  {
+    "id": 9,
+    "username": "bugBuster",
+    "category": "bug",
+    "post": "The scientific name of 'Areca Palm' doesn't match the official data.",
+    "comments": [
+      {
+        "id": "9-1",
+        "username": "adminBot",
+        "comment": "We are verifying the information with our sources.",
+        "date": "2024-12-31T12:34:56.789Z"
+      }
+    ],
+    "date": "2024-12-31T12:34:56.789Z"
+  },
+  {
+    "id": 10,
+    "username": "plantEnthusiast",
+    "category": "question",
+    "post": "What plants help purify the air indoors?",
+    "comments": [
+      {
+        "id": "10-1",
+        "username": "verdeFeliz",
+        "comment": "Some options include Peace Lily, Ficus, and Sansevieria.",
+        "date": "2024-12-31T12:34:56.789Z"
+      },
+      {
+        "id": "10-2",
+        "username": "greenThumb",
+        "comment": "Aloe Vera is also a great air purifier!",
+        "date": "2024-12-31T13:20:00.000Z"
+      }
+    ],
+    "date": "2024-12-31T12:34:56.789Z"
   }
-  
+]

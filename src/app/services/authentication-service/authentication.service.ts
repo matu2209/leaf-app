@@ -9,12 +9,12 @@ import { Client } from '../../../../servidorConJWT/cliente';
 })
 export class AuthenticationService {
   private loggedInUserSubject = new BehaviorSubject<any>(null);
-  private loggedInUserTokenSubject = new BehaviorSubject<string | null>(null);
 
   // private loggedInUser: any = null;
   // private loggedInUserToken: any = null;
   loggedInUser$ = this.loggedInUserSubject.asObservable();
-  loggedInUserToken$ = this.loggedInUserTokenSubject.asObservable();
+  loggedInUserToken: string = "";
+  loggedInUserName: string = "";
 
 
   constructor(private http: HttpClient) { }
@@ -37,7 +37,8 @@ export class AuthenticationService {
 
   login(user: any) {
     this.loggedInUserSubject.next(user.usuario);
-    this.loggedInUserTokenSubject.next(user.token);
+    this.loggedInUserToken = user.token;
+    this.loggedInUserName = user.usuario.username;
 
     console.log('Usuario logueado:', user.usuario);
     console.log('Token:', user.token);
@@ -45,7 +46,8 @@ export class AuthenticationService {
 
   logout() {
     this.loggedInUserSubject.next(null);
-    this.loggedInUserTokenSubject.next(null);
+    this.loggedInUserToken = "";
+    this.loggedInUserName = "";
   }
 
   isLoggedIn(): boolean {
