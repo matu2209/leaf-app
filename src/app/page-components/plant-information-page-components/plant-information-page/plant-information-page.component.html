@@ -1,6 +1,6 @@
 <br><br><br>
 
-
+<div id="plant-info-content" class="container my-5" *ngIf="plantData">
 <div class="container text-center mt-5">
   <app-spinner *ngIf="spinner == true"></app-spinner>
 </div>
@@ -18,6 +18,13 @@
       <div class="card-body">
         <button class="btn boton" (click)="addToFavorite(plantData.id)">
             Add to favorites
+        </button>
+      </div>
+    </div>
+     <div class="card mb-5" *ngIf="user && user.member">
+      <div class="card-body">
+        <button class="btn boton" (click)="generatePDF()">
+            Download PDF
         </button>
       </div>
     </div>
@@ -48,4 +55,4 @@
       </div>
     </div>
   </div>
-  
+</div>
