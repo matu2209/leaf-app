@@ -14,6 +14,7 @@ declare var bootstrap: any;
 export class ForoPageComponent implements AfterViewInit {
 
   foro: Post[] = [];
+  categories: string[] = ['Announcement', 'Discussion', 'Research', 'Suggestion', 'Bug', 'Question']; // Lista de categorías
 
   constructor(private forumService: ForumService){}
 
