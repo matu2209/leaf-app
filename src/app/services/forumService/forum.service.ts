@@ -31,6 +31,12 @@ export class ForumService {
     });
   }
 
+  getForoFilter(categories: String []): Post[]{
+
+    const posts:Post[] = this.foroSubject.value.filter(post => categories.includes(post.category));
+    console.log(posts);
+    return posts;
+  }
   post(body: any):Promise<any>{
     const headers = new HttpHeaders({
       Authorization: `Bearer ${this.authenticationService.loggedInUserToken}`
