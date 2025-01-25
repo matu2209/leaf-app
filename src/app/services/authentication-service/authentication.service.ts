@@ -54,6 +54,10 @@ export class AuthenticationService {
     return this.loggedInUserSubject.value !== null;
   }
 
+  getUserName(): string {
+    return this.loggedInUserName;
+  }
+
   isAdmin(): boolean {
     return this.loggedInUserSubject.value?.admin;
   }

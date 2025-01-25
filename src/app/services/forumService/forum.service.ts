@@ -31,10 +31,16 @@ export class ForumService {
     });
   }
 
-  getForoFilter(categories: String []): Post[]{
-
-    const posts:Post[] = this.foroSubject.value.filter(post => categories.includes(post.category));
-    console.log(posts);
+  getForoFilter(categories: String [], username:String): Post[]{
+    var posts:Post[];
+    console.log(username)
+    if (username){
+      posts = this.foroSubject.value.filter(post => username == post.username);
+      if(categories.length > 0)
+        posts = posts.filter(post => categories.includes(post.category));
+    } else {
+      posts = this.foroSubject.value.filter(post => categories.includes(post.category));
+    }
     return posts;
   }
   post(body: any):Promise<any>{
