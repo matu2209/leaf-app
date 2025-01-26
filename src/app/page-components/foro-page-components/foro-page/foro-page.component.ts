@@ -4,6 +4,7 @@ import { Post } from '../../../../../servidorConJWT/post';
 import { ForumService } from '../../../services/forumService/forum.service';
 import { ToastNotificationService } from '../../../services/toast-service/toast-notification.service';
 import { AuthenticationService } from '../../../services/authentication-service/authentication.service';
+import { Client } from '../../../../../servidorConJWT/cliente';
 
 
 declare var bootstrap: any; 
@@ -18,8 +19,9 @@ export class ForoPageComponent implements AfterViewInit {
   foro: Post[] = [];
   categories: string[] = ['Announcement', 'Discussion', 'Research', 'Suggestion', 'Bug', 'Question']; // Lista de categorías
   filterForm!: FormGroup;
+  user?: Client;
 
-  constructor(private forumService: ForumService, private toast:ToastNotificationService, private userName:AuthenticationService){}
+  constructor(private forumService: ForumService, private toast:ToastNotificationService, private userDataService:AuthenticationService){}
   
   ngAfterViewInit() {
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
@@ -30,7 +32,7 @@ export class ForoPageComponent implements AfterViewInit {
   
 
   ngOnInit() {
-    this.forumService.getForo(); // cargar foro
+    this.forumService.getForo(); 
     this.filterForm = new FormGroup({
       announcement: new FormControl(false),
       discussion: new FormControl(false),
@@ -40,8 +42,13 @@ export class ForoPageComponent implements AfterViewInit {
       question: new FormControl(false),
       mypost: new FormControl('')
     });
+
     this.forumService.foroSubject$.subscribe(questions => {
       this.foro = questions;
+    });
+
+    this.userDataService.loggedInUser$.subscribe(user => {
+      this.user = user;
     });
 
     const backToTopButton = document.getElementById('backToTopButton');
@@ -59,23 +66,26 @@ export class ForoPageComponent implements AfterViewInit {
 
   onSubmitFilter(){
     var username = '';
-    const selectedCategories = Object.keys(this.filterForm.value).filter(key => this.filterForm.value[key]);
+    const selectedCategories = Object.keys(this.filterForm.value).filter((key) => this.filterForm.value[key]);
     if (selectedCategories.includes('mypost')){
       selectedCategories.splice(selectedCategories.indexOf('mypost'), 1);
-      username = this.userName.getUserName();
-      console.log(username);
-      /*selectedCategories.push(this.userName.getUserName());
-      console.log(selectedCategories);*/
+      username = this.userDataService.getUserName();
     }
-    this.foro = this.forumService.getForoFilter(selectedCategories,username);
-    if (this.foro.length == 0) {
+
+    this.forumService.getForoFilter(selectedCategories, username);
+
+    if (this.foro.length === 0) {
       this.toast.showToast("No data found for these categories");
       this.filterForm.reset();
-      this.forumService.foroSubject$.subscribe(questions => {
-        this.foro = questions;
-      });
+      this.forumService.getForoFilter([], ''); 
     }
   }
+
+  clearFilters() {
+    this.filterForm.reset();
+    this.forumService.getForoFilter([], '');
+    this.toast.showToast("Filters cleared");
+}
     
   openCommentModal(id: number){
     this.forumService.currentPostId = id;

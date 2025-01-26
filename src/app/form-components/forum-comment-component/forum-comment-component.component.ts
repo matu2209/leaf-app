@@ -22,28 +22,30 @@ export class ForumCommentComponentComponent {
   }
 
   submitComment(): void {
-    if (this.commentForm.invalid) {
-      alert('Please write a comment.');
-      return;
-    }
+    if(this.AuthenticationService.isMember()){
+      if (this.commentForm.invalid) {
+        alert('Please write a comment.');
+        return;
+      }
 
-   let newComment: Comment = new Comment();
-   newComment.comment = this.commentForm.value.commentContent;
-   newComment.username = this.AuthenticationService.loggedInUserName;
-   
-    this.forumService.commentPost(newComment)
-      .then(response => {
+    let newComment: Comment = new Comment();
+    newComment.comment = this.commentForm.value.commentContent;
+    newComment.username = this.AuthenticationService.loggedInUserName;
     
-        const modalElement = document.getElementById('commentModal');
-        const modalInstance = bootstrap.Modal.getInstance(modalElement);
-        modalInstance.hide();
+      this.forumService.commentPost(newComment)
+        .then(response => {
+      
+          const modalElement = document.getElementById('commentModal');
+          const modalInstance = bootstrap.Modal.getInstance(modalElement);
+          modalInstance.hide();
 
-        this.toast.showToast('Your comment has been submitted successfully!');
-        this.commentForm.reset();
+          this.toast.showToast('Your comment has been submitted successfully!');
+          this.commentForm.reset();
 
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      })
-  }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        })
+    }
+  }  
 }

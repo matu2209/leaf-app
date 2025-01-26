@@ -25,7 +25,7 @@
           <a class="nav-link btn btn-outline-light" routerLink="/fav" role="button" *ngIf="user && user.member">Favorites</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link btn btn-outline-light" routerLink="/foro" role="button" *ngIf="user && user.member">Foro</a>
+          <a class="nav-link btn btn-outline-light" routerLink="/foro" role="button" *ngIf="user">Foro</a>
         </li>
         <li class="nav-item">
           <a class="nav-link btn btn-outline-light" routerLink="/admin" role="button" *ngIf="user && user.admin == true">Users list</a>

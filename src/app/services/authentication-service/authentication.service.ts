@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Client } from '../../../../servidorConJWT/cliente';
+import { PlantsService } from '../plants-service/plants.service';
 
 
 @Injectable({
@@ -17,7 +18,7 @@ export class AuthenticationService {
   loggedInUserName: string = "";
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private plants: PlantsService) { }
   // login(user: any) {
   //   this.loggedInUser = user.usuario;
   //   this.loggedInUserToken = user.token;
@@ -48,6 +49,7 @@ export class AuthenticationService {
     this.loggedInUserSubject.next(null);
     this.loggedInUserToken = "";
     this.loggedInUserName = "";
+    this.plants.resetPlantsPagination();
   }
 
   isLoggedIn(): boolean {
@@ -60,6 +62,10 @@ export class AuthenticationService {
 
   isAdmin(): boolean {
     return this.loggedInUserSubject.value?.admin;
+  }
+
+  isMember(): boolean {
+    return this.loggedInUserSubject.value?.member;
   }
 
   updateUser(user: Client){
