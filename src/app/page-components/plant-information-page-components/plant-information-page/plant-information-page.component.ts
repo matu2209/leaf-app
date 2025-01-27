@@ -157,6 +157,6 @@ export class PlantInformationPageComponent implements OnInit{
     }
   }
   generatePDF() {
-    this.PDF.generatePDF();
+    this.PDF.generatePDF(this.plantData.common_name);
   }
 }

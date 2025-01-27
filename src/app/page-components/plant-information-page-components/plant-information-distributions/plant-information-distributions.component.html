@@ -1,35 +1,39 @@
 <div class="container mt-4">
     <h3>Distribution</h3>
-  
+
     <!-- Botón para mostrar/ocultar distribución nativa -->
-    <button class="btn btn-sm ms-2 me-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNative" aria-expanded="false" aria-controls="collapseNative">
+    <button class="btn btn-sm ms-2 me-2 no-print" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNative" aria-expanded="false" aria-controls="collapseNative">
         Native
     </button>
 
     <!-- Botón para mostrar/ocultar distribución introducida -->
-    <button class="btn btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIntroduced" aria-expanded="false" aria-controls="collapseIntroduced">
+    <button class="btn btn-sm no-print" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIntroduced" aria-expanded="false" aria-controls="collapseIntroduced">
         Introduced
     </button>
 
     <div class="row">
         <div class="col">
-        <!-- Contenedor colapsable de distribución nativa -->
+            <!-- Contenedor colapsable de distribución nativa -->
             <div class="collapse mt-2" id="collapseNative">
                 <div class="card card-body">
                     <h4>Native</h4>
-                    <ul>
-                    <li *ngFor="let location of plantData.distribution.native">{{ location }}</li>
+                    <ul class="row row-cols-2">
+                        <li class="col" *ngFor="let location of plantData.distribution.native">
+                            {{ location }}
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="col">
-        <!-- Contenedor colapsable de distribución introducida -->
+            <!-- Contenedor colapsable de distribución introducida -->
             <div class="collapse mt-2" id="collapseIntroduced">
                 <div class="card card-body">
                     <h4>Introduced</h4>
-                    <ul>
-                    <li *ngFor="let location of plantData.distribution.introduced">{{ location }}</li>
+                    <ul class="row row-cols-2">
+                        <li class="col" *ngFor="let location of plantData.distribution.introduced">
+                            {{ location }}
+                        </li>
                     </ul>
                 </div>
             </div>

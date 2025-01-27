@@ -1,53 +1,54 @@
 <br><br><br>
-
-<div id="plant-info-content" class="container my-5" *ngIf="plantData">
+ 
+<div id="pdfContent" class="container my-5" *ngIf="plantData">
 <div class="container text-center mt-5">
   <app-spinner *ngIf="spinner == true"></app-spinner>
 </div>
 
 <div class="container my-5" *ngIf="plantData">
     <!-- Plant Header -->
-    <app-plant-information-header [plantData]="plantData"></app-plant-information-header>
-
+    <app-plant-information-header class="first-section" [plantData]="plantData"></app-plant-information-header>
+  
+    <div class="no-print">
+      <div *ngIf="user && distributionUser" class="alert alert-info text-center my-3" role="alert">
+        {{ distributionUser }}
+      </div>
+  
+      <div class="card mb-5" *ngIf="user && user.member && !isFavorite(plantData.id)">
+        <div class="card-body">
+          <button class="btn boton" (click)="addToFavorite(plantData.id)">
+              Add to favorites
+          </button>
+        </div>
+      </div>
+       <div class="card mb-5" *ngIf="user && user.member">
+        <div class="card-body">
+          <button class="btn boton" (click)="generatePDF()">
+              Download PDF
+          </button>
+        </div>
+      </div>
+    </div>
     
-    <div *ngIf="user && distributionUser" class="alert alert-info text-center my-3" role="alert">
-      {{ distributionUser }}
-    </div>
-
-    <div class="card mb-5" *ngIf="user && user.member && !isFavorite(plantData.id)">
-      <div class="card-body">
-        <button class="btn boton" (click)="addToFavorite(plantData.id)">
-            Add to favorites
-        </button>
-      </div>
-    </div>
-     <div class="card mb-5" *ngIf="user && user.member">
-      <div class="card-body">
-        <button class="btn boton" (click)="generatePDF()">
-            Download PDF
-        </button>
-      </div>
-    </div>
-
     <!-- Campo de notas personales con formulario reactivo -->
-    <app-note-form *ngIf="user && user.member && isFavorite(plantData.id)" [userNote]="userNote" (updateNote)="updateNote($event)"></app-note-form>
+      <app-note-form class="first-section" *ngIf="user && user.member && isFavorite(plantData.id)" [userNote]="userNote" (updateNote)="updateNote($event)"></app-note-form>
    
     <!-- Plant distributions -->
-    <app-plant-information-distributions [plantData]="plantData"></app-plant-information-distributions>
+    <app-plant-information-distributions class="second-section" [plantData]="plantData"></app-plant-information-distributions>
   
     <!-- specifications -->
-    <app-plant-information-specifications [plantData]="plantData"></app-plant-information-specifications>
+    <app-plant-information-specifications class="first-section" [plantData]="plantData"></app-plant-information-specifications>
   
     <!-- Growth -->
-    <app-plant-information-growth [plantData]="plantData"></app-plant-information-growth>
+    <app-plant-information-growth class="first-section" [plantData]="plantData"></app-plant-information-growth>
     
     <!-- Image Galleries -->
-    <app-plant-information-gallerie [plantData]="plantData" [limitImages]="!user?.member"></app-plant-information-gallerie>
+    <app-plant-information-gallerie class="no-print" [plantData]="plantData" [limitImages]="!user?.member"></app-plant-information-gallerie>
 
     <!-- Sources Section -->
-    <app-plant-information-sources [plantData]="plantData"></app-plant-information-sources>
+    <app-plant-information-sources class="second-section" [plantData]="plantData"></app-plant-information-sources>
 
-    <div class="card mb-5" *ngIf="user && user.member && isFavorite(plantData.id)">
+    <div class="card mb-5 no-print" *ngIf="user && user.member && isFavorite(plantData.id)">
       <div class="card-body">
         <button class="btn btn-danger" (click)="deleteFromFavorites(plantData.id)">
             Delete from favorites

@@ -6,7 +6,7 @@
                 <strong>{{ source.name }}</strong>
                 <span *ngIf="source.citation"> ({{ source.citation }})</span>
                 <span *ngIf="source.url">
-                - <a [href]="source.url" target="_blank">More info</a>
+                - <a class="no-print" [href]="source.url" target="_blank">More info</a>
                 </span>
             </div>
         </li>
