@@ -28,6 +28,9 @@ import { TimerAlertComponent } from './page-components/timer-components/timer-al
 import { UserViewComponent } from './page-components/user-view/user-view.component';
 import { ToastNotificationsComponent } from './alerts/toast-notifications/toast-notifications.component';
 import { NoteFormComponent } from './form-components/note-form/note-form.component';
+import { ForoPageComponent } from './page-components/foro-page-components/foro-page/foro-page.component';
+import { ForumPostComponentComponent } from './form-components/forum-post-component/forum-post-component.component';
+import { ForumCommentComponentComponent } from './form-components/forum-comment-component/forum-comment-component.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +55,9 @@ import { NoteFormComponent } from './form-components/note-form/note-form.compone
     UserViewComponent,
     ToastNotificationsComponent,
     NoteFormComponent,
+    ForoPageComponent,
+    ForumPostComponentComponent,
+    ForumCommentComponentComponent,
     ],  
   imports: [
     HttpClientModule,

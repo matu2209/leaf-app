@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Client } from '../../../../servidorConJWT/cliente';
+import { PlantsService } from '../plants-service/plants.service';
 
 
 @Injectable({
@@ -9,15 +10,15 @@ import { Client } from '../../../../servidorConJWT/cliente';
 })
 export class AuthenticationService {
   private loggedInUserSubject = new BehaviorSubject<any>(null);
-  private loggedInUserTokenSubject = new BehaviorSubject<string | null>(null);
 
   // private loggedInUser: any = null;
   // private loggedInUserToken: any = null;
   loggedInUser$ = this.loggedInUserSubject.asObservable();
-  loggedInUserToken$ = this.loggedInUserTokenSubject.asObservable();
+  loggedInUserToken: string = "";
+  loggedInUserName: string = "";
 
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private plants: PlantsService) { }
   // login(user: any) {
   //   this.loggedInUser = user.usuario;
   //   this.loggedInUserToken = user.token;
@@ -37,7 +38,8 @@ export class AuthenticationService {
 
   login(user: any) {
     this.loggedInUserSubject.next(user.usuario);
-    this.loggedInUserTokenSubject.next(user.token);
+    this.loggedInUserToken = user.token;
+    this.loggedInUserName = user.usuario.username;
 
     console.log('Usuario logueado:', user.usuario);
     console.log('Token:', user.token);
@@ -45,15 +47,25 @@ export class AuthenticationService {
 
   logout() {
     this.loggedInUserSubject.next(null);
-    this.loggedInUserTokenSubject.next(null);
+    this.loggedInUserToken = "";
+    this.loggedInUserName = "";
+    this.plants.resetPlantsPagination();
   }
 
   isLoggedIn(): boolean {
     return this.loggedInUserSubject.value !== null;
   }
 
+  getUserName(): string {
+    return this.loggedInUserName;
+  }
+
   isAdmin(): boolean {
     return this.loggedInUserSubject.value?.admin;
+  }
+
+  isMember(): boolean {
+    return this.loggedInUserSubject.value?.member;
   }
 
   updateUser(user: Client){

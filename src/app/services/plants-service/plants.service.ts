@@ -39,6 +39,18 @@ export class PlantsService{
     return this.http.get(apiUrl); 
   }
 
+  resetPlantsPagination(){
+    this.lastFilter = "";
+
+    this.actualPage = "";
+    this.firstPage = "";
+    this.previousPage = "";
+    this.nextPage = "";
+    this.endPage = "";
+    this.plants = [];
+
+  }
+
   getByFilters(query:String, page:String): Observable<any> {
     if (!this.token) {
       throw new Error('Token no disponible');
