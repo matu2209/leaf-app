@@ -16,42 +16,48 @@ declare var bootstrap: any;
 })
 export class ForumPostComponentComponent {
   postForm: FormGroup;
-  categories: string[] = ['anuncio', 'sugerencia', 'discusiones', 'galeria', 'investigacion'];
+  isAdmin: Boolean = false;
+
+  categories: string[] = ['discussion', 'research', 'suggestion', 'bug', 'question'];
   constructor(private fb: FormBuilder, private http: HttpClient, private forumService: ForumService, private AuthenticationService: AuthenticationService, private router: Router, public timerService: TimerService,
     private UserService: UserService, private toast: ToastNotificationService ) {
     this.postForm = this.fb.group({
       category: ['', Validators.required],
       postContent: ['', Validators.required]
     });
+
+    this.isAdmin = this.AuthenticationService.isAdmin();
   }
   ngOnInit(): void {
   }
 
   post(): void {
-    if (this.postForm.invalid) {
-      alert('Please fill in all fields.');
-      return;
-    }
+    if(this.AuthenticationService.isMember()){
+      if (this.postForm.invalid) {
+        alert('Please fill in all fields.');
+        return;
+      }
 
-   let newPost: Post = new Post();
-   newPost.category = this.postForm.value.category;
-   newPost.post = this.postForm.value.postContent;
-   newPost.username = this.AuthenticationService.loggedInUserName;
-   
-    this.forumService.post(newPost)
-      .then(response => {
+    let newPost: Post = new Post();
+    newPost.category = this.postForm.value.category;
+    newPost.post = this.postForm.value.postContent;
+    newPost.username = this.AuthenticationService.loggedInUserName;
     
-        const modalElement = document.getElementById('forumPostModal');
-        const modalInstance = bootstrap.Modal.getInstance(modalElement);
-        modalInstance.hide();
+      this.forumService.post(newPost)
+        .then(response => {
+      
+          const modalElement = document.getElementById('forumPostModal');
+          const modalInstance = bootstrap.Modal.getInstance(modalElement);
+          modalInstance.hide();
 
-        this.toast.showToast('Your post has been submitted successfully!');
-        this.postForm.reset();
+          this.toast.showToast('Your post has been submitted successfully!');
+          this.postForm.reset();
 
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      })
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        })
+    }
   }
 }
 

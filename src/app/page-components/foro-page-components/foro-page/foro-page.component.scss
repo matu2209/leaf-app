@@ -67,3 +67,27 @@ div{
 
   }
 }
+
+.filter-btn {
+  transition: transform 0.3s ease; 
+}
+
+.filter-btn[aria-expanded="true"] {
+  transform: rotate(180deg); 
+}
+
+.form-check-input {
+  // Cambia el color base del checkbox
+  background-color: transparent;
+  border-color: #40352B; // color de borde inicial cuando no está marcado
+
+  // Estilo cuando está marcado
+  &:checked {
+    background-color: #697353; // color de fondo cuando está marcado
+  }
+
+  // Añadir sombra al hacer clic o enfocar
+  &:focus {
+    box-shadow: 0 0 5px #697353;
+  }
+}

@@ -19,7 +19,6 @@ const routes: Routes = [
   { path: 'login', component: FormLogInComponent}, 
   { path: 'plant/:id', component: PlantInformationPageComponent},
   { path: 'fav', component: FavoritesPageComponent, canActivate: [UserGuard]},
-  // { path: 'foro', component: ForoPageComponent},
   { path: 'foro', component: ForoPageComponent, canActivate: [UserGuard]},
   { path: 'admin', component: AdminViewComponent, canActivate: [AdminGuard]},
   { path: 'profile', component: ProfileComponent, canActivate: [UserGuard]},

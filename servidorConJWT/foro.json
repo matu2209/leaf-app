@@ -133,7 +133,7 @@
   },
   {
     "id": 9,
-    "username": "bugBuster",
+    "username": "mm",
     "category": "bug",
     "post": "The scientific name of 'Areca Palm' doesn't match the official data.",
     "comments": [
@@ -148,7 +148,7 @@
   },
   {
     "id": 10,
-    "username": "plantEnthusiast",
+    "username": "mm",
     "category": "question",
     "post": "What plants help purify the air indoors?",
     "comments": [
@@ -166,5 +166,150 @@
       }
     ],
     "date": "2024-12-31T12:34:56.789Z"
+  },
+  {
+    "id": 11,
+    "username": "Dia",
+    "category": "research",
+    "post": "sdass",
+    "comments": [
+      {
+        "id": "11-1",
+        "username": "Dia",
+        "comment": "comentario de prueba al original",
+        "date": "2025-01-26T20:49:33.601Z"
+      }
+    ],
+    "date": "2025-01-26T18:08:28.789Z"
+  },
+  {
+    "id": 12,
+    "username": "Dia",
+    "category": "question",
+    "post": "ssssss",
+    "comments": [
+      {
+        "id": "12-1",
+        "username": "Dia",
+        "comment": "sssss1",
+        "date": "2025-01-26T21:07:15.403Z"
+      }
+    ],
+    "date": "2025-01-26T18:09:31.179Z"
+  },
+  {
+    "id": 13,
+    "username": "Dia",
+    "category": "announcement",
+    "post": "asdsadsa",
+    "comments": [
+      {
+        "id": "13-1",
+        "username": "Dia",
+        "comment": "adsdad1",
+        "date": "2025-01-26T18:53:58.753Z"
+      }
+    ],
+    "date": "2025-01-26T18:09:41.868Z"
+  },
+  {
+    "id": 14,
+    "username": "Dia",
+    "category": "discussion",
+    "post": "discussion",
+    "comments": [],
+    "date": "2025-01-26T18:31:29.902Z"
+  },
+  {
+    "id": 15,
+    "username": "Dia",
+    "category": "question",
+    "post": "question",
+    "comments": [],
+    "date": "2025-01-26T18:48:32.959Z"
+  },
+  {
+    "id": 16,
+    "username": "Dia",
+    "category": "bug",
+    "post": "bug",
+    "comments": [
+      {
+        "id": "16-1",
+        "username": "Dia",
+        "comment": "bug1",
+        "date": "2025-01-26T18:53:40.819Z"
+      }
+    ],
+    "date": "2025-01-26T18:53:20.279Z"
+  },
+  {
+    "id": 17,
+    "username": "Dia",
+    "category": "question",
+    "post": "tremenda quiestion lore impsusmdks",
+    "comments": [
+      {
+        "id": "17-1",
+        "username": "Dia",
+        "comment": "asdsads",
+        "date": "2025-01-26T20:17:22.128Z"
+      },
+      {
+        "id": "17-2",
+        "username": "Dia",
+        "comment": "comentario",
+        "date": "2025-01-26T20:46:37.357Z"
+      },
+      {
+        "id": "17-3",
+        "username": "Dia",
+        "comment": "comentario 2",
+        "date": "2025-01-26T20:46:52.860Z"
+      },
+      {
+        "id": "17-4",
+        "username": "Dia",
+        "comment": "comentario 3",
+        "date": "2025-01-26T20:47:20.888Z"
+      },
+      {
+        "id": "17-5",
+        "username": "Dia",
+        "comment": "333333",
+        "date": "2025-01-26T20:51:05.086Z"
+      }
+    ],
+    "date": "2025-01-26T20:17:07.257Z"
+  },
+  {
+    "id": 18,
+    "username": "Dia",
+    "category": "question",
+    "post": "s",
+    "comments": [
+      {
+        "id": "18-1",
+        "username": "Dia",
+        "comment": "probando padre",
+        "date": "2025-01-26T21:28:25.935Z"
+      }
+    ],
+    "date": "2025-01-26T21:07:31.361Z"
+  },
+  {
+    "id": 19,
+    "username": "ss",
+    "category": "announcement",
+    "post": "soy admin capo",
+    "comments": [
+      {
+        "id": "19-1",
+        "username": "Dia",
+        "comment": ":D",
+        "date": "2025-01-26T21:41:12.869Z"
+      }
+    ],
+    "date": "2025-01-26T21:40:53.130Z"
   }
 ]

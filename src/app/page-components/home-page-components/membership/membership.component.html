@@ -9,14 +9,15 @@
             <li>Save your favorite records for quick access</li>
             <li>Add notes to each saved record</li>
             <li>Access to personalized information</li>
-            <li>have access to more images for each plant</li>
+            <li>Have access to more images for each plant</li>
+            <li>Create posts in the forum</li>
         </ul>
 
-        <button class="btn btn-primary btn-block mt-3" data-bs-toggle="modal" data-bs-target="#MembershipModal" *ngIf="user == true">
+        <button class="btn btn btn-block mt-3" data-bs-toggle="modal" data-bs-target="#MembershipModal" *ngIf="user == true">
           Get Premium
         </button>
 
-        <button class="btn btn-primary btn-block mt-3 disabled" *ngIf="user == false">
+        <button class="btn btn btn-block mt-3 disabled" *ngIf="user == false">
           You must log in
         </button>
         

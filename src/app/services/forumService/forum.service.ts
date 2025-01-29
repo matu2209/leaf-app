@@ -11,6 +11,7 @@ import { Post } from '../../../../servidorConJWT/post';
 export class ForumService {
   url: string = "http://localhost:3001/foro";
   currentPostId: number = -1;
+  private originalPosts: Post[] = [];
   private foroSubject = new BehaviorSubject<Post[]>([]); 
   foroSubject$ = this.foroSubject.asObservable(); // Observable para que otros componentes se suscriban
 
@@ -27,9 +28,24 @@ export class ForumService {
 
     return this.http.get<Post[]>(this.url, {headers}).toPromise()
       .then((foro) => {
-        this.foroSubject.next(foro?.reverse()!); 
+        this.originalPosts = foro?.reverse()!; 
+        this.foroSubject.next(this.originalPosts);
     });
   }
+
+  getForoFilter(categories: String [], username:String): void{
+    let filteredPosts = [...this.originalPosts];
+    if (username) {
+      filteredPosts = filteredPosts.filter((post) => post.username === username);
+    }
+
+    if (categories.length > 0) {
+      filteredPosts = filteredPosts.filter((post) => categories.includes(post.category));
+    }
+
+    this.foroSubject.next(filteredPosts);
+  }
+
 
   post(body: any):Promise<any>{
     const headers = new HttpHeaders({
@@ -40,9 +56,11 @@ export class ForumService {
         console.error('no post');
         return; 
       }
-      const foro = this.foroSubject.getValue();
-      foro.unshift(newPost);
-      this.foroSubject.next(foro);
+      // const foro = this.foroSubject.getValue();
+      // foro.unshift(newPost);
+      // this.foroSubject.next(foro);
+      this.originalPosts.unshift(newPost);
+      this.foroSubject.next(this.originalPosts);
     });
   }
 
@@ -57,11 +75,12 @@ export class ForumService {
         return;
       }
       const foro = this.foroSubject.getValue();
+      // const foro = this.originalPosts;
       const postIndex = foro.findIndex(post => post.id === updatedPost.id);
 
       if (postIndex !== -1) {
-      foro[postIndex].comments = updatedPost.comments;
-      this.foroSubject.next(foro);
+        foro[postIndex].comments = updatedPost.comments;
+        this.foroSubject.next(foro);
       }
       
     });

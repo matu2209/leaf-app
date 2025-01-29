@@ -27,8 +27,24 @@ export class PlantInformationPageComponent implements OnInit{
   ngOnInit(): void {
 
     this.id = Number(this.route.snapshot.paramMap.get('id'));
-    //console.log(this.id);
 
+    if(!this.PlantsService.token){
+      this.PlantsService.getToken().subscribe(
+        (data) => {
+          this.PlantsService.token = data.token;
+          this.loadPlantInformation();
+        },
+        (error) => {
+          console.error('Error al obtener el token:', error);
+        }
+      );
+    }
+    else{
+      this.loadPlantInformation();
+    }
+  }
+
+  loadPlantInformation(){
     this.PlantsService.getById(this.id).subscribe(
       (data) => {
         this.plantData = data.data;
@@ -52,7 +68,6 @@ export class PlantInformationPageComponent implements OnInit{
         console.error('Error al obtener el token:', error);
       }
     );
-
   }
 
 
