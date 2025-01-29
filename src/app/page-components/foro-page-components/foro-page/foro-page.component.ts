@@ -22,7 +22,6 @@ export class ForoPageComponent implements AfterViewInit {
   user?: Client;
 
   constructor(private forumService: ForumService, private toast:ToastNotificationService, private userDataService:AuthenticationService){}
-  
   ngAfterViewInit() {
     const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
     tooltipTriggerList.forEach((tooltipTriggerEl) => {
