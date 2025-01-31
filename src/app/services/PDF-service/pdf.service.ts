@@ -11,20 +11,38 @@ export class PDFService {
 
 generatePDF(fileName: string) {
 
-   const firstSectionElements = document.querySelectorAll('.first-section');
+  const firstSectionElements = document.querySelectorAll('.first-section');
   const secondSectionElements = document.querySelectorAll('.second-section');
 
   if (firstSectionElements.length === 0 || secondSectionElements.length === 0) return;
 
-  const firstSectionClones = Array.from(firstSectionElements).map(element => 
-    element.cloneNode(true) as HTMLElement
-  );
-  const secondSectionClones = Array.from(secondSectionElements).map(element => 
-    element.cloneNode(true) as HTMLElement
-  );
+  // const firstSectionClones = Array.from(firstSectionElements).map(element => 
+  //   element.cloneNode(true) as HTMLElement
+  // );
+  // const secondSectionClones = Array.from(secondSectionElements).map(element => 
+  //   element.cloneNode(true) as HTMLElement
+  // );
 
-  firstSectionClones.forEach(clone => document.body.appendChild(clone));
-  secondSectionClones.forEach(clone => document.body.appendChild(clone));
+  const container = document.createElement('div');
+  container.style.position = 'absolute';
+  container.style.top = '-9999px';
+  container.style.left = '-9999px';
+  document.body.appendChild(container);
+
+  const firstSectionClones = Array.from(firstSectionElements).map(element => {
+    const clone = element.cloneNode(true) as HTMLElement;
+    container.appendChild(clone);
+    return clone;
+  });
+
+  const secondSectionClones = Array.from(secondSectionElements).map(element => {
+    const clone = element.cloneNode(true) as HTMLElement;
+    container.appendChild(clone);
+    return clone;
+  });
+
+  // firstSectionClones.forEach(clone => document.body.appendChild(clone));
+  // secondSectionClones.forEach(clone => document.body.appendChild(clone));
 
   this.removeUnwantedElements(firstSectionClones);
   this.removeUnwantedElements(secondSectionClones);
@@ -34,6 +52,7 @@ generatePDF(fileName: string) {
 
   setTimeout(() => {
     const pdf = new jsPDF('p', 'mm', 'a4');
+    console.log("holaaa");
 
     this.generateSectionsPDF(firstSectionClones, pdf, 0,).then(() => {
 
@@ -42,11 +61,13 @@ generatePDF(fileName: string) {
         pdf.save(`${fileName}.pdf`);
 
 
-        firstSectionClones.forEach(clone => clone.remove());
-        secondSectionClones.forEach(clone => clone.remove());
+        // firstSectionClones.forEach(clone => clone.remove());
+        // secondSectionClones.forEach(clone => clone.remove());
+        container.remove();
       });
     });
   }, 500);
+
 }
 
 private generateSectionsPDF(elements: HTMLElement[], pdf: jsPDF, pageIndex: number): Promise<void> {

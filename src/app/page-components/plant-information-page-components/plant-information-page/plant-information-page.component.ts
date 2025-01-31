@@ -126,7 +126,6 @@ export class PlantInformationPageComponent implements OnInit{
       const exists = this.isFavorite(id);
       //const exists = this.user.favorites.some(favorite => favorite.id === id);
   
-      // Si el ID no existe, agregarlo al arreglo de favoritos
       if (exists) {
         const index = this.user.favorites.findIndex(favorite => favorite.id === id);
         this.user.favorites.splice(index, 1);
@@ -134,6 +133,7 @@ export class PlantInformationPageComponent implements OnInit{
         .subscribe(
           response => {
             //console.log("Planta eliminada de favoritos:", { id, note: "" });
+            this.userNote = "";
             this.toastNotificationService.showToast(this.plantData.common_name +' has been removed from favorites');
           },
           error => {
