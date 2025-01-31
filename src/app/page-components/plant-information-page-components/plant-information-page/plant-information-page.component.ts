@@ -5,6 +5,7 @@ import { PlantsService } from '../../../services/plants-service/plants.service';
 import { AuthenticationService } from '../../../services/authentication-service/authentication.service';
 import { Client } from '../../../../../servidorConJWT/cliente';
 import { ToastNotificationService } from '../../../services/toast-service/toast-notification.service';
+import { PDFService } from '../../../services/PDF-service/pdf.service';
 declare var bootstrap: any;  
 @Component({
   selector: 'app-plant-information-page',
@@ -13,7 +14,7 @@ declare var bootstrap: any;
 })
 export class PlantInformationPageComponent implements OnInit{
 
-  constructor(private fb: FormBuilder, private PlantsService: PlantsService, private route: ActivatedRoute, private AuthenticationService: AuthenticationService, private toastNotificationService: ToastNotificationService){
+  constructor(private PDF: PDFService ,private fb: FormBuilder, private PlantsService: PlantsService, private route: ActivatedRoute, private AuthenticationService: AuthenticationService, private toastNotificationService: ToastNotificationService){
   }
   message: string = "";
   userNote: string = "";
@@ -169,5 +170,8 @@ export class PlantInformationPageComponent implements OnInit{
           );
       }
     }
+  }
+  generatePDF() {
+    this.PDF.generatePDF(this.plantData.common_name);
   }
 }
