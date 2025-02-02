@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { TimerService } from '../../services/timer-service/timer.service';
 import { UserService } from '../../services/user-service/user.service';
 import { ToastNotificationService } from '../../services/toast-service/toast-notification.service';
+import { OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 
 declare var bootstrap: any;  // Declara bootstrap para usar sus métodos
 
@@ -15,8 +17,10 @@ declare var bootstrap: any;  // Declara bootstrap para usar sus métodos
   templateUrl: './form-log-in.component.html',
   styleUrls: ['./form-log-in.component.scss']
 })
-export class FormLogInComponent {
+export class FormLogInComponent implements OnInit{
+  externalCondition: boolean = false;
   loginForm: FormGroup;
+  modalInstance: any;
 
   constructor(private fb: FormBuilder, private http: HttpClient, private authService: AuthenticationService, private router: Router, public timerService: TimerService,
     private UserService: UserService, private toast: ToastNotificationService ) {
@@ -24,6 +28,17 @@ export class FormLogInComponent {
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
+  }
+
+  ngOnInit(): void {
+    // Suscripción a cambios del estado del temporizador
+    this.timerService.timerEndObservableBS.subscribe(isExpired => {
+      this.externalCondition = isExpired;  
+      this.updateModalBehavior(); // si hay cambios en el estado del timer se cambian los atributos relacionados al formulario
+    });
+
+    const modalElement = document.getElementById('logInModal');
+    this.modalInstance = new bootstrap.Modal(modalElement);
   }
 
   validateCredentials() {
@@ -59,5 +74,28 @@ export class FormLogInComponent {
         alert('An error occurred while validating credentials');
       })
   }
+
+
+  updateModalBehavior() {
+    if (this.modalInstance) {
+      if (this.timerService.isTimerExpired || this.externalCondition) {
+        // Si el temporizador ha expirado o hay una condición externa
+        this.modalInstance._config.backdrop = 'static'; // No permite cerrar el modal al hacer clic fuera
+        this.modalInstance._config.keyboard = false; // No permite cerrar el modal con Esc
+      } else {
+        // Si el temporizador no ha expirado ni hay condición externa
+        this.modalInstance._config.backdrop = true; // Permite cerrar al hacer clic fuera
+        this.modalInstance._config.keyboard = true;// Permite cerrar el modal con Esc
+      }
+      
+      // Si el modal ya está abierto, lo ocultamos y luego lo mostramos para aplicar los cambios
+      if (this.modalInstance._isShown) {
+        this.modalInstance.hide();
+        this.modalInstance.show();
+      }
+    }
+  }
+
+
 
 }

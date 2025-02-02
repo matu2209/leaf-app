@@ -22,7 +22,7 @@
           <div class="card-body">
               <div class="mb-2">
                 <label class="form-label">Cardholder Name:</label>
-                <input type="text" class="form-control" placeholder="Cardholder Name" formControlName="cardholderName">
+                <input type="text" class="form-control" placeholder="Cardholder Name" formControlName="cardholderName" maxlength="20">
                 <div *ngIf="membershipForm.get('cardholderName')?.invalid && membershipForm.get('cardholderName')?.touched" class="text-danger">
                   Cardholder Name is required.
                 </div>
@@ -50,7 +50,7 @@
               </div>
               <div>
                 <label class="form-label">Billing Address:</label>
-                <input type="text" class="form-control" placeholder="Billing Address" formControlName="billingAddress">
+                <input type="text" class="form-control" placeholder="Billing Address" formControlName="billingAddress" maxlength="20">
                 <div *ngIf="membershipForm.get('billingAddress')?.invalid && membershipForm.get('billingAddress')?.touched" class="text-danger">
                   Billing Address is required.
                 </div>
@@ -58,7 +58,7 @@
               <div>
                 <label class="form-label">Country:</label>
                 <select class="form-control" formControlName="country">
-                  <option value="">Select a country</option>
+                  <option value="" disabled selected >-Select a country-</option>
                   <option value="us">United States</option>
                   <option value="ca">Canada</option>
                   <option value="br">Brazil</option>

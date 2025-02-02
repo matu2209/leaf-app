@@ -17,7 +17,7 @@ export class ForumCommentComponentComponent {
   constructor(private fb: FormBuilder, private toast: ToastNotificationService, private AuthenticationService: AuthenticationService,
     private forumService: ForumService) {
     this.commentForm = this.fb.group({
-      commentContent: ['', Validators.required]
+      commentContent: ['', [Validators.required, Validators.maxLength(200)]]
     });
   }
 

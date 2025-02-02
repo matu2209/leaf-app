@@ -19,11 +19,11 @@ export class FormMembershipComponent implements OnInit {
 
   constructor(private fb: FormBuilder, private authService: AuthenticationService, private http: HttpClient,private toast: ToastNotificationService){
     this.membershipForm = this.fb.group({
-      cardholderName: ['', Validators.required],
+      cardholderName: ['', [Validators.required, Validators.maxLength(20)]],
       cardNumber: ['', [Validators.required, Validators.pattern(/^\d{4} \d{4} \d{4} \d{4}$/)]],
       expirationDate: ['', [Validators.required, Validators.pattern(/^(0[1-9]|1[0-2])\/\d{2}$/)]],
       cvv: ['', [Validators.required, Validators.pattern(/^\d{3}$/)]],
-      billingAddress: ['', Validators.required],
+      billingAddress: ['', [Validators.required, Validators.maxLength(20)]],
       country: ['', Validators.required]
     });
   }

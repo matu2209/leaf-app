@@ -1,5 +1,5 @@
-<div class="modal fade" id="logInModal" tabindex="-1" aria-labelledby="logInModalLabel" aria-hidden="true"[attr.data-bs-backdrop]="timerService.isTimerExpired ? 'static' : null"
-[attr.data-bs-keyboard]="timerService.isTimerExpired ? 'false' : null">
+<div class="modal fade" id="logInModal" tabindex="-1" aria-labelledby="logInModalLabel" aria-hidden="true"[attr.data-bs-backdrop]="(timerService.isTimerExpired || externalCondition) ? 'static' : null"
+[attr.data-bs-keyboard]="(timerService.isTimerExpired || externalCondition) ? 'false' : null">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">

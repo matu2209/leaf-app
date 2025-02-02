@@ -22,7 +22,7 @@
                 </div>
                 <div>
                   <label class="form-label">Post Content:</label>
-                  <textarea class="form-control" placeholder="Write your post here..." formControlName="postContent" rows="4"></textarea>
+                  <textarea class="form-control" placeholder="Write your post here..." formControlName="postContent" rows="4" maxlength="200"></textarea>
                   <div *ngIf="postForm.get('postContent')?.invalid && postForm.get('postContent')?.touched" class="text-danger">
                     Post content is required.
                   </div>

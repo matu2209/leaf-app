@@ -1,5 +1,5 @@
-<div class="modal fade" id="RegisterModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true" [attr.data-bs-backdrop]="timerService.isTimerExpired ? 'static' : null"
-[attr.data-bs-keyboard]="timerService.isTimerExpired ? 'false' : null">
+<div class="modal fade" id="RegisterModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true" [attr.data-bs-backdrop]="(timerService.isTimerExpired || externalCondition) ? 'static' : null"
+[attr.data-bs-keyboard]="(timerService.isTimerExpired || externalCondition) ? 'false' : null">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -12,7 +12,7 @@
             <div class="card-body">
               <div class="mb-2">
                 <label class="form-label">Username:</label>
-                <input type="text" class="form-control" placeholder="Username" formControlName="username">
+                <input type="text" class="form-control" placeholder="Username" formControlName="username"  maxlength="20">
                 <div *ngIf="!registerForm.get('username')?.valid && (registerForm.get('username')?.dirty || registerForm.get('username')?.touched)">
                   <div *ngIf="registerForm.get('username')?.hasError('required')" class="text-danger">
                     Username is required.
@@ -20,20 +20,33 @@
                   <div *ngIf="registerForm.get('username')?.hasError('usernameExists')" class="text-danger">
                     Username already exists.
                   </div>
+                  <div *ngIf="registerForm.get('username')?.hasError('maxlength')"  class="text-danger">
+                    Username cannot be longer than 20 characters.
+                  </div>
                 </div>
               </div>
               <div>
                 <label class="form-label">Name:</label>
-                <input type="email" class="form-control" placeholder="Jhon" formControlName="firstName">
-                <div *ngIf="registerForm.get('firstName')?.invalid && registerForm.get('firstName')?.touched" class="text-danger">
-                  Valid firstName is required.
+                <input type="email" class="form-control" placeholder="Jhon" formControlName="firstName"  maxlength="20">
+                <div *ngIf="!registerForm.get('firstName')?.valid && (registerForm.get('firstName')?.dirty || registerForm.get('firstName')?.touched)">
+                  <div *ngIf="registerForm.get('firstName')?.invalid && registerForm.get('firstName')?.touched" class="text-danger">
+                    Valid firstName is required.
+                  </div>
+                  <div *ngIf="registerForm.get('firstName')?.hasError('maxlength')"  class="text-danger">
+                    Firstname cannot be longer than 20 characters.
+                  </div>
                 </div>
               </div>
               <div>
                 <label class="form-label">Last name:</label>
-                <input type="email" class="form-control" placeholder="Doe" formControlName="lastName">
-                <div *ngIf="registerForm.get('lastName')?.invalid && registerForm.get('lastName')?.touched" class="text-danger">
-                  Valid lastName is required.
+                <input type="email" class="form-control" placeholder="Doe" formControlName="lastName"  maxlength="20">
+                <div *ngIf="!registerForm.get('lastName')?.valid && (registerForm.get('lastName')?.dirty || registerForm.get('lastName')?.touched)">
+                  <div *ngIf="registerForm.get('lastName')?.invalid && registerForm.get('lastName')?.touched" class="text-danger">
+                    Valid lastName is required.
+                  </div>
+                  <div *ngIf="registerForm.get('lastName')?.hasError('maxlength')"  class="text-danger">
+                    Lastname cannot be longer than 20 characters.
+                  </div>
                 </div>
               </div>
               <div>

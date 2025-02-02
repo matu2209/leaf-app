@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { AuthenticationService } from '../../services/authentication-service/authentication.service';
@@ -17,20 +17,22 @@ declare var bootstrap: any;
   templateUrl: './from-register.component.html',
   styleUrls: ['./from-register.component.scss']
 })
-export class FromRegisterComponent {
+export class FromRegisterComponent implements OnInit{
   registerForm: FormGroup;
   distributions: String [] = [];
+  externalCondition: boolean = false;
+  modalInstance: any;
 
 
   constructor(private fb: FormBuilder, private http: HttpClient, private AuthenticationService: AuthenticationService, private DistributionsService: DistributionsService, public timerService: TimerService,
     private userService: UserService, private toast: ToastNotificationService
   ) {
     this.registerForm = this.fb.group({
-      username: ['', [Validators.required], [CustomValidators.usernameExists(this.userService)]],
-      birthDate: ['', Validators.required],
+      username: ['', [Validators.required, Validators.maxLength(20)], [CustomValidators.usernameExists(this.userService)]],
+      birthDate: [''],
       email: ['', [Validators.required, Validators.email]],
-      firstName:['', [Validators.required]],
-      lastName: ['', [Validators.required]],
+      firstName:['', [Validators.required, Validators.maxLength(20)]],
+      lastName: ['', [Validators.required, Validators.maxLength(20)]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       passwordConfirmation: ['', Validators.required,],
       country: ['', Validators.required]
@@ -44,6 +46,16 @@ export class FromRegisterComponent {
       .subscribe((data: string[]) => {
         this.distributions = data;
       });
+  }
+
+  ngOnInit(): void {
+    this.timerService.timerEndObservableBS.subscribe(isExpired => {
+      this.externalCondition = isExpired;  
+      this.updateModalBehavior();
+    });
+
+    const modalElement = document.getElementById('RegisterModal');
+    this.modalInstance = new bootstrap.Modal(modalElement);
   }
 
   registerUser() {
@@ -108,4 +120,24 @@ export class FromRegisterComponent {
       alert('Error registering user');
     });
   }
+
+
+  updateModalBehavior() {
+    if (this.modalInstance) {
+      if (this.timerService.isTimerExpired || this.externalCondition) {
+        this.modalInstance._config.backdrop = 'static';
+        this.modalInstance._config.keyboard = false;
+      } else {
+        this.modalInstance._config.backdrop = true;
+        this.modalInstance._config.keyboard = true;
+      }
+      
+      if (this.modalInstance._isShown) {
+        this.modalInstance.hide();
+        this.modalInstance.show();
+      }
+    }
+  }
+
+  
 }

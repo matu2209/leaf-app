@@ -23,7 +23,7 @@ export class ForumPostComponentComponent {
     private UserService: UserService, private toast: ToastNotificationService ) {
     this.postForm = this.fb.group({
       category: ['', Validators.required],
-      postContent: ['', Validators.required]
+      postContent: ['', [Validators.required, Validators.maxLength(200)]]
     });
 
     this.isAdmin = this.AuthenticationService.isAdmin();

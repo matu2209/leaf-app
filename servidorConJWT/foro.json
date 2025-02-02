@@ -6,12 +6,16 @@
     "post": "What is the best way to take care of a bonsai?",
     "comments": [
       {
+        "id": "1-1",
         "username": "Dia",
-        "comment": "I recommend pruning regularly and ensuring it's in a spot with enough sunlight."
+        "comment": "I recommend pruning regularly and ensuring it's in a spot with enough sunlight.",
+        "date": "2025-01-31T10:00:00.000Z"
       },
       {
+        "id": "1-2",
         "username": "pedro",
-        "comment": "Make sure the soil is well-draining and water it only when the soil is dry."
+        "comment": "Make sure the soil is well-draining and water it only when the soil is dry.",
+        "date": "2025-01-31T10:00:00.000Z"
       }
     ],
     "date": "2025-01-31T10:00:00.000Z"
@@ -23,12 +27,16 @@
     "post": "We’ve upgraded the search functionality on the forum. It’s now easier to find specific topics!",
     "comments": [
       {
+        "id": "2-1",
         "username": "Dia",
-        "comment": "This is going to be so useful. Can’t wait to try it!"
+        "comment": "This is going to be so useful. Can’t wait to try it!",
+        "date": "2025-01-31T10:00:00.000Z"
       },
       {
+        "id": "2-2",
         "username": "jp",
-        "comment": "Nice! That’ll make navigating the forum much faster."
+        "comment": "Nice! That’ll make navigating the forum much faster.",
+        "date": "2025-01-31T10:00:00.000Z"
       }
     ],
     "date": "2025-01-31T15:00:00.000Z"
@@ -40,12 +48,16 @@
     "post": "What do you think about using hydroponics at home?",
     "comments": [
       {
+        "id": "3-1",
         "username": "joshua",
-        "comment": "Hydroponics can be a great way to grow plants without soil, especially for small spaces."
+        "comment": "Hydroponics can be a great way to grow plants without soil, especially for small spaces.",
+        "date": "2025-01-31T10:00:00.000Z"
       },
       {
+        "id": "3-2",
         "username": "demonslayer",
-        "comment": "I've tried it and it's pretty effective, but it requires a bit of maintenance."
+        "comment": "I've tried it and it's pretty effective, but it requires a bit of maintenance.",
+        "date": "2025-01-31T10:00:00.000Z"
       }
     ],
     "date": "2025-01-31T10:30:00.000Z"
@@ -57,12 +69,16 @@
     "post": "Does anyone know how to eliminate pests naturally?",
     "comments": [
       {
+        "id": "4-1",
         "username": "ss",
-        "comment": "You can use neem oil or make a garlic spray to repel pests."
+        "comment": "You can use neem oil or make a garlic spray to repel pests.",
+        "date": "2025-01-31T10:00:00.000Z"
       },
       {
+        "id": "4-2",
         "username": "pedro",
-        "comment": "Try using diatomaceous earth; it works wonders for getting rid of insects."
+        "comment": "Try using diatomaceous earth; it works wonders for getting rid of insects.",
+        "date": "2025-01-31T10:00:00.000Z"
       }
     ],
     "date": "2025-01-31T10:45:00.000Z"
@@ -74,12 +90,16 @@
     "post": "The notification system isn't working correctly. Is anyone else having this issue?",
     "comments": [
       {
+        "id": "5-1",
         "username": "Dia",
-        "comment": "Yes, I'm experiencing the same issue. I hope it's fixed soon!"
+        "comment": "Yes, I'm experiencing the same issue. I hope it's fixed soon!",
+        "date": "2025-01-31T10:00:00.000Z"
       },
       {
+        "id": "5-2",
         "username": "joshua",
-        "comment": "I think it's a server problem. Hopefully, they are working on it."
+        "comment": "I think it's a server problem. Hopefully, they are working on it.",
+        "date": "2025-01-31T10:00:00.000Z"
       }
     ],
     "date": "2025-01-31T11:00:00.000Z"
@@ -91,12 +111,16 @@
     "post": "What is the easiest indoor plant to take care of?",
     "comments": [
       {
+        "id": "6-1",
         "username": "pedro",
-        "comment": "I recommend a snake plant; it's very low maintenance."
+        "comment": "I recommend a snake plant; it's very low maintenance.",
+        "date": "2025-01-31T10:00:00.000Z"
       },
       {
+        "id": "6-2",
         "username": "demonslayer",
-        "comment": "Spider plants are also great for beginners!"
+        "comment": "Spider plants are also great for beginners!",
+        "date": "2025-01-31T10:00:00.000Z"
       }
     ],
     "date": "2025-01-31T11:15:00.000Z"
@@ -108,12 +132,16 @@
     "post": "Do you think talking to plants really helps them grow?",
     "comments": [
       {
+        "id": "7-1",
         "username": "JuamPGK",
-        "comment": "I believe it does! It's a way of giving them positive energy."
+        "comment": "I believe it does! It's a way of giving them positive energy.",
+        "date": "2025-01-31T10:00:00.000Z"
       },
       {
+        "id": "7-2",
         "username": "ss",
-        "comment": "It may not scientifically help, but it feels good to interact with them."
+        "comment": "It may not scientifically help, but it feels good to interact with them.",
+        "date": "2025-01-31T10:00:00.000Z"
       }
     ],
     "date": "2025-01-31T11:30:00.000Z"
@@ -125,12 +153,16 @@
     "post": "How long does it take for a lemon seed to germinate?",
     "comments": [
       {
+        "id": "8-1",
         "username": "pedro",
-        "comment": "It can take anywhere from 2 to 6 weeks, depending on the conditions."
+        "comment": "It can take anywhere from 2 to 6 weeks, depending on the conditions.",
+        "date": "2025-01-31T10:00:00.000Z"
       },
       {
+        "id": "8-2",
         "username": "Dia",
-        "comment": "Make sure the seed is kept in a warm and moist environment for best results."
+        "comment": "Make sure the seed is kept in a warm and moist environment for best results.",
+        "date": "2025-01-31T10:00:00.000Z"
       }
     ],
     "date": "2025-01-31T11:45:00.000Z"
@@ -142,12 +174,16 @@
     "post": "Reminder: Please avoid spamming the forum with repeated posts. Let’s keep it clean and organized.",
     "comments": [
       {
+        "id": "9-1",
         "username": "JuamPGK",
-        "comment": "Thanks for the reminder! I’ll keep that in mind."
+        "comment": "Thanks for the reminder! I’ll keep that in mind.",
+        "date": "2025-01-31T10:00:00.000Z"
       },
       {
+        "id": "9-2",
         "username": "pedro",
-        "comment": "Got it! It's important to maintain order."
+        "comment": "Got it! It's important to maintain order.",
+        "date": "2025-01-31T10:00:00.000Z"
       }
     ],
     "date": "2025-01-31T14:45:00.000Z"
@@ -159,12 +195,16 @@
     "post": "What substrate is best for cacti and succulents?",
     "comments": [
       {
+        "id": "10-1",
         "username": "joshua",
-        "comment": "A well-draining cactus mix is ideal, with added sand for extra drainage."
+        "comment": "A well-draining cactus mix is ideal, with added sand for extra drainage.",
+        "date": "2025-01-31T10:00:00.000Z"
       },
       {
+        "id": "10-2",
         "username": "ss",
-        "comment": "I use a mix of cactus soil and perlite, and it works really well!"
+        "comment": "I use a mix of cactus soil and perlite, and it works really well!",
+        "date": "2025-01-31T10:00:00.000Z"
       }
     ],
     "date": "2025-01-31T12:15:00.000Z"
@@ -176,12 +216,16 @@
     "post": "What is your favorite plant and why?",
     "comments": [
       {
+        "id": "11-1",
         "username": "demonslayer",
-        "comment": "I love my Monstera! It's low maintenance and adds a tropical vibe to my home."
+        "comment": "I love my Monstera! It's low maintenance and adds a tropical vibe to my home.",
+        "date": "2025-01-31T10:00:00.000Z"
       },
       {
+        "id": "11-2",
         "username": "pedro",
-        "comment": "I really like peace lilies. They're so beautiful and purify the air."
+        "comment": "I really like peace lilies. They're so beautiful and purify the air.",
+        "date": "2025-01-31T10:00:00.000Z"
       }
     ],
     "date": "2025-01-31T12:30:00.000Z"
@@ -193,12 +237,16 @@
     "post": "I can't edit my posts. Is anyone else experiencing this?",
     "comments": [
       {
+        "id": "12-1",
         "username": "joshua",
-        "comment": "Yes, I noticed that too. I think it's a bug that needs fixing."
+        "comment": "Yes, I noticed that too. I think it's a bug that needs fixing.",
+        "date": "2025-01-31T10:00:00.000Z"
       },
       {
+        "id": "12-2",
         "username": "Dia",
-        "comment": "I can't edit either! I hope they fix it soon."
+        "comment": "I can't edit either! I hope they fix it soon.",
+        "date": "2025-01-31T10:00:00.000Z"
       }
     ],
     "date": "2025-01-31T12:45:00.000Z"
@@ -210,12 +258,16 @@
     "post": "What are the best natural fertilizers for indoor plants?",
     "comments": [
       {
+        "id": "13-1",
         "username": "pedro",
-        "comment": "I recommend using compost or fish emulsion for a natural boost."
+        "comment": "I recommend using compost or fish emulsion for a natural boost.",
+        "date": "2025-01-31T10:00:00.000Z"
       },
       {
+        "id": "13-2",
         "username": "demonslayer",
-        "comment": "You can also use banana peels! They're great for potassium."
+        "comment": "You can also use banana peels! They're great for potassium.",
+        "date": "2025-01-31T10:00:00.000Z"
       }
     ],
     "date": "2025-01-31T13:00:00.000Z"
@@ -227,12 +279,16 @@
     "post": "Have you tried composting at home? Is it worth it?",
     "comments": [
       {
+        "id": "14-1",
         "username": "jp",
-        "comment": "It's a bit of work, but totally worth it for the environment and your plants."
+        "comment": "It's a bit of work, but totally worth it for the environment and your plants.",
+        "date": "2025-01-31T10:00:00.000Z"
       },
       {
+        "id": "14-2",
         "username": "pedro",
-        "comment": "I've been composting for months, and my plants love it!"
+        "comment": "I've been composting for months, and my plants love it!",
+        "date": "2025-01-31T10:00:00.000Z"
       }
     ],
     "date": "2025-01-31T13:15:00.000Z"
@@ -244,12 +300,16 @@
     "post": "It would be great if we could create custom plant lists in the forum.",
     "comments": [
       {
+        "id": "15-1",
         "username": "ss",
-        "comment": "That sounds like a fantastic feature! It would help keep track of favorite plants."
+        "comment": "That sounds like a fantastic feature! It would help keep track of favorite plants.",
+        "date": "2025-01-31T10:00:00.000Z"
       },
       {
+        "id": "15-2",
         "username": "pedro",
-        "comment": "Yes, that would be very useful! Please add it!"
+        "comment": "Yes, that would be very useful! Please add it!",
+        "date": "2025-01-31T10:00:00.000Z"
       }
     ],
     "date": "2025-01-31T13:30:00.000Z"
@@ -261,12 +321,16 @@
     "post": "We're performing maintenance on the forum. You might experience temporary errors.",
     "comments": [
       {
+        "id": "16-1",
         "username": "joshua",
-        "comment": "Thanks for the update! I hope everything gets fixed soon."
+        "comment": "Thanks for the update! I hope everything gets fixed soon.",
+        "date": "2025-01-31T10:00:00.000Z"
       },
       {
+        "id": "16-2",
         "username": "pedro",
-        "comment": "Got it! Thanks for letting us know."
+        "comment": "Got it! Thanks for letting us know.",
+        "date": "2025-01-31T10:00:00.000Z"
       }
     ],
     "date": "2025-01-31T13:45:00.000Z"

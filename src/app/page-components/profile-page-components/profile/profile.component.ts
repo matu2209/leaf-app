@@ -31,12 +31,17 @@ export class ProfileComponent implements OnInit {
       this.loggedInUser = user;
       if (this.loggedInUser) {
         this.profileForm = new FormGroup({
-          username: new FormControl({ value: this.loggedInUser?.username, disabled: true }),
-          email: new FormControl({ value: this.loggedInUser?.email, disabled: false }),
-          firstName: new FormControl({ value: this.loggedInUser?.firstName, disabled: false }),
-          lastName: new FormControl({ value: this.loggedInUser?.lastName, disabled: false }),
+          username: new FormControl({ value: this.loggedInUser?.username, disabled: true }, 
+            [Validators.maxLength(20), Validators.required]),
+          email: new FormControl({ value: this.loggedInUser?.email, disabled: false }, 
+            [Validators.email, Validators.required]),
+          firstName: new FormControl({ value: this.loggedInUser?.firstName, disabled: false }, 
+            [Validators.maxLength(20), Validators.required]),
+          lastName: new FormControl({ value: this.loggedInUser?.lastName, disabled: false }, 
+            [Validators.maxLength(20), Validators.required]),
           birthDate: new FormControl({ value: this.loggedInUser?.birthDate, disabled: false }),
-          country: new FormControl({ value: this.loggedInUser?.country, disabled: false })
+          country: new FormControl({ value: this.loggedInUser?.country, disabled: false }, 
+            [Validators.required, Validators.required])
         });
       }
     });
@@ -54,7 +59,8 @@ export class ProfileComponent implements OnInit {
 
   submitChange(field: keyof Client): void {
     if (this.profileForm.get(field)?.invalid) {
-      alert(`Por favor, introduce un valor válido en ${field}.`);
+      // alert(`Por favor, introduce un valor válido en ${field}.`);
+      this.toastNotificationService.showToast(`Please enter a valid value for ${field}.`);
       return;
     }
     if (this.loggedInUser && this.profileForm.get(field)) {
@@ -75,6 +81,7 @@ export class ProfileComponent implements OnInit {
   submitPasswordChange(): void {
     if (this.passwordForm.invalid) {
       alert('Por favor, introduce contraseñas válidas.');
+      this.toastNotificationService.showToast(`Please enter a valid password.`);
       return;
     }
 

@@ -3,7 +3,7 @@
       <form [formGroup]="noteForm" (ngSubmit)="noteSubmit()">
         <label for="noteInput" class="form-label">Personal Note</label>
         <div class="input-group">
-          <textarea type="text" class="form-control" formControlName="note" placeholder="Write your personal notes about this plant...">
+          <textarea type="text" class="form-control" formControlName="note" placeholder="Write your personal notes about this plant..." maxlength="200">
 
           </textarea>
           <button class="btn boton no-print" type="submit">

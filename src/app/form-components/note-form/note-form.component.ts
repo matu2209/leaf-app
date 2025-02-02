@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ToastNotificationService } from '../../services/toast-service/toast-notification.service';
 
 @Component({
@@ -17,7 +17,7 @@ export class NoteFormComponent {
 
   ngOnInit(){
     this.noteForm = new FormGroup({
-      note: new FormControl(this.userNote)
+      note: new FormControl(this.userNote, [Validators.maxLength(200)])
     });
 
   }
