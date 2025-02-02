@@ -13,7 +13,7 @@ export class AppComponent {
   ngOnInit() {
 
     this.timerService.startTimer(80000);
-    // this.timerService.startTimer(3000);
+    // this.timerService.startTimer(5000);
 
     this.timerService.timerEndObservable.subscribe(() => {
       const logInModal = document.getElementById('logInModal');

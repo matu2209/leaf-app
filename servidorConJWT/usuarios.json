@@ -159,7 +159,7 @@
   {
     "id": 6,
     "username": "Dia",
-    "password": "12345678",
+    "password": "111111",
     "member": true,
     "firstName": "Yahveh",
     "lastName": "Baccaro",
@@ -168,18 +168,6 @@
     "admin": false,
     "isActivated": true,
     "favorites": [
-      {
-        "id": 122042,
-        "note": ""
-      },
-      {
-        "id": 51662,
-        "note": "pero BUENOOOOOOOOOOOOO CHAVALEEEES"
-      },
-      {
-        "id": 159974,
-        "note": "me encanta stardew valley papaaaaaaaaaaaaaaaaa\n"
-      },
       {
         "id": 262177,
         "note": "aguante stardew valley!!!"
@@ -219,6 +207,22 @@
       {
         "id": 227114,
         "note": "sdads\n"
+      },
+      {
+        "id": 122042,
+        "note": ""
+      },
+      {
+        "id": 159974,
+        "note": ""
+      },
+      {
+        "id": 51662,
+        "note": "si"
+      },
+      {
+        "id": 128860,
+        "note": ""
       }
     ],
     "creditCard": [],

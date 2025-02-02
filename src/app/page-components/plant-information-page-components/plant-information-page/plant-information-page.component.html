@@ -11,7 +11,7 @@
     <app-plant-information-header class="first-section" [plantData]="plantData"></app-plant-information-header>
   
     <div class="no-print">
-      <div *ngIf="user && distributionUser" class="alert alert-info text-center my-3" role="alert">
+      <div *ngIf="user && user.member && distributionUser" class="alert alert-info text-center my-3" role="alert">
         {{ distributionUser }}
       </div>
   
