@@ -5,7 +5,7 @@ import cors from 'cors';
 const app = express();
 const port = 3000;
 const urlBase = 'https://trefle.io/api';  // URL base de la API de Trefle
-const token = 'Token';  // Token para acceder a la API
+const token = 'token';  // Token para acceder a la API
 
 app.use(cors({ origin: 'http://localhost:4200' }));  // Permite solicitudes desde Angular
 app.use(express.json());

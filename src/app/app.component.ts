@@ -12,7 +12,7 @@ export class AppComponent {
 
   ngOnInit() {
 
-    this.timerService.startTimer(80000);
+    this.timerService.startTimer(600000);
     // this.timerService.startTimer(5000);
 
     this.timerService.timerEndObservable.subscribe(() => {
